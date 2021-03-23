@@ -1,0 +1,6 @@
+Clade ID	Taxonomy ID	BioProject ID	BioSample ID	Assembly ID	Nucleotide accession(s)
+     20742	    522772	     29431	         0	     26528	CP001968
+     20743	    717231	     45817	         0	    290408	CP002858
+     20744	    639282	     37285	         0	     11788	AP011529
+     20745	    768670	     49523	    102793	    232948	CP002347
+     22123	   1304888	    195767	         0	    729508	ATWF

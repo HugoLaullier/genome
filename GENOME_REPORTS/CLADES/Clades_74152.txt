@@ -1,0 +1,2 @@
+Clade ID	Taxonomy ID	BioProject ID	BioSample ID	Assembly ID	Nucleotide accession(s)
+     21532	    445932	     19701	         0	     20948	CP001055

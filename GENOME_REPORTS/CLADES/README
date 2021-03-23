@@ -1,0 +1,74 @@
+#############################################################
+README for ftp://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/CLADES  
+
+Created: August 15, 2013
+#############################################################
+
+National Center for Biotechnology Information (NCBI)
+National Library of Medicine
+National Institutes of Health
+8600 Rockville Pike
+Bethesda, MD 20894, USA
+tel: (301) 496-2475
+fax: (301) 480-9241
+email: info@ncbi.nlm.nih.gov (for general questions)
+email: genomes@ncbi.nlm.nih.gov (for specific questions)
+
+#############################################################
+
+This is a DEVELOPMENT/BETA project and will undergo numerous revisions.
+NCBI is experimenting with different approaches to organize prokaryotic genomes in sequence-related groups. 
+The current approach is based on the comparison of universally conserved markers. 
+See marker data at ftp://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/MARKERS/
+
+
+====================================
+Directory Content:
+====================================
+This FTP directory contains data for prokaryotic genomes organized in species-level groups (clades)
+File Name              File Content
+--------------------------------------------------------------
+
+Phyla.txt:   		phyla and superphyla as defined by NCBI Taxonomy that contains at least one full genome assembly
+
+Clade_*.txt: 		Clades are calculated separately for each phylum. 
+	     		* - taxid of a phylum or superphylum. Each line represents genome assembly assigned to a clade
+               
+no_asignment.txt	genome assemblies for which clade cannot be assigned for various reasons
+  
+====================================
+File formats and column description:
+====================================
+
+The first line of each file provides column header names and not data.
+
+The following file definitions are formatted as:
+  Column Name | Description
+
+------------------
+Phyla.txt file:
+------------------
+Taxonomy ID		phylum or superphylum NCBI Taxonomy numeric identifier
+Taxonomy name		phylum or superphylum scientific name
+Taxonomy rank		NCBI TAxonomy rank - phylum or superphylum
+Superkingdom name	Archaea or Bacteria
+#Genomes		total number of genome assemblies in a phylum/superphylum assigned to a clade
+#Clades			total number of clades in a phylum/superphylum
+
+------------------
+Clade_*.txt file:
+------------------
+Clade ID		unique numeric calde identifier
+Taxonomy ID		Taxonomy ID of the assembly
+BioProject ID		BioProject for GenBank assembly
+BioSample ID		BioSample ID for GenBank assembly
+Assembly ID		Assembly ID for GenBank assembly
+Nucleotide accession(s)	GenBank accession(s), comma separated. For WGS assemblies only wgs-master accession is shown
+
+====================================
+July 15 2013 statistics:
+====================================
+# Genome assemblies:           12832
+# Genome assemblies in clades: 12217
+# Clades:                       2769
+

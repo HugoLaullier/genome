@@ -1,0 +1,5 @@
+Clade ID	Taxonomy ID	BioProject ID	BioSample ID	Assembly ID	Nucleotide accession(s)
+     20746	    795359	     67515	         0	    286828	CP002829
+     20747	    667014	     40057	         0	    289058	CP002683
+     22124	   1123371	    188821	         0	    730008	ATXH
+     22125	   1123373	    188822	         0	    730048	ATXI

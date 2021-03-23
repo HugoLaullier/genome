@@ -1,0 +1,267 @@
+#############################################################
+README for ftp://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS  
+
+Created: December 15, 2011
+Updated: February 15, 2012
+#############################################################
+
+National Center for Biotechnology Information (NCBI)
+National Library of Medicine
+National Institutes of Health
+8600 Rockville Pike
+Bethesda, MD 20894, USA
+tel: (301) 496-2475
+fax: (301) 480-9241
+email: info@ncbi.nlm.nih.gov (for general questions)
+email: genomes@ncbi.nlm.nih.gov (for specific questions)
+
+#############################################################
+
+This FTP directory distributes data presented in the NCBI Genome 
+database available at:
+   http://www.ncbi.nlm.nih.gov/genome/
+
+====================================
+NOTICE:
+====================================
+This FTP area 
+   - ftp://ftp.ncbi.nlm.nih.gov/genomes/genomeprj/
+has been discontinued on November 15, 2012
+
+====================================
+Directory Content:
+====================================
+
+This directory contains summary reports conveying the organism scope and 
+detailed genome project reports grouped by major taxonomic divisions.
+
+The taxonomic division reports include information on genome data submitted 
+to the primary archival sequence data that is exchanged among members of the 
+International Nucleotide Sequence Database Collaboration (INSDC) and genome 
+data represented in NCBI RefSeq dataset. 
+
+These files correspond to the tables available online at: 
+http://www.ncbi.nlm.nih.gov/genome/browse/
+
+
+File Name              File Content
+--------------------------------------------------------------
+
+overview.txt:   Comprehensive report of organisms that have 
+               one or many genome sequencing projects that 
+               may be complete, in progress or planned.
+
+eukaryotes.txt: Eukaryotic genome sequencing projects 
+               excluding projects that represent only organelles.
+
+prokaryotes.txt: Prokaryotic genome sequencing projects                                      
+                excluding projects that represent only plasmids
+                               
+viruses.txt:   Viral genome sequencing projects 
+               This report includes only data represented in 
+               the RefSeq dataset. 
+
+prok_reference_genomes.txt: List of reference genome: small curated subset of 
+                                         really good and scientifically important prokaryotic genomes (see detail description below).
+                                         
+prok_representative_genomes.txt:  List of all selected representative prokaryotic genomes (see detail description below).
+
+====================================
+Update frequency:
+       4 first files are updated daily
+        Reference and representative files are updated manually
+====================================
+
+====================================
+File formats and column description:
+====================================
+All taxonomy terms are defined by the NCBI Taxonomy database.
+
+The first line of each file begins with â€#â€™ and provides column 
+header names and not data.
+
+The following file definitions are formatted as:
+  
+Column Name | Description
+
+------------------
+overview.txt file:
+------------------
+Organism/Name  Organism name at the species level according 
+Kingdom        Taxonomic division: Archaea, Bacteria, Eukaryota, or Viruses 
+Group                  Commonly used organism groups 
+                       Eukaryota: Animals, Fungi, Plants, Protists;                           
+                       Prokaryota: group corresponds to phylum; 
+                       Viruses: groups defined as the first level (not ranked)                        
+                       below the kingdom of Viruses
+
+SubGroup       NCBI Taxonomy level below group:
+                       Eukaryota: Mammals, Birds, Fishes, Flatworms, Insects, Amphibians
+                       Reptiles, Roundworms, Ascomycetes, Basidiomycetes, 
+                       Land Plants, Green Algae, Apicomplexans, Kinetoplasts; 
+                       Prokaryota: sub-groups correspond to class level; 
+                       Viruses: sub-groups correspond to families including floating genera 
+
+Size (Mb)      Estimated genome size 
+Chrs           Number of chromosomes 
+Organelles     Number of the organelles 
+Plasmids       Number of plasmids 
+BioProjects    Number of genome sequencing projects 
+
+---------------
+eukaryotes.txt:
+---------------
+#Organism/Name Organism name at the species level    
+BioProject     BioProject Accession number (from BioProject database)
+Group          Commonly used organism groups: 
+                        Animals, Fungi, Plants, Protists;
+SubGroup       NCBI Taxonomy level below group: 
+                       Mammals, Birds, Fishes, Flatworms, Insects, Amphibians
+                       Reptiles, Roundworms, Ascomycetes, Basidiomycetes, 
+                       Land Plants, Green Algae, Apicomplexans, Kinetoplasts; 
+Size (Mb)      Total length of DNA submitted for the project 
+GC%            Percent of nitrogenous bases (guanine or cytosine) in 
+               DNA submitted for the project
+Assembly       Name of the genome assembly (from NCBI Assembly database)
+Chromosomes    Number of chromosomes submitted for the project       
+Organelles     Number of organelles submitted for the project 
+Plasmids       Number of plasmids submitted for the project 
+WGS            Four-letter Accession prefix followed by version as                  
+               defined in WGS division of GenBank/INSDC
+Scaffolds      Number of scaffolds in the assembly
+Genes          Number of Genes annotated in the assembly
+Proteins       Number of Proteins annotated in the assembly  
+Release Date   First public sequence release for the project
+Modify Date    Sequence modification date for the project
+Status         Highest level of assembly:
+                       Chromosomes  one or more chromosomes are assembled
+                       Scaffolds or contigs  sequence assembled but no chromosomes
+                       SRA or Traces  raw sequence data available 
+                       No data  no data is connected to the BioProject ID
+
+----------------
+prokaryotes.txt:
+----------------
+Organism/Name          Organism name usually at the species level 
+BioProject             BioProject Accession number (from BioProject database)
+Group                  Phylum 
+SubGroup               Class level 
+Size (Mb)              Total length of DNA submitted for the project
+GC%                    Percent of nitrogenous bases (guanine or cytosine) in 
+                       DNA submitted for the project 
+Chromosomes/RefSeq     Refseq chromosome sequence accessions 
+Chromosomes/INSDC      GenBank chromosome sequence accessions 
+Plasmids/RefSeq        Refseq plasmid sequence accessions
+Plasmids/INSDC         GenBank plasmid sequence accessions   
+WGS                    Four-letter Accession prefix followed by version as                  
+                       defined in WGS division of GenBank/INSDC
+Scaffolds              Number of scaffolds in the assembly
+Genes                  Number of Genes annotated in the assembly
+Proteins               Number of Proteins annotated in the assembly  
+        
+Release Date           First public sequence release for the project
+Modify Date            Sequence modification date for the project
+Status                 Highest level of assembly: 
+                               Chromosomes  chromosome is represented by gapless contig
+                               Scaffolds or contigs  sequence assembled but no chromosomes
+                               SRA or Traces  raw sequence data available 
+                               No data  no data is connected to the BioProject ID
+
+------------
+viruses.txt:
+------------
+Organism/Name  Organism name usually at the species level 
+BioProject     BioProject Accession number (from BioProject database)
+                       Note: Only Refseq projects are reported; 
+                       INSDC Viral genomes are primarily out of scope for BioProject
+Group          Group is defined as the first level (not ranked)                            
+               below the kingdom of Viruses
+SubGroup       Sub-groups correspond to families including floating genera 
+Size (Kb)      Total length of nucleotide sequence
+GC%            Percent of nitrogenous bases (guanine or cytosine) in 
+                DNA submitted for the project 
+Host           Natural host of a virus
+Segmemts       Number of segments in viral genome
+Genes          Number of Genes annotated in viral genome
+Proteins       Number of Proteins annotated in viral genome
+Release Date   First public sequence release for the project
+Modify Date    Sequence modification date for the project    
+Status         Complete - only complete viral genomes are considered
+
+
+------------
+prok_reference_genomes.txt:
+------------
+Species/genus   Species name (or genus for some genomes having Entrez Genome record on 
+                genus level)
+Genomes         Number of genomes for this species (or genus)
+Organism name   Name of organism (can be strain name)
+Chromosomes     Refseq and INSDC Chromosome accessions
+Plasmids        Refseq and INSDC plasmid accessions (only 1st one, with "..."if more 
+                than 1 plasmid in genome
+CODE            Code (abbreviated source code, explained below)
+Comment         Comment 
+Pubmed          Pubmed IDs  
+Link            Link to external resource
+
+------------
+prok_representative_genomes.txt:
+------------
+Species/genus   Species name (or genus for some genomes having Entrez Genome record on 
+                genus level)
+Genomes         Number of genomes for this species (or genus)
+Organism name   Name of organism (can be strain name)
+Chromosomes     Refseq and INSDC Chromosome accessions
+Plasmids        Refseq and INSDC plasmid accessions (only 1st one, with "..."if more 
+                than 1 plasmid in genome
+CODE            Code (abbreviated source code, explained below)
+Comment         Comment 
+Pubmed          Pubmed IDs  
+Link            Link to external resource
+
+#############################################################
+Archaea and Bacteria reference and representative genomes
+Code definitions:
+
+    CLI = Clinical Isolate
+    TYS = Type Strain
+    FGS = First Genome sequenced
+    PRT = Proteomics
+    UPR = UniProt genomes
+    QfO = species selected by the "Quest For Orthologs" group
+    PHY = representative member at a phylogenetically interesting position 
+    MOD = Model organism
+    CCA = Community Consortium Annotation
+    CALC= Calculated
+    COM = Community selected reference
+    
+
+Each species in Entrez genome collection that has assembly data, either complete or WGS, 
+has at least one reference or representative genome. For some well-studied species of great 
+biomedical interest or high diversity more than one reference or representative is selected.
+
+Reference genomes are defined as genomes of high quality sequence and annotation and/or 
+the isolates that have been used by the research community for clinical studies, 
+experimental validation, comparative analysis.
+
+The source of reference genomes:
+
+    UniProt reference proteome
+    The genomes with extensive proteomics support for the annotation.
+    Community curated annotation
+    Community selected reference
+
+Representative genomes are selected based on the following rules:
+
+    the only genome sequenced
+    the only complete genome for species
+    multiple complete genomes or no complete genome
+        Type strain
+        First complete genome sequenced
+        Human Microbiome reference
+        Highest assembly quality
+
+Calculated:
+For large clades (> 5 genomes) a representative is calculated by protein cluster analysis: 
+the genome with maximum number proteins in clusters is selected.
+

@@ -1,0 +1,5 @@
+Clade ID	Taxonomy ID	BioProject ID	BioSample ID	Assembly ID	Nucleotide accession(s)
+     20501	    330214	     46433	         0	    257638	FP929003
+     20502	    289376	     30733	         0	     21788	CP001147
+     21329	   1162668	    157333	         0	    408158	AP012342
+     22046	   1048260	     68175	         0	    427108	CP002919
