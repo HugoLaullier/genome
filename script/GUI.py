@@ -14,13 +14,18 @@ window.title("Michel on t'adore")
 
 # Frame 1 : Liste des fichiers
 list = Frame(window)
-list.place(x=0, y=0, anchor="nw", width=400, height=1200)
+list.place(x=0, y=0, anchor="nw", width=400, height=800)
 
 # Creating treeview window
+scrollbar = Scrollbar(list)
+scrollbar.pack( side = RIGHT, fill = Y )
+
 treeview = ttk.Treeview(list)
 treeview.heading('#0', text='Arborescence des fichiers')
 
+treeview.configure(yscrollcommand=scrollbar.set)
 treeview.pack(fill="both", expand=True)
+scrollbar.configure(command=treeview.yview)
 
 
 def tree_exist(tree, name) :
@@ -55,14 +60,14 @@ Info.place(x=400, y=0, anchor="nw", width=800, height=600)
 Info_lab = LabelFrame(Info, text="Informations", padx=20, pady=20)
 Info_lab.pack(fill="both", expand="yes")
 
-Label(Info_lab, justify = LEFT, text="Organisme choisi : ").grid(row = 0, column = 0)
+Label(Info_lab, text="Organisme choisi : ").grid(row = 0, column = 0, sticky = W, ipadx = 100, ipady = 30)
 
 labelText = StringVar()
 labelText.set('Aucun')
 depositLabel = Label(Info_lab, textvariable=labelText)
-depositLabel.grid(row = 0, column = 1)
+depositLabel.grid(row = 0, column = 1, sticky = W)
 
-Label(Info_lab, justify = LEFT, text="Région fonctionnelle choisie : ").grid(row = 4, column = 0)
+Label(Info_lab, justify = LEFT, text="Région fonctionnelle choisie : ").grid(row = 4, column = 0, sticky = W, ipadx = 100, ipady = 30)
 
 # Frame 3 : Logs
 Logs = Frame(window, background="#b22222")
@@ -72,7 +77,41 @@ Logs_lab = LabelFrame(Logs, text="Logs", padx=20, pady=20)
 Logs_lab.pack(fill="both", expand="yes")
 
 
+# Menu des regions
 
+OptionList = [
+"Aucun",
+"CDS",
+"centromere",
+"intron",
+"mobile_element",
+"ncRNA",
+"rRNA",
+"telomere",
+"tRNA",
+"3'UTR",
+"5'UTR"
+]
+
+
+variable = StringVar(Info_lab)
+variable.set(OptionList[0])
+
+menu = OptionMenu(Info_lab, variable, *OptionList)
+menu["borderwidth"]=1
+menu.grid(row = 4, column = 1, sticky = W)
+
+
+def callback(*args): # fonction pour executer du code pour le menu, a changer
+    print("The selected item is {}".format(variable.get()))
+
+variable.trace("w", callback)
+
+def button_callback(): # Fonction boutton
+   print("Run...")
+
+run = Button(Info_lab, text ="Run", command = button_callback, relief = RIDGE, borderwidth=1)
+run.grid(row = 5, sticky = 'se', column = 2, ipadx = 20, pady = 30, padx = 30)
 
 # Fonctionnalités
 
