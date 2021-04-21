@@ -3,6 +3,7 @@ from tkinter import ttk
 
 from run import *
 import os
+import time
 
 
 # Creating window
@@ -69,12 +70,29 @@ depositLabel.grid(row = 0, column = 1, sticky = W)
 
 Label(Info_lab, justify = LEFT, text="Région fonctionnelle choisie : ").grid(row = 4, column = 0, sticky = W, ipadx = 100, ipady = 30)
 
+
+
 # Frame 3 : Logs
 Logs = Frame(window, background="#b22222")
 Logs.place(x=400, y=400, anchor="nw", width=800, height=400)
 
-Logs_lab = LabelFrame(Logs, text="Logs", padx=20, pady=20)
+Logs_lab = LabelFrame(Logs, text="Logs")
 Logs_lab.pack(fill="both", expand="yes")
+
+
+log_text = Text(Logs_lab, height='400', width='800')
+scroll = Scrollbar(Logs_lab, command = log_text.yview)
+log_text.configure(yscrollcommand=scroll.set)
+
+log_text.pack(side=LEFT)
+scroll.pack(side=RIGHT, fill=Y)
+
+def print_on_window(t): #affiche t dans les logs
+    time_string = time.strftime('%H:%M:%S')
+    log_text.insert(INSERT, time_string + ' : ' + t + "\n")
+    log_text.yview(END)
+
+
 
 
 # Menu des regions
@@ -103,23 +121,23 @@ menu.grid(row = 4, column = 1, sticky = W)
 
 
 def callback(*args): # fonction pour executer du code pour le menu, a changer
-    print("The selected item is {}".format(variable.get()))
+    print_on_window("The selected item is "+variable.get())
 
 variable.trace("w", callback)
 
 def button_callback(): # Fonction boutton
-   print("Run...")
+   print_on_window("Run...")
 
 run = Button(Info_lab, text ="Run", command = button_callback, relief = RIDGE, borderwidth=1)
 run.grid(row = 5, sticky = 'se', column = 2, ipadx = 20, pady = 30, padx = 30)
 
 # Fonctionnalités
 
-def on_tree_select(event):
-        print("selected items:")
+def on_tree_select(event): #on recupere l'organisme dans item
+        print_on_window("selected items:")
         for item in treeview.selection():
             item_text = treeview.item(item,"text")
-            print(item_text)
+            print_on_window(item_text)
             labelText.set(item_text)
 
 
