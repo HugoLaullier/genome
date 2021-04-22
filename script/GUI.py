@@ -36,11 +36,14 @@ def tree_exist(tree, name) :
     return name
 
 
-
+name_list = []
 def create_node(tree, node_path, node) :
     name_nodes = os.listdir(node_path)
     if name_nodes == [] : pass
     for name in name_nodes :
+        if name in name_list:
+            continue
+        name_list.append(name)
         name_path = node_path + name
         if os.path.isdir(name_path) :
             name = tree_exist(tree, name)
