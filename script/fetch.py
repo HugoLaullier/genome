@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from Bio import Entrez
 from lxml import etree
 import pandas as pd
@@ -11,11 +12,14 @@ save_pickle = False
 debug = True
 Entrez.email = 'porcinet@example.com'
 
-def reset_tree():
+def reset_tree(progress = None, window = None):
     """
     reset the tree stored locally
     return organism_df
     """
+    if (progress != None and window != None):
+        progress['value'] = 0
+        window.update_idletasks()
     # delete previous tree
     if os.path.exists('../Results'):
         shutil.rmtree('../Results')
@@ -29,6 +33,10 @@ def reset_tree():
         for row in f:
             if debug:
                 print(count_rows, " / 59674")
+            
+            if (progress != None and window != None and count_rows % 500 == 0):
+                progress['value'] = (count_rows/59674)*50
+                window.update_idletasks()
             count_rows += 1
             if first_row:
                 first_row=False
@@ -54,6 +62,9 @@ def reset_tree():
     i = 0
     for ids in ids_files:
         i += 1
+        if (progress != None and window != None):
+                progress['value'] = 50 + (i/10)*50
+                window.update_idletasks()
         if debug:
             print(str(i) + ' ' * (1 if i >= 10 else 2) + '/ ' + str(len(ids_files)) + ' : ' + ids)
         with open('../GENOME_REPORTS/IDS/' + ids) as f:
@@ -87,9 +98,13 @@ def load_df_from_pickle():
     """
     load pickle dataframe and return it
     """
-    with open("../pickle/organism_df", 'rb') as f:
-        organism_df = pickle.load(f)
-    return organism_df
+    
+    try:
+        with open("../pickle/organism_df", 'rb') as f:
+            return pickle.load(f)
+    except IOError:
+        print("Pickle file not accessible")
+        return reset_tree()
 
 def load_data_from_NC(index, name, path, NC_list):
     """
