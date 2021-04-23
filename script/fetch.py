@@ -98,13 +98,17 @@ def load_df_from_pickle():
     """
     load pickle dataframe and return it
     """
-    
     try:
         with open("../pickle/organism_df", 'rb') as f:
-            return pickle.load(f)
+            organism_df = pickle.load(f)
     except IOError:
         print("Pickle file not accessible")
         return reset_tree()
+    if not os.path.exists('../Results'):
+        for i in range(len(organism_df)):
+            if not os.path.exists(organism_df["path"][i]):
+                os.makedirs(organism_df["path"][i])
+    return organism_df
 
 def load_data_from_NC(index, name, path, NC_list):
     """
