@@ -1,0 +1,2 @@
+Clade ID	Taxonomy ID	BioProject ID	BioSample ID	Assembly ID	Nucleotide accession(s)
+     21533	    379066	     18501	         0	     11108	AP009153

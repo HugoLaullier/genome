@@ -1,0 +1,2 @@
+Clade ID	Taxonomy ID	BioProject ID	BioSample ID	Assembly ID	Nucleotide accession(s)
+     21534	    228908	      9599	         0	      8888	AE017199

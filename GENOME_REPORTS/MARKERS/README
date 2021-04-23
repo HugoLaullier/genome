@@ -1,0 +1,50 @@
+#############################################################
+README for ftp://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/MARKERS  
+
+Updated: July 1, 2013
+#############################################################
+
+ National Center for Biotechnology Information (NCBI)
+ National Library of Medicine
+ National Institutes of Health
+ 8600 Rockville Pike
+ Bethesda, MD 20894, USA
+ tel: (301) 496-2475
+ fax: (301) 480-9241
+ email: info@ncbi.nlm.nih.gov (for general questions)
+ email: genomes@ncbi.nlm.nih.gov (for specific questions)
+ 
+##########################################################################################################################
+
+====================================
+Directory Content:
+====================================
+
+The directory contains Bacterial protein reference set for the following proteins:
+
+COG0048	Ribosomal protein S12
+COG0049	Ribosomal protein S7
+COG0052	Ribosomal protein S2
+COG0080	Ribosomal protein L11
+COG0081	Ribosomal protein L1
+COG0087	Ribosomal protein L3
+COG0091	Ribosomal protein L22
+COG0092	Ribosomal protein S3
+COG0093	Ribosomal protein L14
+COG0094	Ribosomal protein L5
+COG0096	Ribosomal protein S8
+COG0097	Ribosomal protein l6p/L9E
+COG0098	Ribosomal protein S5
+COG0099	Ribosomal protein S13
+COG0100	Ribosomal protein S11
+COG0102	Ribosomal protein L13
+COG0103	Ribosomal protein S9
+COG0184	Ribosomal protein S15P/S13E
+COG0186	Ribosomal protein S17
+COG0197	Ribosomal protein L16/L10E
+COG0200	Ribosomal protein L15
+COG0256	Ribosomal protein L18
+COG0522	Ribosomal protein S4
+
+File COG****.txt contains a list of GIs for the corresponding ribosomal protein
+

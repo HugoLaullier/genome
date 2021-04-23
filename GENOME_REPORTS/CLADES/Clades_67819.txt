@@ -1,0 +1,3 @@
+Clade ID	Taxonomy ID	BioProject ID	BioSample ID	Assembly ID	Nucleotide accession(s)
+     22052	   1104605	    192507	         0	    696128	ASMK
+     22053	   1303518	    207044	         0	    734288	HF951689

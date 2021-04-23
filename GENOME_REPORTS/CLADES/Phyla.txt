@@ -1,0 +1,34 @@
+Taxonomy ID	Taxonomy name	Taxonomy rank	Superkingdom name	# Genomes assigned to clades	# Clades
+28889	Crenarchaeota	phylum	Archaea	62	36	
+28890	Euryarchaeota	phylum	Archaea	215	130	
+51967	Korarchaeota	phylum	Archaea	1	1	
+192989	Nanoarchaeota	phylum	Archaea	1	1	
+651137	Thaumarchaeota	phylum	Archaea	10	8	
+29294	unclassified Archaea	-	Archaea	1	1	
+201174	Actinobacteria	phylum	Bacteria	1086	430	
+200783	Aquificae	phylum	Bacteria	14	11	
+67819	Armatimonadetes	phylum	Bacteria	2	2	
+68336	Bacteroidetes/Chlorobi group	superphylum	Bacteria	405	236	
+67814	Caldiserica	phylum	Bacteria	1	1	
+51290	Chlamydiae/Verrucomicrobia group	superphylum	Bacteria	145	28	
+200795	Chloroflexi	phylum	Bacteria	24	16	
+200938	Chrysiogenetes	phylum	Bacteria	1	1	
+1117	Cyanobacteria	phylum	Bacteria	152	106	
+200930	Deferribacteres	phylum	Bacteria	5	5	
+1297	Deinococcus-Thermus	phylum	Bacteria	33	24	
+68297	Dictyoglomi	phylum	Bacteria	2	2	
+74152	Elusimicrobia	phylum	Bacteria	1	1	
+131550	Fibrobacteres/Acidobacteria group	superphylum	Bacteria	21	18	
+1239	Firmicutes	phylum	Bacteria	3490	549	
+32066	Fusobacteria	phylum	Bacteria	43	12	
+142182	Gemmatimonadetes	phylum	Bacteria	1	1	
+1293497	Nitrospinae	phylum	Bacteria	4	4	
+40117	Nitrospirae	phylum	Bacteria	4	4	
+203682	Planctomycetes	phylum	Bacteria	22	16	
+1224	Proteobacteria	phylum	Bacteria	5871	982	
+203691	Spirochaetes	phylum	Bacteria	403	46	
+508458	Synergistetes	phylum	Bacteria	14	13	
+544448	Tenericutes	phylum	Bacteria	122	49	
+200940	Thermodesulfobacteria	phylum	Bacteria	4	4	
+200918	Thermotogae	phylum	Bacteria	20	12	
+2323	unclassified Bacteria	-	Bacteria	37	19	

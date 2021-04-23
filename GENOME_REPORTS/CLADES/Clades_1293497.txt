@@ -1,0 +1,5 @@
+Clade ID	Taxonomy ID	BioProject ID	BioSample ID	Assembly ID	Nucleotide accession(s)
+     22305	   1266370	    189458	         0	    541478	CAQJ
+     22306	   1131270	    165595	         0	    597998	AQVU
+     22307	    913337	     66865	         0	    593098	AQTY
+     22308	   1131269	    165597	         0	    598018	AQVV
