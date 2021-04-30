@@ -10,7 +10,7 @@ from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
 
 save_pickle = False
 debug = True
-Entrez.email = 'porcinet@example.com'
+Entrez.email = 'goret@example.com'
 
 def reset_tree(progress = None, window = None):
     """
@@ -23,7 +23,7 @@ def reset_tree(progress = None, window = None):
     # delete previous tree
     if os.path.exists('../Results'):
         shutil.rmtree('../Results')
-    
+
     # parse overview.txt
     organism_names = []
     organism_paths = []
@@ -33,7 +33,7 @@ def reset_tree(progress = None, window = None):
         for row in f:
             if debug:
                 print(count_rows, " / 59674")
-            
+
             if (progress != None and window != None and count_rows % 500 == 0):
                 progress['value'] = (count_rows/59674)*50
                 window.update_idletasks()
@@ -49,8 +49,6 @@ def reset_tree(progress = None, window = None):
             path = '../Results/' + kingdom +'/' + group +'/' + subgroup +'/' + organism
             organism_names.append(parsed_row[0])
             organism_paths.append('../Results/' + kingdom +'/' + group +'/' + subgroup +'/')
-            if not os.path.exists(path):
-                os.makedirs(path)
 
     # parse ids files
     ids_files = os.listdir('../GENOME_REPORTS/IDS/')
@@ -82,7 +80,10 @@ def reset_tree(progress = None, window = None):
                     organism_names_ids.append(organism_names[index])
                     organism_paths_ids.append(organism_paths[index])
                     organism_NC_ids.append([parsed_row[1]])
-    
+                    if not os.path.exists(organism_paths[index]):
+                        name = organism_names[index].replace(" ", "")
+                        path = organism_paths[index] + name + "/"
+                        os.makedirs(path)
     organism_df = pd.DataFrame({
                 "name":organism_names_ids,
                 "path":organism_paths_ids,
@@ -151,7 +152,7 @@ def load_data_from_NC(index, name, path, NC_list):
                         print("COMPLEMENT JOIN")
                         print(f.extract(record_fasta.seq).complement())
                     out.write(str(f.extract(record_fasta.seq).complement()))
-                
+
                 elif feature_location.find("complement")!= -1:
                     feature_location = feature_location[11:-1]
                     x = feature_location.split("..")
@@ -160,41 +161,97 @@ def load_data_from_NC(index, name, path, NC_list):
                         print("COMPLEMENT")
                         print(f.extract(record_fasta.seq).complement())
                     out.write(str(f.extract(record_fasta.seq).complement()))
-                
+
                 elif feature_location.find("join") != -1:
                     feature_location = feature_location[5:-1]
                     x = feature_location.split(",")
                     fn = []
                     for xi in x:
                         xi = xi.split("..")
-                        fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
+                        try:
+                            (int(xi[0]),int(xi[1]))
+                        except ValueError:
+                            return False
+                        else:
+                            if(check_inf_sup(xi[0],xi[1])==False):
+                                return False
+                            fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
+                    f = CompoundLocation(fn)
+                    if debug:
+                        print("COMPLEMENT JOIN")
+                        print(f.extract(record_fasta.seq).complement())
+                    out.write(str(f.extract(record_fasta.seq).complement()))
+
+                elif feature_location.find("complement")!= -1:
+                    feature_location = feature_location[11:-1]
+                    x = feature_location.split("..")
+                    try:
+                        (int(x[0]),int(x[1]))
+                    except ValueError:
+                        return False
+                    else:
+                        if(check_inf_sup(x[0],x[1])==False):
+                            return False
+                        f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type="domain")
+                        if debug:
+                            print("COMPLEMENT")
+                            print(f.extract(record_fasta.seq).complement())
+                        out.write(str(f.extract(record_fasta.seq).complement()))
+
+                elif feature_location.find("join") != -1:
+                    feature_location = feature_location[5:-1]
+                    x = feature_location.split(",")
+                    fn = []
+                    for xi in x:
+                        xi = xi.split("..")
+                        try:
+                            (int(x[0]),int(x[1]))
+                        except ValueError:
+                            return False
+                        else:
+                            if(check_inf_sup(xi[0],xi[1])==False):
+                                return False
+                            fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
                     f = CompoundLocation(fn)
                     if debug:
                         print("JOIN")
                         print(f.extract(record_fasta.seq))
                     out.write(str(f.extract(record_fasta.seq)))
-                
+
                 else:
                     x = feature_location.split("..")
-                    f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type="domain")
-                    if debug:
-                        print("EXTRACT")
-                        print(f.extract(record_fasta.seq))
-                    out.write(str(f.extract(record_fasta.seq)))
+                    try:
+                        (int(x[0]),int(x[1]))
+                    except ValueError:
+                        return False
+                    else:
+                        if(check_inf_sup(x[0],x[1])==False):
+                            return False
+                        f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type="domain")
+                        if debug:
+                            print("EXTRACT")
+                            print(f.extract(record_fasta.seq))
+                        out.write(str(f.extract(record_fasta.seq)))
             out.write("\n")
+
+def check_inf_sup(inf,sup):
+    if(inf<=sup):
+        return True
+    else:
+        return False
 
 if __name__ == "__main__":
     if (save_pickle): # reset local tree and pickle
         organism_df = reset_tree()
     else: # load data from pickle
         organism_df = load_df_from_pickle()
-    
+
     if debug:
         print("----------------------------")
         print(organism_df.head(5))
         print(organism_df.tail(5))
         print("----------------------------")
-    
+
     for (index, name, path, NC_list) in organism_df.itertuples():
         load_data_from_NC(index, name, path, NC_list)
         if debug: # only load the first organism

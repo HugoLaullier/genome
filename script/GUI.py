@@ -5,6 +5,8 @@ from tkinter import ttk
 import os
 import time
 
+import pandas as pd
+
 import fetch as fetch
 
 class GUI:
@@ -19,7 +21,7 @@ class GUI:
 
         # Frame 1 : Liste des fichiers
         (self.treeview, self.scrollbar) = self.create_tree()
-        self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select) 
+        self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select)
 
         # Frame 2 : Informations
         (self.Info, self.Info_lab, self.labelText, self.depositLabel) = self.create_info()
@@ -43,19 +45,21 @@ class GUI:
             self.tree_exist(tree, name)
         return name
 
-    def create_node(self, tree, node_path, node, name_list) :
+    def create_node(self, tree, node_path, node) :
         name_nodes = os.listdir(node_path)
         if name_nodes == [] : pass
         for name in name_nodes :
-            if name in name_list:
-                continue
-            name_list.append(name)
             name_path = node_path + name
             if os.path.isdir(name_path) :
                 name = self.tree_exist(tree, name)
                 name_path += '/'
-                tree.insert(node, '1000000',iid=name, text=name)
-                self.create_node(tree, name_path, name, name_list)
+                try :
+                    tree.insert(node, '1000000',iid=name, text=name)
+                    self.create_node(tree, name_path, name)
+                except:
+                    print(name_path)
+                    pass
+
 
     def create_tree(self):
         list = Frame(self.window)
@@ -73,8 +77,8 @@ class GUI:
         scrollbar.configure(command=treeview.yview)
 
         root_path = "../Results/"
-        treeview.insert('', '0', text='Result', iid='Result')
-        self.create_node(treeview, root_path, 'Result', [])
+        treeview.insert('', '0', text='Results', iid='Results')
+        self.create_node(treeview, root_path, 'Results')
 
         return treeview, scrollbar
 
@@ -158,12 +162,32 @@ class GUI:
     def callback(self, *args): # fonction pour executer du code pour le menu, a changer
         self.print_on_window("The selected item is " + self.selected_region.get())
 
+    def get_path(self, current_item):
+        path = '/' + current_item + '/'
+        while len(self.treeview.parent(current_item)) != 0 :
+            parent = self.treeview.parent(current_item)
+            current_item = parent
+            path = '/' + parent + path
+        return ('..' + path)
+
     def search_button_callback(self): # Fonction boutton
-        if self.is_in_critical_section: return
+        if self.is_in_critical_section:
+            return
+
         self.print_on_window("Searching")
         self.is_in_critical_section = True
+        if self.labelText.get() == 'Aucun' :
+            self.print_on_window("Nothing selected")
+        else :
+            self.print_on_window(self.get_path(self.labelText.get()))
+            for (index, name, path, NC_list) in self.organism_df.itertuples():
+                if path.find(self.get_path(self.labelText.get())) != -1:
+                    self.print_on_window("Mais oui c'est cair'")
+                    fetch.load_data_from_NC(index, name, path, NC_list)
+                    break
+
         self.window.update()
-        
+
         self.print_on_window("Research finished")
         self.is_in_critical_section = False
 
@@ -179,11 +203,11 @@ class GUI:
         self.organism_df = fetch.reset_tree(progress, self.window)
         #reset treeview
         (self.treeview, self.scrollbar) = self.create_tree()
-        self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select) 
+        self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select)
         self.print_on_window("Reset Tree finished")
         progress.destroy()
         self.is_in_critical_section = False
-    
+
     def on_tree_select(self, event): #on recupere l'organisme dans item
             self.print_on_window("selected items:")
             for item in self.treeview.selection():
