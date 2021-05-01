@@ -180,11 +180,21 @@ class GUI:
             self.print_on_window("Nothing selected")
         else :
             self.print_on_window(self.get_path(self.labelText.get()))
+            c = 0
             for (index, name, path, NC_list) in self.organism_df.itertuples():
-                if path.find(self.get_path(self.labelText.get())) != -1:
-                    self.print_on_window("Mais oui c'est cair'")
+                path_full = path + name.replace(" ", "_") + '/'
+                if path_full == self.get_path(self.labelText.get()):
+                    c += 1
+                    self.print_on_window("Download [" + name + "]")
+                    self.window.update()
                     fetch.load_data_from_NC(index, name, path, NC_list)
                     break
+                elif self.get_path(self.labelText.get()) in path_full:
+                    c += 1
+                    self.print_on_window("Download [" + name + "]")
+                    self.window.update()
+                    fetch.load_data_from_NC(index, name, path, NC_list)
+            self.print_on_window(str(c) + " items downloaded")
 
         self.window.update()
 

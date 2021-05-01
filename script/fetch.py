@@ -7,10 +7,11 @@ import shutil
 from Bio import SeqIO
 import pickle
 from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
+import random
+import string
 
 save_pickle = False
 debug = True
-Entrez.email = 'goret@example.com'
 
 def reset_tree(progress = None, window = None):
     """
@@ -115,6 +116,8 @@ def load_data_from_NC(index, name, path, NC_list):
     """
     download data of an organism from genbank using the API
     """
+    letters = string.ascii_lowercase
+    Entrez.email = ''.join(random.choice(string.ascii_lowercase) for i in range(20))+'@'+''.join(random.choice(string.ascii_lowercase) for i in range(20))+ '.com'
     NC_i = 1
     for NC in NC_list:
         name = name.replace(" ", "_")
@@ -241,18 +244,19 @@ def check_inf_sup(inf,sup):
         return False
 
 if __name__ == "__main__":
-    if (save_pickle): # reset local tree and pickle
-        organism_df = reset_tree()
-    else: # load data from pickle
-        organism_df = load_df_from_pickle()
+    pass
+    # if (save_pickle): # reset local tree and pickle
+    #     organism_df = reset_tree()
+    # else: # load data from pickle
+    #     organism_df = load_df_from_pickle()
 
-    if debug:
-        print("----------------------------")
-        print(organism_df.head(5))
-        print(organism_df.tail(5))
-        print("----------------------------")
+    # if debug:
+    #     print("----------------------------")
+    #     print(organism_df.head(5))
+    #     print(organism_df.tail(5))
+    #     print("----------------------------")
 
-    for (index, name, path, NC_list) in organism_df.itertuples():
-        load_data_from_NC(index, name, path, NC_list)
-        if debug: # only load the first organism
-            exit()
+    # for (index, name, path, NC_list) in organism_df.itertuples():
+    #     load_data_from_NC(index, name, path, NC_list)
+    #     if debug: # only load the first organism
+    #         exit()
