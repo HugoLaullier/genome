@@ -19,6 +19,7 @@ class GUI:
         self.window.geometry("1200x800")
         self.window.title("GenBank Application")
 
+        self.tree_array = []
         # Frame 1 : Liste des fichiers
         (self.treeview, self.scrollbar) = self.create_tree()
         self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select)
@@ -35,6 +36,8 @@ class GUI:
         # Reset button
         self.reset_button = self.create_reset_button()
 
+        self.update_tree_tags()
+
         # Start mainloop
         self.window.mainloop()
 
@@ -50,11 +53,12 @@ class GUI:
         if name_nodes == [] : pass
         for name in name_nodes :
             name_path = node_path + name
-            if os.path.isdir(name_path) :
+            if os.path.isdir(name_path):
                 name = self.tree_exist(tree, name)
-                name_path += '/'
                 try :
-                    tree.insert(node, '1000000',iid=name, text=name)
+                    tree.insert(node, '1000000',iid=name, text=name, tags=('not_dl'))
+                    self.tree_array.append(name)
+                    name_path += '/'
                     self.create_node(tree, name_path, name)
                 except:
                     print(name_path)
@@ -77,8 +81,12 @@ class GUI:
         scrollbar.configure(command=treeview.yview)
 
         root_path = "../Results/"
-        treeview.insert('', '0', text='Results', iid='Results')
+        treeview.insert('', '0', text='Results', iid='Results', tags=('not_dl'))
+        self.tree_array.append('Results')
         self.create_node(treeview, root_path, 'Results')
+        
+        treeview.tag_configure('not_dl', background='yellow')
+        treeview.tag_configure('dl', background='lightgreen')
 
         return treeview, scrollbar
 
@@ -154,6 +162,37 @@ class GUI:
         return reset_button
 
     # FEATURES METHODS
+
+    def update_tree_tags(self):
+        # print(self.treeview.get_children())
+        # print(self.tree_array)
+        for node in self.tree_array:
+            current_path = self.get_path(node).replace("Other1", "Other").replace("unclassified1", "unclassified").replace("uncultured_bacterium1", "uncultured_bacterium")
+            turn_to_green = True
+            is_leaf = False
+            for (index, name, path, NC_list) in self.organism_df.itertuples():
+                path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_")+ '/'
+                if path_full == current_path:
+                    is_leaf = True
+                    if os.listdir(path_full) == []:
+                        self.treeview.item(node, tags="not_dl")
+                    else:
+                        self.treeview.item(node, tags="dl")
+                    break
+                elif current_path in path_full:
+                    if os.listdir(path_full) == []:
+                        turn_to_green = False
+            if is_leaf:
+                continue
+
+            if turn_to_green:
+                self.treeview.item(node, tags="dl")
+            else:
+                self.treeview.item(node, tags="not_dl")
+            
+            self.window.update()
+        self.print_on_window("Tree updated")
+
     def print_on_window(self, t): #affiche t dans les logs
         time_string = time.strftime('%H:%M:%S')
         self.log_text.insert(INSERT, time_string + ' : ' + t + "\n")
@@ -179,21 +218,24 @@ class GUI:
         if self.labelText.get() == 'Aucun' :
             self.print_on_window("Nothing selected")
         else :
-            self.print_on_window(self.get_path(self.labelText.get()))
+            current_path = self.get_path(self.labelText.get()).replace("Other1", "Other").replace("unclassified1", "unclassified").replace("uncultured_bacterium1", "uncultured_bacterium")
+            self.print_on_window(current_path)
             c = 0
             for (index, name, path, NC_list) in self.organism_df.itertuples():
-                path_full = path + name.replace(" ", "_") + '/'
-                if path_full == self.get_path(self.labelText.get()):
+                path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_") + '/'
+                if path_full == current_path:
                     c += 1
                     self.print_on_window("Download [" + name + "]")
                     self.window.update()
                     fetch.load_data_from_NC(index, name, path, NC_list)
                     break
-                elif self.get_path(self.labelText.get()) in path_full:
+                elif current_path in path_full:
                     c += 1
                     self.print_on_window("Download [" + name + "]")
                     self.window.update()
                     fetch.load_data_from_NC(index, name, path, NC_list)
+            if c != 0:
+                self.update_tree_tags()
             self.print_on_window(str(c) + " items downloaded")
 
         self.window.update()
