@@ -171,7 +171,7 @@ class GUI:
             turn_to_green = True
             is_leaf = False
             for (index, name, path, NC_list) in self.organism_df.itertuples():
-                path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_")+ '/'
+                path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
                 if path_full == current_path:
                     is_leaf = True
                     if os.listdir(path_full) == []:
@@ -222,7 +222,7 @@ class GUI:
             self.print_on_window(current_path)
             c = 0
             for (index, name, path, NC_list) in self.organism_df.itertuples():
-                path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_") + '/'
+                path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
                 if path_full == current_path:
                     c += 1
                     self.print_on_window("Download [" + name + "]")

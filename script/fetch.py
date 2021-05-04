@@ -84,6 +84,7 @@ def reset_tree(progress = None, window = None):
                     name = organism_names[index].replace(" ", "_")
                     name = name.replace("[", "_")
                     name = name.replace("]", "_")
+                    name = name.replace(":", "_")
                     path = organism_paths[index] + name + "/"
                     if not os.path.exists(path):
                         os.makedirs(path)
@@ -113,6 +114,7 @@ def load_df_from_pickle():
             name = organism_df["name"][i].replace(" ", "_")
             name = name.replace("[", "_")
             name = name.replace("]", "_")
+            name = name.replace(":", "_")
             path = organism_df["path"][i] + name + "/"
             if not os.path.exists(path):
                 os.makedirs(path)
@@ -129,6 +131,7 @@ def load_data_from_NC(index, name, path, NC_list):
         name = name.replace(" ", "_")
         name = name.replace("[", "_")
         name = name.replace("]", "_")
+        name = name.replace(":", "_")
         NC_filename = str(name) + "_CDS_NC_" + str(NC_i) + ".txt"
         NC_i += 1
         if debug:
