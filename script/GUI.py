@@ -229,19 +229,25 @@ class GUI:
             current_path = self.get_path(self.labelText.get()).replace("Other1", "Other").replace("unclassified1", "unclassified").replace("uncultured_bacterium1", "uncultured_bacterium")
             self.print_on_window(current_path)
             c = 0
+            nb_region_found = 0
             for (index, name, path, NC_list) in self.organism_df.itertuples():
                 path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
                 if path_full == current_path:
                     c += 1
                     self.print_on_window("Download [" + name + "]")
                     self.window.update()
-                    fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                    nb_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
                     break
                 elif current_path in path_full:
                     c += 1
                     self.print_on_window("Download [" + name + "]")
                     self.window.update()
-                    fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                    nb_region_found += fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+            if nb_region_found == 0:
+                self.print_on_window("Selected functional region not found")
+                self.window.update()
+                self.is_in_critical_section = False
+                return
             if c != 0:
                 self.update_tree_tags()
             self.print_on_window(str(c) + " items downloaded")

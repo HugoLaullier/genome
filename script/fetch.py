@@ -127,6 +127,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
     letters = string.ascii_lowercase
     Entrez.email = ''.join(random.choice(string.ascii_lowercase) for i in range(20))+'@'+''.join(random.choice(string.ascii_lowercase) for i in range(20))+ '.com'
     NC_i = 1
+    nb_region_found = 0
     for NC in NC_list:
         name = name.replace(" ", "_")
         name = name.replace("[", "_")
@@ -152,7 +153,8 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             feature_location = record[0]["GBSeq_feature-table"][i]["GBFeature_location"]
             feature_key = record[0]["GBSeq_feature-table"][i]["GBFeature_key"]
             if feature_key != selected_region:
-                continue;
+                continue
+            nb_region_found += 1
             NC_filename = str(name) + "_" + feature_key + "_NC_" + str(NC_i) + ".txt"
             if len(list_file) != 0 :
                 if NC_filename not in list_file:
@@ -284,6 +286,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                             print(f.extract(record_fasta.seq))
                         out.write(str(f.extract(record_fasta.seq)))
                 out.write("\n")
+    return nb_region_found
 
 def check_inf_sup(inf,sup):
     if(inf<=sup):
