@@ -84,7 +84,7 @@ class GUI:
         treeview.insert('', '0', text='Results', iid='Results', tags=('not_dl'))
         self.tree_array.append('Results')
         self.create_node(treeview, root_path, 'Results')
-        
+
         treeview.tag_configure('not_dl', background='yellow')
         treeview.tag_configure('dl', background='lightgreen')
 
@@ -189,7 +189,7 @@ class GUI:
                 self.treeview.item(node, tags="dl")
             else:
                 self.treeview.item(node, tags="not_dl")
-            
+
             self.window.update()
         self.print_on_window("Tree updated")
 
@@ -216,7 +216,15 @@ class GUI:
         self.print_on_window("Searching")
         self.is_in_critical_section = True
         if self.labelText.get() == 'Aucun' :
-            self.print_on_window("Nothing selected")
+            self.print_on_window("No organism selected")
+            self.window.update()
+            self.is_in_critical_section = False
+            return
+        elif self.selected_region.get() == 'Aucun':
+            self.print_on_window("No functional region selected")
+            self.window.update()
+            self.is_in_critical_section = False
+            return
         else :
             current_path = self.get_path(self.labelText.get()).replace("Other1", "Other").replace("unclassified1", "unclassified").replace("uncultured_bacterium1", "uncultured_bacterium")
             self.print_on_window(current_path)
@@ -227,13 +235,13 @@ class GUI:
                     c += 1
                     self.print_on_window("Download [" + name + "]")
                     self.window.update()
-                    fetch.load_data_from_NC(index, name, path, NC_list)
+                    fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
                     break
                 elif current_path in path_full:
                     c += 1
                     self.print_on_window("Download [" + name + "]")
                     self.window.update()
-                    fetch.load_data_from_NC(index, name, path, NC_list)
+                    fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
             if c != 0:
                 self.update_tree_tags()
             self.print_on_window(str(c) + " items downloaded")

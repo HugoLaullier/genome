@@ -120,7 +120,7 @@ def load_df_from_pickle():
                 os.makedirs(path)
     return organism_df
 
-def load_data_from_NC(index, name, path, NC_list):
+def load_data_from_NC(index, name, path, NC_list, selected_region):
     """
     download data of an organism from genbank using the API
     """
@@ -132,7 +132,7 @@ def load_data_from_NC(index, name, path, NC_list):
         name = name.replace("[", "_")
         name = name.replace("]", "_")
         name = name.replace(":", "_")
-        NC_filename = str(name) + "_CDS_NC_" + str(NC_i) + ".txt"
+        #NC_filename = str(name) + "_CDS_NC_" + str(NC_i) + ".txt"
         NC_i += 1
         if debug:
             print("NC id  =", NC)
@@ -146,14 +146,28 @@ def load_data_from_NC(index, name, path, NC_list):
         handle_text = Entrez.efetch(db="nucleotide", id=NC, retmode="xml")
         record = Entrez.read(handle_text)
         handle_text.close()
-        with open(path + name + "/" + NC_filename, 'w+') as out:
-            for i in range(len(record[0]["GBSeq_feature-table"])):
-                feature_location = record[0]["GBSeq_feature-table"][i]["GBFeature_location"]
+        list_file = []
+        #with open(path + name + "/" + NC_filename, 'a+') as out:
+        for i in range(len(record[0]["GBSeq_feature-table"])):
+            feature_location = record[0]["GBSeq_feature-table"][i]["GBFeature_location"]
+            feature_key = record[0]["GBSeq_feature-table"][i]["GBFeature_key"]
+            if feature_key != selected_region:
+                continue;
+            NC_filename = str(name) + "_" + feature_key + "_NC_" + str(NC_i) + ".txt"
+            if len(list_file) != 0 :
+                if NC_filename not in list_file:
+                    os.remove(path + name + "/" + NC_filename)
+                    list_file.append(NC_filename)
+            else :
+                if os.path.isfile(path + name + "/" + NC_filename):
+                    os.remove(path + name + "/" + NC_filename)
+                list_file.append(NC_filename)
+            with open(path + name + "/" + NC_filename, 'a+') as out:
                 if debug:
                     print(i+1, "/", len(record[0]["GBSeq_feature-table"]))
                     print(feature_location)
                 # TODO Tests sur les regions (partie 2.3)
-                out.write("CDS " + feature_location + "\n")
+                out.write(feature_key + ' ' + feature_location + "\n")
                 if feature_location.find("complement")!= -1 and feature_location.find("join") != -1:
                     feature_location = feature_location[16:-1]
                     x = feature_location.split(",")
@@ -269,7 +283,7 @@ def load_data_from_NC(index, name, path, NC_list):
                             print("EXTRACT")
                             print(f.extract(record_fasta.seq))
                         out.write(str(f.extract(record_fasta.seq)))
-            out.write("\n")
+                out.write("\n")
 
 def check_inf_sup(inf,sup):
     if(inf<=sup):
