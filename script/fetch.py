@@ -11,7 +11,7 @@ import random
 import string
 
 save_pickle = False
-debug = True
+debug = False
 
 def reset_tree(progress = None, window = None):
     """
@@ -128,7 +128,10 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
     Entrez.email = ''.join(random.choice(string.ascii_lowercase) for i in range(20))+'@'+''.join(random.choice(string.ascii_lowercase) for i in range(20))+ '.com'
     NC_i = 1
     nb_region_found = 0
+    print()
+    print("downloading [" + name + "]")
     for NC in NC_list:
+        print("NC : " + str(NC_i) + " / " + str(len(NC_list)))
         name = name.replace(" ", "_")
         name = name.replace("[", "_")
         name = name.replace("]", "_")
@@ -148,6 +151,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
         handle_text.close()
         list_file = []
         for i in range(len(record[0]["GBSeq_feature-table"])):
+            print("\tfeature : " + str(i + 1) + " / " + str(len(record[0]["GBSeq_feature-table"])))
             feature_location = record[0]["GBSeq_feature-table"][i]["GBFeature_location"]
             feature_key = record[0]["GBSeq_feature-table"][i]["GBFeature_key"]
             if feature_key != selected_region:
@@ -284,6 +288,10 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                             print(f.extract(record_fasta.seq))
                         out.write(str(f.extract(record_fasta.seq)))
                 out.write("\n")
+    if nb_region_found == 0:
+        print("Selected functional region not found for organism : [" + name + "]")
+        return 0
+    print(name + " downloaded")
     return nb_region_found
 
 def check_inf_sup(inf,sup):

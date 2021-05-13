@@ -230,23 +230,33 @@ class GUI:
             nb_region_found = 0
             for (index, name, path, NC_list) in self.organism_df.itertuples():
                 path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
+                nb_new_region_found = -1
                 if path_full == current_path:
                     c += 1
                     self.window.update()
-                    nb_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                    nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                    if nb_new_region_found == 0:
+                        self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
+                    else:
+                        self.print_on_window("[" + name + "] downloaded ")
+                    self.window.update()
+                    nb_region_found += nb_new_region_found
                     break
                 elif current_path in path_full:
                     c += 1
                     self.window.update()
-                    nb_region_found += fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                    nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                if nb_new_region_found != -1:
+                    if nb_new_region_found == 0:
+                        self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
+                    else:
+                        self.print_on_window("[" + name + "] downloaded ")
+                    self.window.update()
+                    nb_region_found += nb_new_region_found
             if nb_region_found == 0:
-                self.print_on_window("Selected functional region not found")
                 self.window.update()
                 self.is_in_critical_section = False
                 return
-            elif nb_region_found != 0 :
-                self.print_on_window("[" + name + "] downloaded ")
-                self.window.update()
             if c != 0:
                 self.update_tree_tags()
             self.print_on_window(str(c) + " items downloaded")
@@ -277,7 +287,7 @@ class GUI:
             self.print_on_window("Selected items:")
             for item in self.treeview.selection():
                 item_text = self.treeview.item(item,"text")
-                self.print_on_window(item_text)
+                self.print_on_window("Selected items : [" + item_text + "]")
                 self.labelText.set(item_text)
 
 if __name__ == "__main__":
