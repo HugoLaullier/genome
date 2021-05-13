@@ -164,8 +164,6 @@ class GUI:
     # FEATURES METHODS
 
     def update_tree_tags(self):
-        # print(self.treeview.get_children())
-        # print(self.tree_array)
         for node in self.tree_array:
             current_path = self.get_path(node).replace("Other1", "Other").replace("unclassified1", "unclassified").replace("uncultured_bacterium1", "uncultured_bacterium")
             turn_to_green = True
@@ -234,13 +232,11 @@ class GUI:
                 path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
                 if path_full == current_path:
                     c += 1
-                    self.print_on_window("Download [" + name + "]")
                     self.window.update()
                     nb_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
                     break
                 elif current_path in path_full:
                     c += 1
-                    self.print_on_window("Download [" + name + "]")
                     self.window.update()
                     nb_region_found += fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
             if nb_region_found == 0:
@@ -248,6 +244,9 @@ class GUI:
                 self.window.update()
                 self.is_in_critical_section = False
                 return
+            elif nb_region_found != 0 :
+                self.print_on_window("[" + name + "] downloaded ")
+                self.window.update()
             if c != 0:
                 self.update_tree_tags()
             self.print_on_window(str(c) + " items downloaded")
@@ -275,7 +274,7 @@ class GUI:
         self.is_in_critical_section = False
 
     def on_tree_select(self, event): #on recupere l'organisme dans item
-            self.print_on_window("selected items:")
+            self.print_on_window("Selected items:")
             for item in self.treeview.selection():
                 item_text = self.treeview.item(item,"text")
                 self.print_on_window(item_text)

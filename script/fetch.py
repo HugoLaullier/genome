@@ -133,7 +133,6 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
         name = name.replace("[", "_")
         name = name.replace("]", "_")
         name = name.replace(":", "_")
-        #NC_filename = str(name) + "_CDS_NC_" + str(NC_i) + ".txt"
         NC_i += 1
         if debug:
             print("NC id  =", NC)
@@ -148,7 +147,6 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
         record = Entrez.read(handle_text)
         handle_text.close()
         list_file = []
-        #with open(path + name + "/" + NC_filename, 'a+') as out:
         for i in range(len(record[0]["GBSeq_feature-table"])):
             feature_location = record[0]["GBSeq_feature-table"][i]["GBFeature_location"]
             feature_key = record[0]["GBSeq_feature-table"][i]["GBFeature_key"]
@@ -293,21 +291,3 @@ def check_inf_sup(inf,sup):
         return True
     else:
         return False
-
-if __name__ == "__main__":
-    pass
-    # if (save_pickle): # reset local tree and pickle
-    #     organism_df = reset_tree()
-    # else: # load data from pickle
-    #     organism_df = load_df_from_pickle()
-
-    # if debug:
-    #     print("----------------------------")
-    #     print(organism_df.head(5))
-    #     print(organism_df.tail(5))
-    #     print("----------------------------")
-
-    # for (index, name, path, NC_list) in organism_df.itertuples():
-    #     load_data_from_NC(index, name, path, NC_list)
-    #     if debug: # only load the first organism
-    #         exit()
