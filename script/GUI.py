@@ -4,10 +4,14 @@ from tkinter import ttk
 
 import os
 import time
-
 import pandas as pd
+import ctypes
+from threading import Thread
 
 import fetch as fetch
+
+ctypes.windll.shcore.SetProcessDpiAwareness(True) # améliore la netteté de l'app
+
 
 class GUI:
     def __init__(self):
@@ -25,7 +29,7 @@ class GUI:
         self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select)
 
         # Frame 2 : Informations
-        (self.Info, self.Info_lab, self.labelText, self.depositLabel) = self.create_info()
+        (self.Info, self.Info_lab, self.Info_lab1, self.labelText, self.text_row) = self.create_info()
 
         # Frame 3 : Logs
         (self.Logs, self.Logs_lab, self.log_text, self.log_scroll) = self.create_log()
@@ -36,7 +40,8 @@ class GUI:
         # Reset button
         self.reset_button = self.create_reset_button()
 
-        self.update_tree_tags()
+        t = Thread (target = self.update_tree_tags)
+        t.start()
 
         # Start mainloop
         self.window.mainloop()
@@ -93,32 +98,35 @@ class GUI:
     # INFO CREATION METHODS
     def create_info(self):
         Info = Frame(self.window)
-        Info.place(x=400, y=0, anchor="nw", width=800, height=600)
+        Info.place(x=400, y=0, anchor="nw", width=800, height=300)
 
-        Info_lab = LabelFrame(Info, text="Informations", padx=20, pady=20)
+        Info_lab = LabelFrame(Info, text="Selectionner un organisme", padx=20, pady=20)
         Info_lab.pack(fill="both", expand="yes")
 
-        Label(Info_lab, text="Organisme choisi : ").grid(row = 0, column = 0, sticky = W, ipadx = 100, ipady = 30)
+        Info_lab1 = LabelFrame(Info, text="Selectionner une région fonctionnelle", padx=20, pady=20)
+        Info_lab1.pack(fill="both", expand="yes")
 
-        labelText = StringVar()
-        labelText.set('Aucun')
-
+        labelText = StringVar(value='Aucun')
+        '''
         depositLabel = Label(Info_lab, textvariable=labelText)
         depositLabel.grid(row = 0, column = 1, sticky = W)
+        '''
+        text_row = Label(Info_lab, text="Organisme choisi : " + labelText.get())
+        text_row.grid(row = 0, column = 0, sticky = W, ipadx = 100, ipady = 10)
 
-        Label(Info_lab, justify = LEFT, text="Région fonctionnelle choisie : ").grid(row = 4, column = 0, sticky = W, ipadx = 100, ipady = 30)
-        return Info, Info_lab, labelText, depositLabel
+        Label(Info_lab1, justify = LEFT, text="Région fonctionnelle choisie : ").grid(row = 1, column = 0, sticky = W, ipadx = 100, ipady = 10)
+        return Info, Info_lab, Info_lab1, labelText, text_row
 
     # LOG CREATION METHODS
     def create_log(self):
         Logs = Frame(self.window, background="#b22222")
-        Logs.place(x=400, y=400, anchor="nw", width=800, height=400)
+        Logs.place(x=400, y=300, anchor="nw", width=802, height=500)
 
         Logs_lab = LabelFrame(Logs, text="Logs")
         Logs_lab.pack(fill="both", expand="yes")
 
 
-        log_text = Text(Logs_lab, height='400', width='800')
+        log_text = Text(Logs_lab, height=400, wrap=WORD, width=800, padx=5, pady=5)
         log_scroll = Scrollbar(Logs_lab, command = log_text.yview)
         log_text.configure(yscrollcommand=log_scroll.set)
 
@@ -142,23 +150,23 @@ class GUI:
         "5'UTR"
         ]
 
-        variable = StringVar(self.Info_lab)
+        variable = StringVar(self.Info_lab1)
         variable.set(OptionList[0])
 
-        menu = OptionMenu(self.Info_lab, variable, *OptionList)
+        menu = OptionMenu(self.Info_lab1, variable, *OptionList)
         menu["borderwidth"]=1
-        menu.grid(row = 4, column = 1, sticky = W)
+        menu.grid(row = 1, column = 1, sticky = W, pady = 15)
 
         variable.trace("w", self.callback)
 
-        run_search = Button(self.Info_lab, text ="Search", command = self.search_button_callback, relief = RIDGE, borderwidth=1)
-        run_search.grid(row = 5, sticky = 'se', column = 2, ipadx = 20, pady = 30, padx = 30)
+        run_search = Button(self.Info_lab1, text ="Search", command = self.search_button_callback, borderwidth=1)
+        run_search.grid(row = 2, column = 1, ipadx = 20, pady = 15, padx = 30)
         return variable, menu, run_search, OptionList
 
     # RESET BUTTON CREATION
     def create_reset_button(self):
-        reset_button = Button(self.Info_lab, text ="Reset Tree", command = self.reset_button_callback, relief = RIDGE, borderwidth=1)
-        reset_button.grid(row = 7, sticky = 'se', column = 2, ipadx = 20, pady = 30, padx = 30)
+        reset_button = Button(self.Info_lab1, text ="Reset Tree", command = self.reset_button_callback, borderwidth=1)
+        reset_button.grid(row = 2, column = 0, ipadx = 20, pady = 15, padx = 30)
         return reset_button
 
     # FEATURES METHODS
@@ -258,7 +266,8 @@ class GUI:
                 self.is_in_critical_section = False
                 return
             if c != 0:
-                self.update_tree_tags()
+                t = Thread (target = self.update_tree_tags)
+                t.start()
             self.print_on_window(str(c) + " items downloaded")
 
         self.window.update()
@@ -284,11 +293,11 @@ class GUI:
         self.is_in_critical_section = False
 
     def on_tree_select(self, event): #on recupere l'organisme dans item
-            self.print_on_window("Selected items:")
             for item in self.treeview.selection():
                 item_text = self.treeview.item(item,"text")
-                self.print_on_window("Selected items : [" + item_text + "]")
                 self.labelText.set(item_text)
+                self.text_row = Label(self.Info_lab, text="Organisme choisi : " + self.labelText.get())
+                self.text_row.grid(row = 0, column = 0, sticky = W, ipadx = 100, ipady = 10)
 
 if __name__ == "__main__":
     App = GUI()

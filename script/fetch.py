@@ -11,7 +11,7 @@ import random
 import string
 
 save_pickle = False
-debug = False
+debug = True
 
 def reset_tree(progress = None, window = None):
     """
@@ -282,7 +282,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                     else:
                         if(check_inf_sup(x[0],x[1]) == False):
                             continue
-                        f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type="domain")
+                        f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])), type="domain")
                         if debug:
                             print("EXTRACT")
                             print(f.extract(record_fasta.seq))
