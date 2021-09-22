@@ -10,8 +10,10 @@ from threading import Thread
 
 import fetch as fetch
 
-ctypes.windll.shcore.SetProcessDpiAwareness(True) # améliore la netteté de l'app
-
+try:
+    ctypes.windll.shcore.SetProcessDpiAwareness(True) # améliore la netteté de l'app
+except:
+    pass # doesn't work on linux
 
 class GUI:
     def __init__(self):

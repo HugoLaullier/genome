@@ -154,10 +154,10 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             print("\tfeature : " + str(i + 1) + " / " + str(len(record[0]["GBSeq_feature-table"])))
             feature_location = record[0]["GBSeq_feature-table"][i]["GBFeature_location"]
             feature_key = record[0]["GBSeq_feature-table"][i]["GBFeature_key"]
-            if feature_key != selected_region:
+            if feature_key != selected_region or (selected_region == "intron" and feature_key == "CDS"):
                 continue
             nb_region_found += 1
-            NC_filename = str(name) + "_" + feature_key + "_NC_" + str(NC_i) + ".txt"
+            NC_filename = feature_key + "_" + str(name) + "_NC_" + str(NC_i) + ".txt"
             if len(list_file) != 0 :
                 if NC_filename not in list_file:
                     os.remove(path + name + "/" + NC_filename)
@@ -170,8 +170,8 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                 if debug:
                     print(i+1, "/", len(record[0]["GBSeq_feature-table"]))
                     print(feature_location)
-                # TODO Tests sur les regions (partie 2.3)
                 out.write(feature_key + ' ' + feature_location + "\n")
+
                 if feature_location.find("complement")!= -1 and feature_location.find("join") != -1:
                     feature_location = feature_location[16:-1]
                     x = feature_location.split(",")
@@ -184,9 +184,9 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                         except ValueError:
                             is_valid = False
                         else:
-                            if(check_inf_sup(xi[0],xi[1]) == False):
+                            if(check_inf_sup(int(xi[0]),int(xi[1])) == False):
                                 is_valid = False
-                            fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
+                            fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])))
                     if not is_valid:
                         continue
                     f = CompoundLocation(fn)
@@ -203,9 +203,9 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                     except ValueError:
                         continue
                     else:
-                        if(check_inf_sup(x[0],x[1]) == False):
+                        if(check_inf_sup(int(x[0]),int(x[1])) == False):
                             continue
-                        f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type="domain")
+                        f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])), type="domain")
                         if debug:
                             print("COMPLEMENT")
                             print(f.extract(record_fasta.seq).complement())
@@ -223,48 +223,9 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                         except ValueError:
                             is_valid = False
                         else:
-                            if(check_inf_sup(xi[0],xi[1]) == False):
+                            if(check_inf_sup(int(xi[0]),int(xi[1])) == False):
                                 is_valid = False
-                            fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
-                    if not is_valid:
-                        continue
-                    f = CompoundLocation(fn)
-                    if debug:
-                        print("COMPLEMENT JOIN")
-                        print(f.extract(record_fasta.seq).complement())
-                    out.write(str(f.extract(record_fasta.seq).complement()))
-
-                elif feature_location.find("complement")!= -1:
-                    feature_location = feature_location[11:-1]
-                    x = feature_location.split("..")
-                    try:
-                        (int(x[0]),int(x[1]))
-                    except ValueError:
-                        continue
-                    else:
-                        if(check_inf_sup(x[0],x[1]) == False):
-                            continue
-                        f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type="domain")
-                        if debug:
-                            print("COMPLEMENT")
-                            print(f.extract(record_fasta.seq).complement())
-                        out.write(str(f.extract(record_fasta.seq).complement()))
-
-                elif feature_location.find("join") != -1:
-                    feature_location = feature_location[5:-1]
-                    x = feature_location.split(",")
-                    fn = []
-                    is_valid = True
-                    for xi in x:
-                        xi = xi.split("..")
-                        try:
-                            (int(x[0]),int(x[1]))
-                        except ValueError:
-                            is_valid = False
-                        else:
-                            if(check_inf_sup(xi[0],xi[1]) == False):
-                                is_valid = False
-                            fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
+                            fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])))
                     if not is_valid:
                         continue
                     f = CompoundLocation(fn)
@@ -280,7 +241,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                     except ValueError:
                         continue
                     else:
-                        if(check_inf_sup(x[0],x[1]) == False):
+                        if(check_inf_sup(int(x[0]),int(x[1])) == False):
                             continue
                         f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])), type="domain")
                         if debug:
@@ -288,6 +249,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                             print(f.extract(record_fasta.seq))
                         out.write(str(f.extract(record_fasta.seq)))
                 out.write("\n")
+    
     if nb_region_found == 0:
         print("Selected functional region not found for organism : [" + name + "]")
         return 0
@@ -295,7 +257,15 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
     return nb_region_found
 
 def check_inf_sup(inf,sup):
-    if(inf<=sup):
+    if(inf <= sup):
         return True
     else:
         return False
+
+# TODOLIST
+# test les bornes des join
+# intron
+# ordre alphabetique dans l'arbre
+# thread du GUI marche pas, arbre pas update
+# "19 items downloaded pour les archaea CDS: certainement pas !!!"
+# autre regions fonctionnelles
