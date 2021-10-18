@@ -11,7 +11,7 @@ import random
 import string
 
 save_pickle = False
-debug = True
+DEBUG = True
 
 def reset_tree(progress = None, window = None):
     """
@@ -32,7 +32,7 @@ def reset_tree(progress = None, window = None):
         first_row = True
         count_rows = 1
         for row in f:
-            if debug:
+            if DEBUG:
                 print(count_rows, " / 59674")
 
             if (progress != None and window != None and count_rows % 500 == 0):
@@ -64,7 +64,7 @@ def reset_tree(progress = None, window = None):
         if (progress != None and window != None):
                 progress['value'] = 50 + (i/10)*50
                 window.update_idletasks()
-        if debug:
+        if DEBUG:
             print(str(i) + ' ' * (1 if i >= 10 else 2) + '/ ' + str(len(ids_files)) + ' : ' + ids)
         with open('../GENOME_REPORTS/IDS/' + ids) as f:
             for row in f:
@@ -120,11 +120,100 @@ def load_df_from_pickle():
                 os.makedirs(path)
     return organism_df
 
+def join(outfile, selected_region, feature_location, record_fasta, is_complement):
+    write_buffer = selected_region + ' ' + feature_location + "\n"
+    if is_complement:
+        feature_location = feature_location[16:-2]
+    else:
+        feature_location = feature_location[5:-1]
+    
+    x = feature_location.split(",")
+
+    is_valid = True
+
+    indexes = []
+    for xi in x:
+        xi = xi.split("..")
+        try:
+            indexes.append([int(xi[0]),int(xi[1])])
+        except ValueError:
+            is_valid = False
+
+    # check si les index sont dans le bon ordre
+    for i in range(len(indexes) - 1):
+        if indexes[i] > indexes[i + 1]:
+            return False
+    indexes.sort(key=lambda r:r[0])
+
+
+    if selected_region == "intron":
+        fn = []
+        for i in range(len(indexes) - 1):
+            if(check_inf_sup(indexes[i][1],indexes[i+1][0]) == False):
+                is_valid = False
+            fn.append(FeatureLocation(indexes[i][1]-1, indexes[i+1][0]))
+            print(indexes[i][1]-1, indexes[i+1][0])
+        if not is_valid:
+            return
+    else:
+        fn = []
+        for xi in indexes:
+            if(check_inf_sup(xi[0],xi[1]) == False):
+                is_valid = False
+            fn.append(FeatureLocation(xi[0]-1, xi[1]))
+        if not is_valid:
+            return
+    
+    if len(fn) > 1:
+        f = CompoundLocation(fn)
+    else:
+        f = SeqFeature(fn[0],  type="domain")
+    
+    if is_complement:
+        if DEBUG:
+            print("COMPLEMENT JOIN")
+            print(f.extract(record_fasta.seq).reverse_complement())
+        write_buffer += str(f.extract(record_fasta.seq).reverse_complement())
+    else:
+        if DEBUG:
+            print("JOIN")
+            print(f.extract(record_fasta.seq))
+        write_buffer += str(f.extract(record_fasta.seq)) 
+    outfile.write(write_buffer + "\n")
+    return
+
+def extract(outfile, selected_region, feature_location, record_fasta, is_complement):
+    if selected_region == "intron":
+        return # le sujet est pas clair : on fait quoi si il y a pas de join ???!!!
+    write_buffer = selected_region + ' ' + feature_location + "\n"
+    if is_complement:
+        feature_location = feature_location[11:-1]
+    x = feature_location.split("..")
+    try:
+        (int(x[0]),int(x[1]))
+    except ValueError:
+        return
+    else:
+        if(check_inf_sup(int(x[0]),int(x[1])) == False):
+            return
+        f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])), type="domain")
+        if is_complement:
+            if DEBUG:
+                print("COMPLEMENT")
+                print(f.extract(record_fasta.seq).reverse_complement())
+            write_buffer += str(f.extract(record_fasta.seq).reverse_complement())
+        else:
+            if DEBUG:
+                print("EXTRACT")
+                print(f.extract(record_fasta.seq))
+            write_buffer += str(f.extract(record_fasta.seq))
+    outfile.write(write_buffer + "\n")
+    return
+
 def load_data_from_NC(index, name, path, NC_list, selected_region):
     """
     download data of an organism from genbank using the API
     """
-    letters = string.ascii_lowercase
     Entrez.email = ''.join(random.choice(string.ascii_lowercase) for i in range(20))+'@'+''.join(random.choice(string.ascii_lowercase) for i in range(20))+ '.com'
     NC_i = 1
     nb_region_found = 0
@@ -136,13 +225,12 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
         name = name.replace("[", "_")
         name = name.replace("]", "_")
         name = name.replace(":", "_")
-        NC_i += 1
-        if debug:
+        if DEBUG:
             print("NC id  =", NC)
             print("----------------------------")
         handle_fasta = Entrez.efetch(db="nucleotide", id=NC, rettype="fasta", retmode="text")
         record_fasta = SeqIO.read(handle_fasta, "fasta")
-        if debug:
+        if DEBUG:
             print(record_fasta)
             print("----------------------------")
         handle_fasta.close()
@@ -154,10 +242,10 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             print("\tfeature : " + str(i + 1) + " / " + str(len(record[0]["GBSeq_feature-table"])))
             feature_location = record[0]["GBSeq_feature-table"][i]["GBFeature_location"]
             feature_key = record[0]["GBSeq_feature-table"][i]["GBFeature_key"]
-            if feature_key != selected_region or (selected_region == "intron" and feature_key == "CDS"):
+            if feature_key != selected_region and not (selected_region == "intron" and feature_key == "CDS"):
                 continue
             nb_region_found += 1
-            NC_filename = feature_key + "_" + str(name) + "_NC_" + str(NC_i) + ".txt"
+            NC_filename = selected_region + "_" + str(name) + "_NC_" + str(NC_i) + ".txt"
             if len(list_file) != 0 :
                 if NC_filename not in list_file:
                     os.remove(path + name + "/" + NC_filename)
@@ -167,89 +255,24 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                     os.remove(path + name + "/" + NC_filename)
                 list_file.append(NC_filename)
             with open(path + name + "/" + NC_filename, 'a+') as out:
-                if debug:
+                if DEBUG:
                     print(i+1, "/", len(record[0]["GBSeq_feature-table"]))
                     print(feature_location)
-                out.write(feature_key + ' ' + feature_location + "\n")
 
-                if feature_location.find("complement")!= -1 and feature_location.find("join") != -1:
-                    feature_location = feature_location[16:-1]
-                    x = feature_location.split(",")
-                    fn = []
-                    is_valid = True
-                    for xi in x:
-                        xi = xi.split("..")
-                        try:
-                            (int(xi[0]),int(xi[1]))
-                        except ValueError:
-                            is_valid = False
-                        else:
-                            if(check_inf_sup(int(xi[0]),int(xi[1])) == False):
-                                is_valid = False
-                            fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])))
-                    if not is_valid:
-                        continue
-                    f = CompoundLocation(fn)
-                    if debug:
-                        print("COMPLEMENT JOIN")
-                        print(f.extract(record_fasta.seq).complement())
-                    out.write(str(f.extract(record_fasta.seq).complement()))
+                if feature_location.find("complement") != -1 and feature_location.find("join") != -1:
+                    join(out, selected_region, feature_location, record_fasta, True)
 
-                elif feature_location.find("complement")!= -1:
-                    feature_location = feature_location[11:-1]
-                    x = feature_location.split("..")
-                    try:
-                        (int(x[0]),int(x[1]))
-                    except ValueError:
-                        continue
-                    else:
-                        if(check_inf_sup(int(x[0]),int(x[1])) == False):
-                            continue
-                        f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])), type="domain")
-                        if debug:
-                            print("COMPLEMENT")
-                            print(f.extract(record_fasta.seq).complement())
-                        out.write(str(f.extract(record_fasta.seq).complement()))
+                elif feature_location.find("complement") != -1:
+                    extract(out, selected_region, feature_location, record_fasta, True)
 
                 elif feature_location.find("join") != -1:
-                    feature_location = feature_location[5:-1]
-                    x = feature_location.split(",")
-                    fn = []
-                    is_valid = True
-                    for xi in x:
-                        xi = xi.split("..")
-                        try:
-                            (int(xi[0]),int(xi[1]))
-                        except ValueError:
-                            is_valid = False
-                        else:
-                            if(check_inf_sup(int(xi[0]),int(xi[1])) == False):
-                                is_valid = False
-                            fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])))
-                    if not is_valid:
-                        continue
-                    f = CompoundLocation(fn)
-                    if debug:
-                        print("JOIN")
-                        print(f.extract(record_fasta.seq))
-                    out.write(str(f.extract(record_fasta.seq)))
+                    join(out, selected_region, feature_location, record_fasta, False)
 
                 else:
-                    x = feature_location.split("..")
-                    try:
-                        (int(x[0]),int(x[1]))
-                    except ValueError:
-                        continue
-                    else:
-                        if(check_inf_sup(int(x[0]),int(x[1])) == False):
-                            continue
-                        f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])), type="domain")
-                        if debug:
-                            print("EXTRACT")
-                            print(f.extract(record_fasta.seq))
-                        out.write(str(f.extract(record_fasta.seq)))
-                out.write("\n")
-    
+                    extract(out, selected_region, feature_location, record_fasta, False)
+        
+        NC_i += 1
+
     if nb_region_found == 0:
         print("Selected functional region not found for organism : [" + name + "]")
         return 0
@@ -263,9 +286,8 @@ def check_inf_sup(inf,sup):
         return False
 
 # TODOLIST
-# test les bornes des join
-# intron
-# ordre alphabetique dans l'arbre
-# thread du GUI marche pas, arbre pas update
-# "19 items downloaded pour les archaea CDS: certainement pas !!!"
+# print chaque exons pour les joins ??? cf sujet
+# update arbre plus rapidement
+# "19 items downloaded pour les archaea CDS: certainement pas !!!" demander à michel pk
 # autre regions fonctionnelles
+# Viruses missing files and directory ...

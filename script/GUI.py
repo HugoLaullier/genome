@@ -24,6 +24,9 @@ class GUI:
         self.window = Tk()
         self.window.geometry("1200x800")
         self.window.title("GenBank Application")
+        
+        # icons for treeview
+        # self.im_red = PhotoImage('../folder_2.png')
 
         self.tree_array = []
         # Frame 1 : Liste des fichiers
@@ -57,6 +60,7 @@ class GUI:
 
     def create_node(self, tree, node_path, node) :
         name_nodes = os.listdir(node_path)
+        name_nodes.sort()
         if name_nodes == [] : pass
         for name in name_nodes :
             name_path = node_path + name
@@ -70,7 +74,6 @@ class GUI:
                 except:
                     print(name_path)
                     pass
-
 
     def create_tree(self):
         list = Frame(self.window)
@@ -89,10 +92,11 @@ class GUI:
 
         root_path = "../Results/"
         treeview.insert('', '0', text='Results', iid='Results', tags=('not_dl'))
+        
         self.tree_array.append('Results')
         self.create_node(treeview, root_path, 'Results')
 
-        treeview.tag_configure('not_dl', background='yellow')
+        treeview.tag_configure('not_dl', background='gold')
         treeview.tag_configure('dl', background='lightgreen')
 
         return treeview, scrollbar
