@@ -152,7 +152,6 @@ def join(outfile, selected_region, feature_location, record_fasta, is_complement
             if(check_inf_sup(indexes[i][1],indexes[i+1][0]) == False):
                 is_valid = False
             fn.append(FeatureLocation(indexes[i][1]-1, indexes[i+1][0]))
-            print(indexes[i][1]-1, indexes[i+1][0])
         if not is_valid:
             return
     else:
@@ -167,7 +166,7 @@ def join(outfile, selected_region, feature_location, record_fasta, is_complement
     if len(fn) > 1:
         f = CompoundLocation(fn)
     else:
-        f = SeqFeature(fn[0],  type="domain")
+        f = SeqFeature(fn[0], type="domain")
     
     if is_complement:
         if DEBUG:
@@ -179,12 +178,22 @@ def join(outfile, selected_region, feature_location, record_fasta, is_complement
             print("JOIN")
             print(f.extract(record_fasta.seq))
         write_buffer += str(f.extract(record_fasta.seq)) 
+
+    if len(fn) > 1:
+        for i in range(len(fn)):
+            type_seq = ": exon"
+            if selected_region == "intron":
+                type_seq = ": intron"
+            if is_complement:
+                write_buffer += "\n" + selected_region + ' ' + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq).reverse_complement())
+            else:
+                write_buffer += "\n" + selected_region + ' ' + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq))
     outfile.write(write_buffer + "\n")
     return
 
 def extract(outfile, selected_region, feature_location, record_fasta, is_complement):
     if selected_region == "intron":
-        return # le sujet est pas clair : on fait quoi si il y a pas de join ???!!!
+        return
     write_buffer = selected_region + ' ' + feature_location + "\n"
     if is_complement:
         feature_location = feature_location[11:-1]
@@ -288,6 +297,8 @@ def check_inf_sup(inf,sup):
 # TODOLIST
 # print chaque exons pour les joins ??? cf sujet
 # update arbre plus rapidement
-# "19 items downloaded pour les archaea CDS: certainement pas !!!" demander à michel pk
+# icons (pastilles colorees)
+# pas de bleu (parce que!)
+# "19 items downloaded pour les archaea CDS: certainement pas !!!" ???
 # autre regions fonctionnelles
 # Viruses missing files and directory ...
