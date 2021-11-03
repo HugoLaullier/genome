@@ -11,7 +11,7 @@ import random
 import string
 
 save_pickle = False
-DEBUG = True
+DEBUG = False
 
 def reset_tree(progress = None, window = None):
     """
@@ -229,7 +229,8 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
     print()
     print("downloading [" + name + "]")
     for NC in NC_list:
-        print("NC : " + str(NC_i) + " / " + str(len(NC_list)))
+        if DEBUG == True :
+            print("NC : " + str(NC_i) + " / " + str(len(NC_list)))
         name = name.replace(" ", "_")
         name = name.replace("[", "_")
         name = name.replace("]", "_")
@@ -248,7 +249,8 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
         handle_text.close()
         list_file = []
         for i in range(len(record[0]["GBSeq_feature-table"])):
-            print("\tfeature : " + str(i + 1) + " / " + str(len(record[0]["GBSeq_feature-table"])))
+            if DEBUG == True :
+                print("\tfeature : " + str(i + 1) + " / " + str(len(record[0]["GBSeq_feature-table"])))
             feature_location = record[0]["GBSeq_feature-table"][i]["GBFeature_location"]
             feature_key = record[0]["GBSeq_feature-table"][i]["GBFeature_key"]
             if feature_key != selected_region and not (selected_region == "intron" and feature_key == "CDS"):

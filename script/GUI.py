@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 from tkinter import *
 from tkinter import ttk
+from ttkwidgets import CheckboxTreeview
 
 import os
 import time
-import pandas as pd
 import ctypes
 from threading import Thread
 
@@ -29,10 +29,11 @@ class GUI:
         # self.im_red = PhotoImage('../folder_2.png')
 
         self.tree_array = []
+        self.org_selected = []
         # Frame 1 : Liste des fichiers
         (self.treeview, self.scrollbar) = self.create_tree()
-        self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select)
-
+        #self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select)
+        self.treeview.bind("<Button-1>", self.box_click, True)
         # Frame 2 : Informations
         (self.Info, self.Info_lab, self.Info_lab1, self.labelText, self.text_row) = self.create_info()
 
@@ -41,9 +42,6 @@ class GUI:
 
         # Regions menu
         (self.selected_region, self.menu_menu, self.run_search, self.OptionList_region) = self.create_region_menu()
-
-        # Reset button
-        self.reset_button = self.create_reset_button()
 
         t = Thread (target = self.update_tree_tags)
         t.start()
@@ -67,7 +65,7 @@ class GUI:
             if os.path.isdir(name_path):
                 name = self.tree_exist(tree, name)
                 try :
-                    tree.insert(node, '1000000',iid=name, text=name, tags=('not_dl'))
+                    tree.insert(node, '1000000',iid=name, text=name)
                     self.tree_array.append(name)
                     name_path += '/'
                     self.create_node(tree, name_path, name)
@@ -83,23 +81,36 @@ class GUI:
         scrollbar = Scrollbar(list)
         scrollbar.pack( side = RIGHT, fill = Y )
 
-        treeview = ttk.Treeview(list)
+        treeview = CheckboxTreeview(list)
         treeview.heading('#0', text='Arborescence des fichiers')
-
         treeview.configure(yscrollcommand=scrollbar.set)
         treeview.pack(fill="both", expand=True)
+        
         scrollbar.configure(command=treeview.yview)
 
         root_path = "../Results/"
-        treeview.insert('', '0', text='Results', iid='Results', tags=('not_dl'))
+        treeview.insert('', '0', text='Results', iid='Results')
         
         self.tree_array.append('Results')
         self.create_node(treeview, root_path, 'Results')
 
-        treeview.tag_configure('not_dl', background='gold')
-        treeview.tag_configure('dl', background='lightgreen')
-
         return treeview, scrollbar
+
+    def box_click(self, event):
+        """ check or uncheck box when clicked """
+        x, y, widget = event.x, event.y, event.widget
+        elem = widget.identify("element", x, y)
+        if "image" in elem:
+            # a box was clicked
+            item = self.treeview.identify_row(y)
+            tags = self.treeview.item(item, "tags")
+            if ("unchecked" in tags) or ("tristate" in tags):
+                try : 
+                    self.org_selected.remove(item)
+                except : 
+                    pass
+            else:
+                self.org_selected.append(item)
 
     # INFO CREATION METHODS
     def create_info(self):
@@ -166,48 +177,34 @@ class GUI:
         variable.trace("w", self.callback)
 
         run_search = Button(self.Info_lab1, text ="Search", command = self.search_button_callback, borderwidth=1)
-        run_search.grid(row = 2, column = 1, ipadx = 20, pady = 15, padx = 30)
+        run_search.grid(row = 2, columnspan = 3, ipadx = 20, pady = 15, padx = 30)
         return variable, menu, run_search, OptionList
-
-    # RESET BUTTON CREATION
-    def create_reset_button(self):
-        reset_button = Button(self.Info_lab1, text ="Reset Tree", command = self.reset_button_callback, borderwidth=1)
-        reset_button.grid(row = 2, column = 0, ipadx = 20, pady = 15, padx = 30)
-        return reset_button
 
     # FEATURES METHODS
 
     def update_tree_tags(self):
         for node in self.tree_array:
             current_path = self.get_path(node).replace("Other1", "Other").replace("unclassified1", "unclassified").replace("uncultured_bacterium1", "uncultured_bacterium")
-            turn_to_green = True
             is_leaf = False
             for (index, name, path, NC_list) in self.organism_df.itertuples():
                 path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
                 if path_full == current_path:
                     is_leaf = True
                     if os.listdir(path_full) == []:
-                        self.treeview.item(node, tags="not_dl")
+                        self.treeview.item(node)
                     else:
-                        self.treeview.item(node, tags="dl")
+                        self.treeview.item(node)
                     break
-                elif current_path in path_full:
-                    if os.listdir(path_full) == []:
-                        turn_to_green = False
             if is_leaf:
                 continue
 
-            if turn_to_green:
-                self.treeview.item(node, tags="dl")
-            else:
-                self.treeview.item(node, tags="not_dl")
 
             self.window.update()
         self.print_on_window("Tree updated")
 
     def print_on_window(self, t): #affiche t dans les logs
         time_string = time.strftime('%H:%M:%S')
-        self.log_text.insert(INSERT, time_string + ' : ' + t + "\n")
+        self.log_text.insert(INSERT, time_string + ' : ' + str(t) + "\n")
         self.log_text.yview(END)
 
     def callback(self, *args): # fonction pour executer du code pour le menu, a changer
@@ -227,7 +224,7 @@ class GUI:
 
         self.print_on_window("Searching")
         self.is_in_critical_section = True
-        if self.labelText.get() == 'Aucun' :
+        if self.org_selected == [] :
             self.print_on_window("No organism selected")
             self.window.update()
             self.is_in_critical_section = False
@@ -238,67 +235,57 @@ class GUI:
             self.is_in_critical_section = False
             return
         else :
-            current_path = self.get_path(self.labelText.get()).replace("Other1", "Other").replace("unclassified1", "unclassified").replace("uncultured_bacterium1", "uncultured_bacterium")
-            self.print_on_window(current_path)
-            c = 0
-            nb_region_found = 0
-            for (index, name, path, NC_list) in self.organism_df.itertuples():
-                path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
-                nb_new_region_found = -1
-                if path_full == current_path:
-                    c += 1
+            org_done = []
+            for org in self.org_selected :
+                current_path = self.get_path(org).replace("Other1", "Other").replace("unclassified1", "unclassified").replace("uncultured_bacterium1", "uncultured_bacterium")
+                c = 0
+                nb_region_found = 0
+                for (index, name, path, NC_list) in self.organism_df.itertuples():
+                    path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
+                    nb_new_region_found = -1
+                    if path_full == current_path and name not in org_done:
+                        print(name)
+                        c += 1
+                        self.window.update()
+                        nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                        org_done.append(name)
+                        if nb_new_region_found == 0:
+                            self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
+                        else:
+                            self.print_on_window("[" + name + "] downloaded ")
+                        self.window.update()
+                        nb_region_found += nb_new_region_found
+                        break
+                    elif current_path in path_full and name not in org_done:
+                        c += 1
+                        self.window.update()
+                        nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                        org_done.append(name)
+                    if nb_new_region_found != -1:
+                        print(name)
+
+                        if nb_new_region_found == 0:
+                            self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
+                        else:
+                            self.print_on_window("[" + name + "] downloaded ")
+                        self.window.update()
+                        nb_region_found += nb_new_region_found
+                if nb_region_found == 0:
                     self.window.update()
-                    nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
-                    if nb_new_region_found == 0:
-                        self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
-                    else:
-                        self.print_on_window("[" + name + "] downloaded ")
-                    self.window.update()
-                    nb_region_found += nb_new_region_found
-                    break
-                elif current_path in path_full:
-                    c += 1
-                    self.window.update()
-                    nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
-                if nb_new_region_found != -1:
-                    if nb_new_region_found == 0:
-                        self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
-                    else:
-                        self.print_on_window("[" + name + "] downloaded ")
-                    self.window.update()
-                    nb_region_found += nb_new_region_found
-            if nb_region_found == 0:
-                self.window.update()
-                self.is_in_critical_section = False
-                return
-            if c != 0:
-                t = Thread (target = self.update_tree_tags)
-                t.start()
-            self.print_on_window(str(c) + " items downloaded")
+                    self.is_in_critical_section = False
+                    self.print_on_window("Research finished")
+                    return
+                if c != 0:
+                    t = Thread (target = self.update_tree_tags)
+                    t.start()
+                self.print_on_window(str(c) + " items downloaded")
 
         self.window.update()
-
-        self.print_on_window("Research finished")
+        self.print_on_window("--------------------Research finished--------------------")
         self.is_in_critical_section = False
 
-    def reset_button_callback(self):
-        if self.is_in_critical_section: return
-        progress = ttk.Progressbar(self.window, orient = HORIZONTAL,
-            length = 1200, mode = 'determinate')
-        progress.pack(side=BOTTOM)
-        self.print_on_window("Reset Tree starting")
-        self.is_in_critical_section = True
-        self.window.update()
-        # reset file tree
-        self.organism_df = fetch.reset_tree(progress, self.window)
-        #reset treeview
-        (self.treeview, self.scrollbar) = self.create_tree()
-        self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select)
-        self.print_on_window("Reset Tree finished")
-        progress.destroy()
-        self.is_in_critical_section = False
 
-    def on_tree_select(self, event): #on recupere l'organisme dans item
+    def on_tree_select(self, event): #on recupere l'organisme dans item, A GARDER ?????
             for item in self.treeview.selection():
                 item_text = self.treeview.item(item,"text")
                 self.labelText.set(item_text)
