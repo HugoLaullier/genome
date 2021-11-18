@@ -120,8 +120,8 @@ def load_df_from_pickle():
                 os.makedirs(path)
     return organism_df
 
-def join(outfile, selected_region, feature_location, record_fasta, is_complement):
-    write_buffer = selected_region + ' ' + feature_location + "\n"
+def join(outfile, header_str, selected_region, feature_location, record_fasta, is_complement):
+    write_buffer = header_str + feature_location
     if is_complement:
         feature_location = feature_location[16:-2]
     else:
@@ -168,33 +168,34 @@ def join(outfile, selected_region, feature_location, record_fasta, is_complement
     else:
         f = SeqFeature(fn[0], type="domain")
     
-    if is_complement:
-        if DEBUG:
-            print("COMPLEMENT JOIN")
-            print(f.extract(record_fasta.seq).reverse_complement())
-        write_buffer += str(f.extract(record_fasta.seq).reverse_complement())
-    else:
-        if DEBUG:
-            print("JOIN")
-            print(f.extract(record_fasta.seq))
-        write_buffer += str(f.extract(record_fasta.seq)) 
-
-    if len(fn) > 1:
+    if selected_region != "intron":
+        if is_complement:
+            if DEBUG:
+                print("COMPLEMENT JOIN")
+                print(f.extract(record_fasta.seq).reverse_complement())
+            write_buffer += "\n" +str(f.extract(record_fasta.seq).reverse_complement())
+        else:
+            if DEBUG:
+                print("JOIN")
+                print(f.extract(record_fasta.seq))
+            write_buffer += "\n" +str(f.extract(record_fasta.seq))
+    
+    if len(fn) >= 1:
         for i in range(len(fn)):
-            type_seq = ": exon"
+            type_seq = ": exon "
             if selected_region == "intron":
-                type_seq = ": intron"
+                type_seq = ": intron "
             if is_complement:
-                write_buffer += "\n" + selected_region + ' ' + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq).reverse_complement())
+                write_buffer += "\n" + header_str + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq).reverse_complement())
             else:
-                write_buffer += "\n" + selected_region + ' ' + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq))
+                write_buffer += "\n" + header_str + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq))
     outfile.write(write_buffer + "\n")
     return
 
-def extract(outfile, selected_region, feature_location, record_fasta, is_complement):
+def extract(outfile, header_str, selected_region, feature_location, record_fasta, is_complement):
     if selected_region == "intron":
         return
-    write_buffer = selected_region + ' ' + feature_location + "\n"
+    write_buffer = header_str + feature_location + "\n"
     if is_complement:
         feature_location = feature_location[11:-1]
     x = feature_location.split("..")
@@ -224,13 +225,16 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
     download data of an organism from genbank using the API
     """
     Entrez.email = ''.join(random.choice(string.ascii_lowercase) for i in range(20))+'@'+''.join(random.choice(string.ascii_lowercase) for i in range(20))+ '.com'
-    NC_i = 1
     nb_region_found = 0
     print()
     print("downloading [" + name + "]")
+    # remove duplicate NC
+    NC_list = list(dict.fromkeys(NC_list))
+    print(NC_list)
     for NC in NC_list:
+        print("\t", NC)
         if DEBUG == True :
-            print("NC : " + str(NC_i) + " / " + str(len(NC_list)))
+            print(str(NC) + " / " + str(len(NC_list)))
         name = name.replace(" ", "_")
         name = name.replace("[", "_")
         name = name.replace("]", "_")
@@ -239,7 +243,9 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             print("NC id  =", NC)
             print("----------------------------")
         handle_fasta = Entrez.efetch(db="nucleotide", id=NC, rettype="fasta", retmode="text")
-        record_fasta = SeqIO.read(handle_fasta, "fasta")
+        print("ok1")
+        record_fasta = SeqIO.read(handle_fasta, "fasta") # TODO timeout here
+        print("ok2")
         if DEBUG:
             print(record_fasta)
             print("----------------------------")
@@ -256,7 +262,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             if feature_key != selected_region and not (selected_region == "intron" and feature_key == "CDS"):
                 continue
             nb_region_found += 1
-            NC_filename = selected_region + "_" + str(name) + "_NC_" + str(NC_i) + ".txt"
+            NC_filename = selected_region + "_" + str(name) + "_" + str(NC) + ".txt"
             if len(list_file) != 0 :
                 if NC_filename not in list_file:
                     os.remove(path + name + "/" + NC_filename)
@@ -269,21 +275,21 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                 if DEBUG:
                     print(i+1, "/", len(record[0]["GBSeq_feature-table"]))
                     print(feature_location)
+                
+                header_str = selected_region + ' ' + name + ' ' + NC + ': '
 
                 if feature_location.find("complement") != -1 and feature_location.find("join") != -1:
-                    join(out, selected_region, feature_location, record_fasta, True)
+                    join(out, header_str, selected_region, feature_location, record_fasta, True)
 
                 elif feature_location.find("complement") != -1:
-                    extract(out, selected_region, feature_location, record_fasta, True)
+                    extract(out, header_str, selected_region, feature_location, record_fasta, True)
 
                 elif feature_location.find("join") != -1:
-                    join(out, selected_region, feature_location, record_fasta, False)
+                    join(out, header_str, selected_region, feature_location, record_fasta, False)
 
                 else:
-                    extract(out, selected_region, feature_location, record_fasta, False)
-        
-        NC_i += 1
-
+                    extract(out, header_str, selected_region, feature_location, record_fasta, False)
+    
     if nb_region_found == 0:
         print("Selected functional region not found for organism : [" + name + "]")
         return 0

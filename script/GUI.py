@@ -43,8 +43,8 @@ class GUI:
         # Regions menu
         (self.selected_region, self.menu_menu, self.run_search, self.OptionList_region) = self.create_region_menu()
 
-        t = Thread (target = self.update_tree_tags)
-        t.start()
+        # t = Thread (target = self.update_tree_tags)
+        # t.start()
 
         # Start mainloop
         self.window.mainloop()
@@ -244,7 +244,6 @@ class GUI:
                     path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
                     nb_new_region_found = -1
                     if path_full == current_path and name not in org_done:
-                        print(name)
                         c += 1
                         self.window.update()
                         nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
@@ -275,9 +274,9 @@ class GUI:
                     self.is_in_critical_section = False
                     self.print_on_window("Research finished")
                     return
-                if c != 0:
-                    t = Thread (target = self.update_tree_tags)
-                    t.start()
+                # if c != 0:
+                #     t = Thread (target = self.update_tree_tags)
+                #     t.start()
                 self.print_on_window(str(c) + " items downloaded")
 
         self.window.update()
