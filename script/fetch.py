@@ -10,6 +10,11 @@ from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
 import random
 import string
 import signal
+from ftplib import FTP
+import re
+import time
+import os.path
+import datetime
 
 save_pickle = False
 DEBUG = False
@@ -26,9 +31,34 @@ def reset_tree(progress = None, window = None):
     if os.path.exists('../Results'):
         shutil.rmtree('../Results')
 
+    # update with new report from website
+    t = os.path.getmtime("../GENOME_REPORTS/overview.txt")
+    pred_time = datetime.datetime.fromtimestamp(t)
+    now = datetime.datetime.now()
+
+    if not(pred_time.month == now.month and pred_time.day == now.day and pred_time.year == now.year) :
+        try: shutil.rmtree('../GENOME_REPORTS')
+        except: pass
+        os.mkdir("../GENOME_REPORTS")
+        os.chdir('../GENOME_REPORTS')
+        os.mkdir('IDS')
+
+        with FTP('ftp.ncbi.nlm.nih.gov') as ftp:
+            ftp.login()  # connecter au FTP
+
+            ftp.cwd('genomes/GENOME_REPORTS')
+            ftp.retrbinary('RETR overview.txt', open("overview.txt",'wb').write)
+
+            ftp.cwd('IDS')  # changer de répertoire courant
+            for filename in ftp.nlst():
+                ftp.retrbinary('RETR '+ filename, open("IDS/" + filename, 'wb').write)
+
+
     # parse overview.txt
     organism_names = []
     organism_paths = []
+
+    os.chdir('../script')
     with open('../GENOME_REPORTS/overview.txt') as f:
         first_row = True
         count_rows = 1
@@ -44,21 +74,22 @@ def reset_tree(progress = None, window = None):
                 first_row=False
                 continue
             parsed_row = row.split('\t')
-            organism = parsed_row[0].replace(' ','_').replace('/','_')
-            kingdom = parsed_row[1].replace(' ','_').replace('/','_')
-            group = parsed_row[2].replace(' ','_').replace('/','_')
-            subgroup = parsed_row[3].replace(' ','_').replace('/','_')
-            path = '../Results/' + kingdom +'/' + group +'/' + subgroup +'/' + organism
-            organism_names.append(parsed_row[0])
-            organism_paths.append('../Results/' + kingdom +'/' + group +'/' + subgroup +'/')
 
+            try :
+                organism = parsed_row[0].replace(' ','_').replace('/','_')
+                kingdom = parsed_row[1].replace(' ','_').replace('/','_')
+                group = parsed_row[2].replace(' ','_').replace('/','_')
+                subgroup = parsed_row[3].replace(' ','_').replace('/','_')
+                path = '../Results/' + kingdom +'/' + group +'/' + subgroup +'/' + organism
+                organism_names.append(parsed_row[0])
+                organism_paths.append('../Results/' + kingdom +'/' + group +'/' + subgroup +'/')
+            except IndexError : pass
     # parse ids files
     ids_files = os.listdir('../GENOME_REPORTS/IDS/')
 
     organism_names_ids = []
     organism_paths_ids = []
     organism_NC_ids = []
-
     i = 0
     for ids in ids_files:
         i += 1
@@ -75,7 +106,13 @@ def reset_tree(progress = None, window = None):
                 try:
                     index = organism_names.index(parsed_row[5])
                 except ValueError:
-                    continue
+                    #if ids == "Archaea.ids" :
+                    #    print(parsed_row)
+                    for i, org in enumerate(organism_names) :
+                        if org in parsed_row[5] :
+                            index = i
+                            break
+
                 try:
                     organism_NC_ids[organism_names_ids.index(organism_names[index])].append(parsed_row[1])
                 except ValueError:
@@ -98,6 +135,7 @@ def reset_tree(progress = None, window = None):
         os.makedirs("../pickle")
     with open("../pickle/organism_df", 'wb') as f:
         pickle.dump(organism_df, f)
+    print(organism_df)
     return organism_df
 
 def load_df_from_pickle():
