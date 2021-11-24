@@ -1,0 +1,3 @@
+intron Zapornia_atra NC_052808: join(9500..9672,9674..9851)
+intron Zapornia_atra NC_052808: 9500..9672,9674..9851: intron 1
+TCA
