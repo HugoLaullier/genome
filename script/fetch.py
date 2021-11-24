@@ -9,6 +9,7 @@ import pickle
 from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
 import random
 import string
+import signal
 
 save_pickle = False
 DEBUG = False
@@ -220,6 +221,10 @@ def extract(outfile, header_str, selected_region, feature_location, record_fasta
     outfile.write(write_buffer + "\n")
     return
 
+def handler(signum, frame):
+    print("Timeout, NC skipped")
+    raise Exception("end of time")
+
 def load_data_from_NC(index, name, path, NC_list, selected_region):
     """
     download data of an organism from genbank using the API
@@ -243,9 +248,15 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             print("NC id  =", NC)
             print("----------------------------")
         handle_fasta = Entrez.efetch(db="nucleotide", id=NC, rettype="fasta", retmode="text")
-        print("ok1")
-        record_fasta = SeqIO.read(handle_fasta, "fasta") # TODO timeout here
-        print("ok2")
+
+        signal.signal(signal.SIGALRM, handler)
+        signal.alarm(10)
+        try:
+            record_fasta = SeqIO.read(handle_fasta, "fasta")
+        except Exception:
+            continue
+        signal.alarm(0)
+
         if DEBUG:
             print(record_fasta)
             print("----------------------------")
