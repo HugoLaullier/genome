@@ -47,122 +47,130 @@ def timeout(timeout):
         return wrapper
     return deco
 
-def reset_tree(root, progress = None, window = None):
+def reset_tree(root, progressbar, progress = None, window = None):
     """
     reset the tree stored locally
-    return organism_df
     """
-    if (progress != None and window != None):
-        progress['value'] = 0
-        window.update_idletasks()
     # delete previous tree
     if os.path.exists('../Results'):
         shutil.rmtree('../Results')
 
     # update with new report from website
-    t = os.path.getmtime("../GENOME_REPORTS/overview.txt")
-    pred_time = datetime.datetime.fromtimestamp(t)
-    now = datetime.datetime.now()
+    if os.path.exists('../GENOME_REPORTS/overview.txt') :
+        t = os.path.getmtime("../GENOME_REPORTS/overview.txt")
+        pred_time = datetime.datetime.fromtimestamp(t)
+        now = datetime.datetime.now()
 
-    if not(pred_time.month == now.month and pred_time.day == now.day and pred_time.year == now.year) :
-        try: shutil.rmtree('../GENOME_REPORTS')
-        except: pass
-        os.mkdir("../GENOME_REPORTS")
-        os.chdir('../GENOME_REPORTS')
-        os.mkdir('IDS')
+        if pred_time.month == now.month and pred_time.day == now.day and pred_time.year == now.year : # on update pas l'arbre
+            root.destroy()
+            return
 
-        with FTP('ftp.ncbi.nlm.nih.gov') as ftp:
-            ftp.login()  # connecter au FTP
+    try: shutil.rmtree('../GENOME_REPORTS')
+    except: pass
+    os.mkdir("../GENOME_REPORTS")
+    os.chdir('../GENOME_REPORTS')
+    os.mkdir('IDS')
 
-            ftp.cwd('genomes/GENOME_REPORTS')
-            ftp.retrbinary('RETR overview.txt', open("overview.txt",'wb').write)
+    with FTP('ftp.ncbi.nlm.nih.gov') as ftp:
+        ftp.login()  # connecter au FTP
 
-            ftp.cwd('IDS')  # changer de répertoire courant
-            for filename in ftp.nlst():
-                ftp.retrbinary('RETR '+ filename, open("IDS/" + filename, 'wb').write)
+        ftp.cwd('genomes/GENOME_REPORTS')
+        ftp.retrbinary('RETR overview.txt', open("overview.txt",'wb').write)
 
+        ftp.cwd('IDS')  # changer de répertoire courant
+        for filename in ftp.nlst():
+            ftp.retrbinary('RETR '+ filename, open("IDS/" + filename, 'wb').write)
 
-        # parse overview.txt
-        organism_names = []
-        organism_paths = []
+    print("download done.")
+    # parse overview.txt
+    organism_names = []
+    organism_paths = []
 
-        os.chdir('../script')
-        with open('../GENOME_REPORTS/overview.txt') as f:
-            first_row = True
-            count_rows = 1
-            for row in f:
-                if DEBUG:
-                    print(count_rows, " / 59674")
-
-                if (progress != None and window != None and count_rows % 500 == 0):
-                    progress['value'] = (count_rows/59674)*50
-                    window.update_idletasks()
-                count_rows += 1
-                if first_row:
-                    first_row=False
-                    continue
-                parsed_row = row.split('\t')
-
-                try :
-                    organism = parsed_row[0].replace(' ','_').replace('/','_')
-                    kingdom = parsed_row[1].replace(' ','_').replace('/','_')
-                    group = parsed_row[2].replace(' ','_').replace('/','_')
-                    subgroup = parsed_row[3].replace(' ','_').replace('/','_')
-                    path = '../Results/' + kingdom +'/' + group +'/' + subgroup +'/' + organism
-                    organism_names.append(parsed_row[0])
-                    organism_paths.append('../Results/' + kingdom +'/' + group +'/' + subgroup +'/')
-                except IndexError : pass
-        # parse ids files
-        ids_files = os.listdir('../GENOME_REPORTS/IDS/')
-
-        organism_names_ids = []
-        organism_paths_ids = []
-        organism_NC_ids = []
-        i = 0
-        for ids in ids_files:
-            i += 1
-            if (progress != None and window != None):
-                    progress['value'] = 50 + (i/10)*50
-                    window.update_idletasks()
+    os.chdir('../script')
+    with open('../GENOME_REPORTS/overview.txt') as f:
+        first_row = True
+        count_rows = 1
+        for row in f:
             if DEBUG:
-                print(str(i) + ' ' * (1 if i >= 10 else 2) + '/ ' + str(len(ids_files)) + ' : ' + ids)
-            with open('../GENOME_REPORTS/IDS/' + ids) as f:
-                for row in f:
-                    parsed_row = row.replace('\n', '').split('\t')
-                    if (parsed_row[1][0:2] != 'NC'):
-                        continue
-                    try:
-                        index = organism_names.index(parsed_row[5])
-                    except ValueError:
-                        #if ids == "Archaea.ids" :
-                        #    print(parsed_row)
-                        for i, org in enumerate(organism_names) :
-                            if org in parsed_row[5] :
-                                index = i
-                                break
+                print(count_rows, " / 59674")
+            count_rows += 1
+            if first_row:
+                first_row=False
+                continue
+            parsed_row = row.split('\t')
 
-                    try:
-                        organism_NC_ids[organism_names_ids.index(organism_names[index])].append(parsed_row[1])
-                    except ValueError:
-                        organism_names_ids.append(organism_names[index])
-                        organism_paths_ids.append(organism_paths[index])
-                        organism_NC_ids.append([parsed_row[1]])
-                        name = organism_names[index].replace(" ", "_")
-                        name = name.replace("[", "_")
-                        name = name.replace("]", "_")
-                        name = name.replace(":", "_")
-                        path = organism_paths[index] + name + "/"
-                        if not os.path.exists(path):
-                            os.makedirs(path)
-        organism_df = pd.DataFrame({
-                    "name":organism_names_ids,
-                    "path":organism_paths_ids,
-                    "NC":organism_NC_ids})
-        # create pickle file saving the dataframe
-        if not os.path.exists("../pickle"):
-            os.makedirs("../pickle")
-        with open("../pickle/organism_df", 'wb') as f:
-            pickle.dump(organism_df, f)
+            try :
+                organism = parsed_row[0].replace(' ','_').replace('/','_')
+                kingdom = parsed_row[1].replace(' ','_').replace('/','_')
+                group = parsed_row[2].replace(' ','_').replace('/','_')
+                subgroup = parsed_row[3].replace(' ','_').replace('/','_')
+                path = '../Results/' + kingdom +'/' + group +'/' + subgroup +'/' + organism
+                organism_names.append(parsed_row[0])
+                organism_paths.append('../Results/' + kingdom +'/' + group +'/' + subgroup +'/')
+            except IndexError : pass
+
+    # parse ids files
+    ids_files = os.listdir('../GENOME_REPORTS/IDS/')
+    print('overview done.')
+    organism_names_ids = []
+    organism_paths_ids = []
+    organism_NC_ids = []
+    i = 0
+
+    for ids in ids_files:
+        i += 1
+        progressbar['value'] = 0
+        root.update_idletasks()
+        if DEBUG:
+            print(str(i) + ' ' * (1 if i >= 10 else 2) + '/ ' + str(len(ids_files)) + ' : ' + ids)
+
+        with open('../GENOME_REPORTS/IDS/' + ids) as f:
+            n_line = sum(1 for _ in f)
+
+        with open('../GENOME_REPORTS/IDS/' + ids) as f:
+            print("ids")
+            for row in f:
+                parsed_row = row.replace('\n', '').split('\t')
+                if (parsed_row[1][0:2] != 'NC'):
+                    continue
+                try:
+                    index = organism_names.index(parsed_row[5])
+                except ValueError:
+                    parsed_name = parsed_row[5].split(' ')[::-1]
+                    try_name = parsed_row[5]
+                    for word in parsed_name :
+                        try_name = try_name.replace(' '+word, '')
+                        try:
+                            index = organism_names.index(try_name)
+                            break
+                        except : pass
+
+                progressbar['value'] += 1/n_line*100
+                root.update_idletasks()
+
+                try:
+                    organism_NC_ids[organism_names_ids.index(organism_names[index])].append(parsed_row[1])
+                except ValueError:
+                    organism_names_ids.append(organism_names[index])
+                    organism_paths_ids.append(organism_paths[index])
+                    organism_NC_ids.append([parsed_row[1]])
+                    name = organism_names[index].replace(" ", "_")
+                    name = name.replace("[", "_")
+                    name = name.replace("]", "_")
+                    name = name.replace(":", "_")
+                    path = organism_paths[index] + name + "/"
+                    if not os.path.exists(path):
+                        os.makedirs(path)
+
+    organism_df = pd.DataFrame({
+                "name":organism_names_ids,
+                "path":organism_paths_ids,
+                "NC":organism_NC_ids})
+    # create pickle file saving the dataframe
+    if not os.path.exists("../pickle"):
+        os.makedirs("../pickle")
+    with open("../pickle/organism_df", 'wb') as f:
+        pickle.dump(organism_df, f)
     root.destroy()
 
 

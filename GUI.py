@@ -19,8 +19,10 @@ def launch_welcome() :
     root.title("Genbank - Welcome")
 
     Label(root, text="Création de l'arborescence en cours...").pack(side = LEFT, anchor=  W, padx = 15, pady = 15)
+    progressbar = ttk.Progressbar(root, orient = HORIZONTAL, length = 100, mode = 'determinate')
+    progressbar.pack( padx = 15, pady = 15)
 
-    root.after(200,  lambda : fetch.reset_tree(root))
+    root.after(200,  lambda : fetch.reset_tree(root, progressbar))
     root.mainloop()
 
 class GUI:
@@ -201,8 +203,6 @@ class GUI:
             if is_leaf:
                 continue
 
-
-            self.window.update()
         self.print_on_window("Tree updated")
 
     def print_on_window(self, t): #affiche t dans les logs
