@@ -15,45 +15,73 @@ import re
 import time
 import os.path
 import datetime
+from threading import Thread
+import functools
 
 save_pickle = False
 DEBUG = False
 
-def reset_tree(progress = None, window = None):
+
+def timeout(timeout):
+    def deco(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            res = [Exception('function [%s] timeout [%s seconds] exceeded!' % (func.__name__, timeout))]
+            def newFunc():
+                try:
+                    res[0] = func(*args, **kwargs)
+                except Exception as e:
+                    res[0] = e
+            t = Thread(target=newFunc)
+            t.daemon = True
+            try:
+                t.start()
+                t.join(timeout)
+            except Exception as je:
+                print ('error starting thread')
+                raise je
+            ret = res[0]
+            if isinstance(ret, BaseException):
+                raise ret
+            return ret
+        return wrapper
+    return deco
+
+def reset_tree(root, progressbar, progress = None, window = None):
     """
     reset the tree stored locally
-    return organism_df
     """
-    if (progress != None and window != None):
-        progress['value'] = 0
-        window.update_idletasks()
     # delete previous tree
     if os.path.exists('../Results'):
         shutil.rmtree('../Results')
 
     # update with new report from website
-    t = os.path.getmtime("../GENOME_REPORTS/overview.txt")
-    pred_time = datetime.datetime.fromtimestamp(t)
-    now = datetime.datetime.now()
+    if os.path.exists('../GENOME_REPORTS/overview.txt') :
+        t = os.path.getmtime("../GENOME_REPORTS/overview.txt")
+        pred_time = datetime.datetime.fromtimestamp(t)
+        now = datetime.datetime.now()
 
-    if not(pred_time.month == now.month and pred_time.day == now.day and pred_time.year == now.year) :
-        try: shutil.rmtree('../GENOME_REPORTS')
-        except: pass
-        os.mkdir("../GENOME_REPORTS")
-        os.chdir('../GENOME_REPORTS')
-        os.mkdir('IDS')
+        if pred_time.month == now.month and pred_time.day == now.day and pred_time.year == now.year : # on update pas l'arbre
+            root.destroy()
+            return
 
-        with FTP('ftp.ncbi.nlm.nih.gov') as ftp:
-            ftp.login()  # connecter au FTP
+    try: shutil.rmtree('../GENOME_REPORTS')
+    except: pass
+    os.mkdir("../GENOME_REPORTS")
+    os.chdir('../GENOME_REPORTS')
+    os.mkdir('IDS')
 
-            ftp.cwd('genomes/GENOME_REPORTS')
-            ftp.retrbinary('RETR overview.txt', open("overview.txt",'wb').write)
+    with FTP('ftp.ncbi.nlm.nih.gov') as ftp:
+        ftp.login()  # connecter au FTP
 
-            ftp.cwd('IDS')  # changer de répertoire courant
-            for filename in ftp.nlst():
-                ftp.retrbinary('RETR '+ filename, open("IDS/" + filename, 'wb').write)
+        ftp.cwd('genomes/GENOME_REPORTS')
+        ftp.retrbinary('RETR overview.txt', open("overview.txt",'wb').write)
 
+        ftp.cwd('IDS')  # changer de répertoire courant
+        for filename in ftp.nlst():
+            ftp.retrbinary('RETR '+ filename, open("IDS/" + filename, 'wb').write)
 
+    print("download done.")
     # parse overview.txt
     organism_names = []
     organism_paths = []
@@ -65,10 +93,6 @@ def reset_tree(progress = None, window = None):
         for row in f:
             if DEBUG:
                 print(count_rows, " / 59674")
-
-            if (progress != None and window != None and count_rows % 500 == 0):
-                progress['value'] = (count_rows/59674)*50
-                window.update_idletasks()
             count_rows += 1
             if first_row:
                 first_row=False
@@ -84,21 +108,27 @@ def reset_tree(progress = None, window = None):
                 organism_names.append(parsed_row[0])
                 organism_paths.append('../Results/' + kingdom +'/' + group +'/' + subgroup +'/')
             except IndexError : pass
+
     # parse ids files
     ids_files = os.listdir('../GENOME_REPORTS/IDS/')
-
+    print('overview done.')
     organism_names_ids = []
     organism_paths_ids = []
     organism_NC_ids = []
     i = 0
+
     for ids in ids_files:
         i += 1
-        if (progress != None and window != None):
-                progress['value'] = 50 + (i/10)*50
-                window.update_idletasks()
+        progressbar['value'] = 0
+        root.update_idletasks()
         if DEBUG:
             print(str(i) + ' ' * (1 if i >= 10 else 2) + '/ ' + str(len(ids_files)) + ' : ' + ids)
+
         with open('../GENOME_REPORTS/IDS/' + ids) as f:
+            n_line = sum(1 for _ in f)
+
+        with open('../GENOME_REPORTS/IDS/' + ids) as f:
+            print("ids")
             for row in f:
                 parsed_row = row.replace('\n', '').split('\t')
                 if (parsed_row[1][0:2] != 'NC'):
@@ -106,12 +136,17 @@ def reset_tree(progress = None, window = None):
                 try:
                     index = organism_names.index(parsed_row[5])
                 except ValueError:
-                    #if ids == "Archaea.ids" :
-                    #    print(parsed_row)
-                    for i, org in enumerate(organism_names) :
-                        if org in parsed_row[5] :
-                            index = i
+                    parsed_name = parsed_row[5].split(' ')[::-1]
+                    try_name = parsed_row[5]
+                    for word in parsed_name :
+                        try_name = try_name.replace(' '+word, '')
+                        try:
+                            index = organism_names.index(try_name)
                             break
+                        except : pass
+
+                progressbar['value'] += 1/n_line*100
+                root.update_idletasks()
 
                 try:
                     organism_NC_ids[organism_names_ids.index(organism_names[index])].append(parsed_row[1])
@@ -126,6 +161,7 @@ def reset_tree(progress = None, window = None):
                     path = organism_paths[index] + name + "/"
                     if not os.path.exists(path):
                         os.makedirs(path)
+
     organism_df = pd.DataFrame({
                 "name":organism_names_ids,
                 "path":organism_paths_ids,
@@ -135,8 +171,8 @@ def reset_tree(progress = None, window = None):
         os.makedirs("../pickle")
     with open("../pickle/organism_df", 'wb') as f:
         pickle.dump(organism_df, f)
-    print(organism_df)
-    return organism_df
+    root.destroy()
+
 
 def load_df_from_pickle():
     """
@@ -175,7 +211,7 @@ def join(outfile, header_str, selected_region, feature_location, record_fasta, i
         xi = xi.split("..")
         try:
             indexes.append([int(xi[0]),int(xi[1])])
-        except ValueError:
+        except:
             is_valid = False
 
     # check si les index sont dans le bon ordre
@@ -198,7 +234,8 @@ def join(outfile, header_str, selected_region, feature_location, record_fasta, i
         for xi in indexes:
             if(check_inf_sup(xi[0],xi[1]) == False):
                 is_valid = False
-            fn.append(FeatureLocation(xi[0]-1, xi[1]))
+            else :
+                fn.append(FeatureLocation(xi[0]-1, xi[1]))
         if not is_valid:
             return
     
@@ -259,7 +296,7 @@ def extract(outfile, header_str, selected_region, feature_location, record_fasta
     outfile.write(write_buffer + "\n")
     return
 
-def handler(signum, frame):
+def handler():
     print("Timeout, NC skipped")
     raise Exception("end of time")
 
@@ -286,7 +323,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             print("NC id  =", NC)
             print("----------------------------")
         handle_fasta = Entrez.efetch(db="nucleotide", id=NC, rettype="fasta", retmode="text")
-
+        '''
         signal.signal(signal.SIGALRM, handler)
         signal.alarm(10)
         try:
@@ -294,10 +331,19 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
         except Exception:
             continue
         signal.alarm(0)
+        '''
+        try:
+            record_fasta = timeout(timeout=10)(SeqIO.read)(handle_fasta, "fasta")
+        except:
+            try :
+                record_fasta = SeqIO.read(handle_fasta, "fasta")
+            except ValueError :
+                pass
 
         if DEBUG:
             print(record_fasta)
             print("----------------------------")
+            
         handle_fasta.close()
         handle_text = Entrez.efetch(db="nucleotide", id=NC, retmode="xml")
         record = Entrez.read(handle_text)
@@ -338,7 +384,10 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
 
                 else:
                     extract(out, header_str, selected_region, feature_location, record_fasta, False)
-    
+            if os.stat(path + name + "/" + NC_filename).st_size == 0:
+                        os.remove(path + name + "/" + NC_filename)
+                        nb_region_found -= 1
+
     if nb_region_found == 0:
         print("Selected functional region not found for organism : [" + name + "]")
         return 0
@@ -354,8 +403,5 @@ def check_inf_sup(inf,sup):
 # TODOLIST
 # print chaque exons pour les joins ??? cf sujet
 # update arbre plus rapidement
-# icons (pastilles colorees)
 # pas de bleu (parce que!)
-# "19 items downloaded pour les archaea CDS: certainement pas !!!" ???
-# autre regions fonctionnelles
 # Viruses missing files and directory ...

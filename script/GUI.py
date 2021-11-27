@@ -6,7 +6,6 @@ from ttkwidgets import CheckboxTreeview
 import os
 import time
 import ctypes
-from threading import Thread
 
 import fetch as fetch
 
@@ -15,19 +14,28 @@ try:
 except:
     pass # doesn't work on linux
 
+def launch_welcome() :
+    root = Tk()
+    root.title("Genbank - Welcome")
+
+    Label(root, text="Création de l'arborescence en cours...").pack(side = LEFT, anchor=  W, padx = 15, pady = 15)
+    progressbar = ttk.Progressbar(root, orient = HORIZONTAL, length = 100, mode = 'determinate')
+    progressbar.pack( padx = 15, pady = 15)
+
+    root.after(200,  lambda : fetch.reset_tree(root, progressbar))
+    root.mainloop()
+
 class GUI:
     def __init__(self):
         # attribute
+        launch_welcome()
         self.organism_df = fetch.load_df_from_pickle()
-        self.is_in_critical_section = False
+
         # Creating window
         self.window = Tk()
         self.window.geometry("1200x800")
         self.window.title("GenBank Application")
         
-        # icons for treeview
-        # self.im_red = PhotoImage('../folder_2.png')
-
         self.tree_array = []
         self.org_selected = []
         # Frame 1 : Liste des fichiers
@@ -35,16 +43,13 @@ class GUI:
         #self.treeview.bind("<<TreeviewSelect>>", self.on_tree_select)
         self.treeview.bind("<Button-1>", self.box_click, True)
         # Frame 2 : Informations
-        (self.Info, self.Info_lab, self.Info_lab1, self.labelText, self.text_row) = self.create_info()
+        (self.Info, self.Info_lab1, self.labelText) = self.create_info()
 
         # Frame 3 : Logs
         (self.Logs, self.Logs_lab, self.log_text, self.log_scroll) = self.create_log()
 
         # Regions menu
         (self.selected_region, self.menu_menu, self.run_search, self.OptionList_region) = self.create_region_menu()
-
-        # t = Thread (target = self.update_tree_tags)
-        # t.start()
 
         # Start mainloop
         self.window.mainloop()
@@ -115,29 +120,20 @@ class GUI:
     # INFO CREATION METHODS
     def create_info(self):
         Info = Frame(self.window)
-        Info.place(x=400, y=0, anchor="nw", width=800, height=300)
-
-        Info_lab = LabelFrame(Info, text="Selectionner un organisme", padx=20, pady=20)
-        Info_lab.pack(fill="both", expand="yes")
+        Info.place(x=400, y=0, anchor="nw", width=800, height=150)
 
         Info_lab1 = LabelFrame(Info, text="Selectionner une région fonctionnelle", padx=20, pady=20)
         Info_lab1.pack(fill="both", expand="yes")
 
         labelText = StringVar(value='Aucun')
-        '''
-        depositLabel = Label(Info_lab, textvariable=labelText)
-        depositLabel.grid(row = 0, column = 1, sticky = W)
-        '''
-        text_row = Label(Info_lab, text="Organisme choisi : " + labelText.get())
-        text_row.grid(row = 0, column = 0, sticky = W, ipadx = 100, ipady = 10)
 
-        Label(Info_lab1, justify = LEFT, text="Région fonctionnelle choisie : ").grid(row = 1, column = 0, sticky = W, ipadx = 100, ipady = 10)
-        return Info, Info_lab, Info_lab1, labelText, text_row
+        Label(Info_lab1, justify = LEFT, text="Région fonctionnelle choisie : ").grid(row = 1, column = 0, sticky = W, ipadx = 50, ipady = 10)
+        return Info, Info_lab1, labelText
 
     # LOG CREATION METHODS
     def create_log(self):
         Logs = Frame(self.window, background="#b22222")
-        Logs.place(x=400, y=300, anchor="nw", width=802, height=500)
+        Logs.place(x=400, y=150, anchor="nw", width=802, height=650)
 
         Logs_lab = LabelFrame(Logs, text="Logs")
         Logs_lab.pack(fill="both", expand="yes")
@@ -146,7 +142,7 @@ class GUI:
         log_text = Text(Logs_lab, height=400, wrap=WORD, width=800, padx=5, pady=5)
         log_scroll = Scrollbar(Logs_lab, command = log_text.yview)
         log_text.configure(yscrollcommand=log_scroll.set)
-
+        log_text.bindtags((str(log_text), str(Logs_lab), "all"))
         log_text.pack(side=LEFT)
         log_scroll.pack(side=RIGHT, fill=Y)
         return Logs, Logs_lab, log_text, log_scroll
@@ -177,7 +173,7 @@ class GUI:
         variable.trace("w", self.callback)
 
         run_search = Button(self.Info_lab1, text ="Search", command = self.search_button_callback, borderwidth=1)
-        run_search.grid(row = 2, columnspan = 3, ipadx = 20, pady = 15, padx = 30)
+        run_search.grid(row = 1, column = 2, ipadx = 20, pady = 15, padx = 50)
         return variable, menu, run_search, OptionList
 
     # FEATURES METHODS
@@ -198,8 +194,6 @@ class GUI:
             if is_leaf:
                 continue
 
-
-            self.window.update()
         self.print_on_window("Tree updated")
 
     def print_on_window(self, t): #affiche t dans les logs
@@ -219,20 +213,15 @@ class GUI:
         return ('..' + path)
 
     def search_button_callback(self): # Fonction boutton
-        if self.is_in_critical_section:
-            return
 
         self.print_on_window("Searching")
-        self.is_in_critical_section = True
         if self.org_selected == [] :
             self.print_on_window("No organism selected")
             self.window.update()
-            self.is_in_critical_section = False
             return
         elif self.selected_region.get() == 'Aucun':
             self.print_on_window("No functional region selected")
             self.window.update()
-            self.is_in_critical_section = False
             return
         else :
             org_done = []
@@ -244,20 +233,26 @@ class GUI:
                     path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
                     nb_new_region_found = -1
                     if path_full == current_path and name not in org_done:
+                        print(name)
                         c += 1
+                        if(self.selected_region.get() == 'CDS'):
+                            fetch.load_data_from_NC(index, name, path, NC_list, 'intron')
                         self.window.update()
                         nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
                         org_done.append(name)
                         if nb_new_region_found == 0:
                             self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
+                            c -= 1
                         else:
-                            self.print_on_window("[" + name + "] downloaded ")
+                            self.print_on_window("[" + self.selected_region.get() + "] for [" + name + "] downloaded ")
                         self.window.update()
                         nb_region_found += nb_new_region_found
                         break
                     elif current_path in path_full and name not in org_done:
                         c += 1
                         self.window.update()
+                        if(self.selected_region.get() == 'CDS'):
+                            fetch.load_data_from_NC(index, name, path, NC_list, 'intron')
                         nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
                         org_done.append(name)
                     if nb_new_region_found != -1:
@@ -265,31 +260,24 @@ class GUI:
 
                         if nb_new_region_found == 0:
                             self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
+                            c -= 1
                         else:
-                            self.print_on_window("[" + name + "] downloaded ")
+                            self.print_on_window("[" + self.selected_region.get() + "] for [" + name + "] downloaded ")
                         self.window.update()
                         nb_region_found += nb_new_region_found
                 if nb_region_found == 0:
                     self.window.update()
-                    self.is_in_critical_section = False
-                    self.print_on_window("Research finished")
-                    return
-                # if c != 0:
-                #     t = Thread (target = self.update_tree_tags)
-                #     t.start()
-                self.print_on_window(str(c) + " items downloaded")
 
+
+        self.print_on_window(str(c) + " items downloaded")
         self.window.update()
         self.print_on_window("--------------------Research finished--------------------")
-        self.is_in_critical_section = False
 
 
     def on_tree_select(self, event): #on recupere l'organisme dans item, A GARDER ?????
             for item in self.treeview.selection():
                 item_text = self.treeview.item(item,"text")
                 self.labelText.set(item_text)
-                self.text_row = Label(self.Info_lab, text="Organisme choisi : " + self.labelText.get())
-                self.text_row.grid(row = 0, column = 0, sticky = W, ipadx = 100, ipady = 10)
 
 if __name__ == "__main__":
     App = GUI()
