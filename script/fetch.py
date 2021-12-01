@@ -20,7 +20,7 @@ import functools
 
 save_pickle = False
 DEBUG = False
-
+VERBOSE = False
 
 def timeout(timeout):
     def deco(func):
@@ -54,7 +54,6 @@ def reset_tree(root, progressbar, progress = None, window = None):
     # delete previous tree
     if os.path.exists('../Results'):
         shutil.rmtree('../Results')
-
     # update with new report from website
     if os.path.exists('../GENOME_REPORTS/overview.txt') :
         t = os.path.getmtime("../GENOME_REPORTS/overview.txt")
@@ -80,8 +79,8 @@ def reset_tree(root, progressbar, progress = None, window = None):
         ftp.cwd('IDS')  # changer de répertoire courant
         for filename in ftp.nlst():
             ftp.retrbinary('RETR '+ filename, open("IDS/" + filename, 'wb').write)
-
-    print("download done.")
+    if VERBOSE:
+        print("download done.")
     # parse overview.txt
     organism_names = []
     organism_paths = []
@@ -111,7 +110,8 @@ def reset_tree(root, progressbar, progress = None, window = None):
 
     # parse ids files
     ids_files = os.listdir('../GENOME_REPORTS/IDS/')
-    print('overview done.')
+    if VERBOSE:
+        print('overview done.')
     organism_names_ids = []
     organism_paths_ids = []
     organism_NC_ids = []
@@ -128,7 +128,8 @@ def reset_tree(root, progressbar, progress = None, window = None):
             n_line = sum(1 for _ in f)
 
         with open('../GENOME_REPORTS/IDS/' + ids) as f:
-            print("ids")
+            if VERBOSE:
+                print("ids")
             for row in f:
                 parsed_row = row.replace('\n', '').split('\t')
                 if (parsed_row[1][0:2] != 'NC'):
@@ -297,7 +298,8 @@ def extract(outfile, header_str, selected_region, feature_location, record_fasta
     return
 
 def handler():
-    print("Timeout, NC skipped")
+    if VERBOSE:
+        print("Timeout, NC skipped")
     raise Exception("end of time")
 
 def load_data_from_NC(index, name, path, NC_list, selected_region):
@@ -306,13 +308,16 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
     """
     Entrez.email = ''.join(random.choice(string.ascii_lowercase) for i in range(20))+'@'+''.join(random.choice(string.ascii_lowercase) for i in range(20))+ '.com'
     nb_region_found = 0
-    print()
-    print("downloading [" + name + "]")
+    if VERBOSE:
+        print()
+        print("downloading [" + name + "]")
     # remove duplicate NC
     NC_list = list(dict.fromkeys(NC_list))
-    print(NC_list)
+    if VERBOSE:
+        print(NC_list)
     for NC in NC_list:
-        print("\t", NC)
+        if VERBOSE:
+            print("\t", NC)
         if DEBUG == True :
             print(str(NC) + " / " + str(len(NC_list)))
         name = name.replace(" ", "_")
@@ -389,9 +394,11 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                         nb_region_found -= 1
 
     if nb_region_found == 0:
-        print("Selected functional region not found for organism : [" + name + "]")
+        if VERBOSE:
+            print("Selected functional region not found for organism : [" + name + "]")
         return 0
-    print(name + " downloaded")
+    if VERBOSE:
+        print(name + " downloaded")
     return nb_region_found
 
 def check_inf_sup(inf,sup):
@@ -399,9 +406,3 @@ def check_inf_sup(inf,sup):
         return True
     else:
         return False
-
-# TODOLIST
-# print chaque exons pour les joins ??? cf sujet
-# update arbre plus rapidement
-# pas de bleu (parce que!)
-# Viruses missing files and directory ...

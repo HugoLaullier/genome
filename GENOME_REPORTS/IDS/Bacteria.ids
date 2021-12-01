@@ -13,6 +13,12 @@
 329726	NC_009932	158341329	0	CP000844	Acaryochloris marina MBIC11017	plasmid pREB7  
 329726	NC_009933	158341503	0	CP000845	Acaryochloris marina MBIC11017	plasmid pREB8  
 329726	NC_009934	158341621	0	CP000846	Acaryochloris marina MBIC11017	plasmid pREB9  
+720554	NC_016627	374294493	0	CP003065	Acetivibrio clariflavus DSM 19732
+1515	NC_021652	521300460	0	KC920663	Acetivibrio thermocellus	plasmid pEBM107  
+1515	NC_021653	521300466	0	KC920664	Acetivibrio thermocellus	plasmid pEBM113  
+1515	NC_021665	521300472	0	KC788287	Acetivibrio thermocellus	plasmid pEBM130  
+203119	NC_009012	125972525	0	CP000568	Acetivibrio thermocellus ATCC 27405
+637887	NC_017304	385777386	0	CP002416	Acetivibrio thermocellus DSM 1313
 1511	NC_014614	310657316	0	FP565809	Acetoanaerobium sticklandii
 435	NC_001275	10955174	0	AF110140	Acetobacter aceti	plasmid pAC5  
 435	NC_022074	530712421	0	KC871566	Acetobacter aceti	plasmid pAG20  
@@ -292,24 +298,26 @@
 382245	NC_004924	32453769	0	AY301065	Aeromonas salmonicida subsp. salmonicida A449	plasmid pAsa3  
 646	NC_016611	376008128	0	JN315884	Aeromonas sobria	plasmid pAQ2-1  
 998088	NC_015424	330827700	0	CP002607	Aeromonas veronii B565
+1031710	NC_017538	386028266	0	CP002821	Afipia carboxidovorans OM4
+1031710	NC_017536	386031648	0	CP002822	Afipia carboxidovorans OM4	plasmid pHCG3B  
+1031710	NC_017539	386031806	0	CP002823	Afipia carboxidovorans OM4	plasmid pOC167B  
+504832	NC_015684	337739247	0	CP002826	Afipia carboxidovorans OM5
+504832	NC_011386	209883160	0	CP001196	Afipia carboxidovorans OM5
+504832	NC_015689	337739122	0	CP002827	Afipia carboxidovorans OM5	plasmid pHCG3  
+504832	NC_015685	337738957	0	CP002828	Afipia carboxidovorans OM5	plasmid pOC167  
 714	NC_021724	523518423	0	JX436327	Aggregatibacter actinomycetemcomitans	plasmid pS23A  
 714	NC_002579	10954409	0	AF302424	Aggregatibacter actinomycetemcomitans	plasmid pVT745  
 694569	NC_017846	1041842021	0	CP003496	Aggregatibacter actinomycetemcomitans D7S-1
 634176	NC_012913	251791816	0	CP001607	Aggregatibacter aphrophilus NJ8700
+1183401	NC_015183	325291453	0	CP002248	Agrobacterium fabacearum	chromosome circular  
+1183401	NC_015508	332715374	0	CP002249	Agrobacterium fabacearum	chromosome linear  
+1183401	NC_015184	325168279	0	CP002250	Agrobacterium fabacearum	plasmid pAspH13-3a  
 176299	NC_003064	159186452	0	AE007872	Agrobacterium fabrum str. C58	plasmid At  
 176299	NC_003065	159161952	0	AE007871	Agrobacterium fabrum str. C58	plasmid Ti  
 176299	NC_003062	159184118	0	AE007869	Agrobacterium fabrum str. C58	chromosome circular  
 176299	NC_003063	159185562	0	AE007870	Agrobacterium fabrum str. C58	chromosome linear  
-311403	NC_011985	222084201	0	CP000628	Agrobacterium radiobacter K84	chromosome 1  
-311403	NC_011983	222080781	0	CP000629	Agrobacterium radiobacter K84	chromosome 2  
-311403	NC_011994	222112705	0	CP000632	Agrobacterium radiobacter K84	plasmid pAgK84  
-311403	NC_011990	222108940	0	CP000630	Agrobacterium radiobacter K84	plasmid pAtK84b  
-311403	NC_011987	222101962	0	CP000631	Agrobacterium radiobacter K84	plasmid pAtK84c  
 359	NC_002575	10954646	0	AP002086	Agrobacterium rhizogenes	plasmid pRi1724  
 359	NC_010841	190404344	0	EU186381	Agrobacterium rhizogenes	plasmid pRi2659  
-861208	NC_015183	325291453	0	CP002248	Agrobacterium sp. H13-3	chromosome circular  
-861208	NC_015508	332715374	0	CP002249	Agrobacterium sp. H13-3	chromosome linear  
-861208	NC_015184	325168279	0	CP002250	Agrobacterium sp. H13-3	plasmid pAspH13-3a  
 358	NC_002377	10955016	0	AF242881	Agrobacterium tumefaciens	plasmid Ti  
 358	NC_010929	190014640	0	DQ058764	Agrobacterium tumefaciens	plasmid Ti plasmid pTiBo542  
 358	NC_006277	71754380	0	AY442931	Agrobacterium tumefaciens	plasmid pAgK84  
@@ -325,6 +333,16 @@
 349741	NC_010655	187734516	0	CP001071	Akkermansia muciniphila ATCC BAA-835
 393595	NC_008260	110832861	0	AM286690	Alcanivorax borkumensis SK2
 930169	NC_018691	407693844	0	CP003466	Alcanivorax dieselolei B5
+28197	NC_025153	691228885	0	KF740630	Aliarcobacter butzleri	plasmid AB-1119-LD  
+28197	NC_025125	691228878	0	KF740633	Aliarcobacter butzleri	plasmid AB-1163-LD  
+28197	NC_025124	691228868	0	KF740632	Aliarcobacter butzleri	plasmid AB-1166-LD  
+28197	NC_025123	691228856	0	KF740631	Aliarcobacter butzleri	plasmid AB-1167-LD  
+28197	NC_023902	691228854	0	KF955987	Aliarcobacter butzleri	plasmid pDWAN  
+28197	NC_012733	238897249	0	EU707943	Aliarcobacter butzleri	plasmid unnamed  
+1036172	NC_021878	526459392	0	CP006615	Aliarcobacter butzleri 7h1h
+944546	NC_017187	384154712	0	AP012047	Aliarcobacter butzleri ED-1
+367737	NC_009850	157736271	0	CP000361	Aliarcobacter butzleri RM4018
+28198	NC_025126	691519974	0	KF740634	Aliarcobacter cryaerophilus	plasmid AC-6347-LD  
 596153	NC_014910	319760738	0	CP002449	Alicycliphilus denitrificans BC
 596153	NC_014908	319760024	0	CP002450	Alicycliphilus denitrificans BC	plasmid pALIDE01  
 596153	NC_014911	319765069	0	CP002451	Alicycliphilus denitrificans BC	plasmid pALIDE02  
@@ -353,12 +371,26 @@
 316275	NC_011311	215778350	0	FM178381	Aliivibrio salmonicida LFI1238	plasmid pVSAL840  
 679935	NC_018011	390945347	0	CP003274	Alistipes finegoldii DSM 17242
 717959	NC_021030	479185170	0	FP929032	Alistipes shahii WAL 8301
+66692	NC_006582	56961782	0	AP006627	Alkalihalobacillus clausii KSM-K16
+272558	NC_002570	57596592	0	BA000004	Alkalihalobacillus halodurans C-125
+398511	NC_013791	316994385	0	CP001878	Alkalihalobacillus pseudofirmus OF4
+398511	NC_013792	288561476	0	CP001879	Alkalihalobacillus pseudofirmus OF4	plasmid pBpOF4-01  
+398511	NC_013793	288557107	0	CP001880	Alkalihalobacillus pseudofirmus OF4	plasmid pBpOF4-02  
 187272	NC_008340	114319166	0	CP000453	Alkalilimnicola ehrlichii MLHE-1
 293826	NC_009633	150387853	0	CP000724	Alkaliphilus metalliredigens QYMF
 350688	NC_009922	158319059	0	CP000853	Alkaliphilus oremlandii OhILAs
 572477	NC_013851	288939764	0	CP001896	Allochromatium vinosum DSM 180
 572477	NC_013852	288947674	0	CP001897	Allochromatium vinosum DSM 180	plasmid pALVIN01  
 572477	NC_013862	288986931	0	CP001898	Allochromatium vinosum DSM 180	plasmid pALVIN02  
+1173027	NC_019738	428308377	0	CP003630	Allocoleopsis franciscana PCC 7113
+1173027	NC_019739	428314405	0	CP003631	Allocoleopsis franciscana PCC 7113	plasmid pMIC7113.01  
+1173027	NC_019760	428314740	0	CP003632	Allocoleopsis franciscana PCC 7113	plasmid pMIC7113.02  
+1173027	NC_019740	428314593	0	CP003633	Allocoleopsis franciscana PCC 7113	plasmid pMIC7113.03  
+1173027	NC_019761	428314544	0	CP003634	Allocoleopsis franciscana PCC 7113	plasmid pMIC7113.04  
+1173027	NC_019741	428314670	0	CP003635	Allocoleopsis franciscana PCC 7113	plasmid pMIC7113.05  
+1173027	NC_019742	428314511	0	CP003636	Allocoleopsis franciscana PCC 7113	plasmid pMIC7113.06  
+1173027	NC_019762	428314808	0	CP003637	Allocoleopsis franciscana PCC 7113	plasmid pMIC7113.07  
+1173027	NC_019743	428314710	0	CP003638	Allocoleopsis franciscana PCC 7113	plasmid pMIC7113.08  
 529120	NC_018632	406595001	0	CP003841	Alteromonas macleodii ATCC 27126
 1004787	NC_018679	407685798	0	CP003873	Alteromonas macleodii str. 'Balearic Sea AD45'
 1004787	NC_018680	407689711	0	CP003874	Alteromonas macleodii str. 'Balearic Sea AD45'	plasmid pAMBAS45  
@@ -368,6 +400,8 @@
 1004786	NC_019393	410859653	0	CP003917	Alteromonas mediterranea DE1
 1004786	NC_019394	410863773	0	CP003918	Alteromonas mediterranea DE1	plasmid pAMDE1-300  
 1300254	NC_023045	566716565	0	CP004848	Alteromonas mediterranea MED64
+1300255	NC_021710	522567641	0	CP004849	Alteromonas mediterranea U4
+1300255	NC_021711	522574444	0	CP004850	Alteromonas mediterranea U4	plasmid unnamed  
 1300256	NC_021717	522665969	0	CP004851	Alteromonas mediterranea U7
 1300259	NC_021714	522813769	0	CP004855	Alteromonas mediterranea UM4b
 1300258	NC_021713	522612259	0	CP004853	Alteromonas mediterranea UM7
@@ -404,6 +438,7 @@
 290397	NC_007760	86156430	0	CP000251	Anaeromyxobacter dehalogenans 2CP-C
 404589	NC_009675	153002879	0	CP000769	Anaeromyxobacter sp. Fw109-5
 447217	NC_011145	197120421	0	CP001131	Anaeromyxobacter sp. K
+649756	NC_021016	479158859	0	FP929061	Anaerostipes hadrus
 574556	NC_013532	269958255	0	CP001759	Anaplasma centrale str. Israel
 1412841	NC_022760	557237421	0	CP006847	Anaplasma marginale str. Dawn
 320483	NC_012026	222474741	0	CP001079	Anaplasma marginale str. Florida
@@ -416,17 +451,8 @@
 491915	NC_011567	212637849	0	CP000922	Anoxybacillus flavithermus WK1
 224324	NC_000918	15282445	0	AE000657	Aquifex aeolicus VF5
 224324	NC_001880	10957041	0	AE000667	Aquifex aeolicus VF5	plasmid ece1  
+767029	NC_018142	397668839	0	CP002734	Arachnia propionica F0230a
 644284	NC_014218	297570613	0	CP002045	Arcanobacterium haemolyticum DSM 20595
-28197	NC_025153	691228885	0	KF740630	Arcobacter butzleri	plasmid AB-1119-LD  
-28197	NC_025125	691228878	0	KF740633	Arcobacter butzleri	plasmid AB-1163-LD  
-28197	NC_025124	691228868	0	KF740632	Arcobacter butzleri	plasmid AB-1166-LD  
-28197	NC_025123	691228856	0	KF740631	Arcobacter butzleri	plasmid AB-1167-LD  
-28197	NC_023902	691228854	0	KF955987	Arcobacter butzleri	plasmid pDWAN  
-28197	NC_012733	238897249	0	EU707943	Arcobacter butzleri	plasmid unnamed  
-1036172	NC_021878	526459392	0	CP006615	Arcobacter butzleri 7h1h
-944546	NC_017187	384154712	0	AP012047	Arcobacter butzleri ED-1
-367737	NC_009850	157736271	0	CP000361	Arcobacter butzleri RM4018
-28198	NC_025126	691519974	0	KF740634	Arcobacter cryaerophilus	plasmid AC-6347-LD  
 572480	NC_014166	296271545	0	CP001999	Arcobacter nitrofigilis DSM 7299
 76114	NC_006513	56475432	0	CR555306	Aromatoleum aromaticum EbN1
 76114	NC_006823	58616149	0	CR555307	Aromatoleum aromaticum EbN1	plasmid 1  
@@ -458,7 +484,6 @@
 573065	NC_014817	315499382	0	CP002396	Asticcacaulis excentricus CB 48	chromosome 2  
 573065	NC_014818	315500504	0	CP002397	Asticcacaulis excentricus CB 48	plasmid pASTEX01  
 573065	NC_014819	315500677	0	CP002398	Asticcacaulis excentricus CB 48	plasmid pASTEX02  
-521095	NC_013203	257783814	0	CP001721	Atopobium parvulum DSM 20469
 728	NC_005245	38638188	0	AY300023	Avibacterium paragallinarum	plasmid p250  
 728	NC_010912	190570473	0	EF015636	Avibacterium paragallinarum	plasmid pYMH5  
 418699	NC_008702	119896292	0	AM406670	Azoarcus olearius
@@ -519,7 +544,6 @@
 768494	NC_017727	386733762	0	CP002093	Bacillus anthracis str. H9401	plasmid BAP2  
 260799	NC_005945	49183039	0	AE017225	Bacillus anthracis str. Sterne
 720555	NC_014639	311066968	0	CP002207	Bacillus atrophaeus 1942
-649639	NC_014829	317126741	0	CP002394	Bacillus cellulosilyticus DSM 2522
 1396	NC_025012	690316214	0	AB083655	Bacillus cereus	plasmid pBC-Tim  
 1396	NC_001705	9507392	0	U32369	Bacillus cereus	plasmid pBC16  
 1396	NC_010933	190015734	0	DQ889679	Bacillus cereus	plasmid pBC210  
@@ -572,13 +596,8 @@
 637380	NC_014333	300885230	0	CP001749	Bacillus cereus biovar anthracis str. CI	plasmid pBAslCI14  
 637380	NC_014331	301068040	0	CP001747	Bacillus cereus biovar anthracis str. CI	plasmid pCI-XO1  
 637380	NC_014332	301067930	0	CP001748	Bacillus cereus biovar anthracis str. CI	plasmid pCI-XO2  
-66692	NC_006582	56961782	0	AP006627	Bacillus clausii KSM-K16
-1398	NC_010853	190404491	0	EF015591	Bacillus coagulans	plasmid pMSR0  
-941639	NC_015634	336112679	0	CP002472	Bacillus coagulans 2-6
-345219	NC_016023	347750441	0	CP003056	Bacillus coagulans 36D1
 315749	NC_009674	152973854	0	CP000764	Bacillus cytotoxicus NVH 391-98
 315749	NC_009673	152973842	0	CP000765	Bacillus cytotoxicus NVH 391-98	plasmid pBC9801  
-272558	NC_002570	57596592	0	BA000004	Bacillus halodurans C-125
 1367477	NC_022524	549473062	0	CP006643	Bacillus infantis NRRL B-14911
 1400	NC_025174	691509353	0	AJ006407	Bacillus intermedius	plasmid pET3xa-barn36  
 1402	NC_006959	62464797	0	AJ748844	Bacillus licheniformis	plasmid pBL63.1  
@@ -587,19 +606,6 @@
 1402	NC_011396	689914557	0	AJ495760	Bacillus licheniformis	plasmid pFL7  
 279010	NC_006322	52783855	0	AE017333	Bacillus licheniformis DSM 13 = ATCC 14580
 279010	NC_006270	163119169	0	CP000002	Bacillus licheniformis DSM 13 = ATCC 14580
-592022	NC_014103	295702242	0	CP001982	Bacillus megaterium DSM 319
-545693	NC_014019	294496875	0	CP001983	Bacillus megaterium QM B1551
-545693	NC_010008	294672670	0	CP001984	Bacillus megaterium QM B1551	plasmid pBM100  
-545693	NC_010009	294672655	0	CP001985	Bacillus megaterium QM B1551	plasmid pBM200  
-545693	NC_010010	294672678	0	CP001986	Bacillus megaterium QM B1551	plasmid pBM300  
-545693	NC_004604	294663009	0	CP001987	Bacillus megaterium QM B1551	plasmid pBM400  
-545693	NC_014025	294509091	0	CP001988	Bacillus megaterium QM B1551	plasmid pBM500  
-545693	NC_014031	294505704	0	CP001989	Bacillus megaterium QM B1551	plasmid pBM600  
-545693	NC_014023	294508916	0	CP001990	Bacillus megaterium QM B1551	plasmid pBM700  
-1006007	NC_017138	384044176	0	CP003017	Bacillus megaterium WSH-002
-1006007	NC_017139	384044106	0	CP003018	Bacillus megaterium WSH-002	plasmid WSH-002_p1  
-1006007	NC_017140	384044079	0	CP003019	Bacillus megaterium WSH-002	plasmid WSH-002_p2  
-1006007	NC_017141	384044091	0	CP003020	Bacillus megaterium WSH-002	plasmid WSH-002_p3  
 796606	NC_005328	41057044	0	AY386314	Bacillus methanolicus MGA3	plasmid pBM19  
 1405	NC_005703	44003838	0	AJ243967	Bacillus mycoides	plasmid pBMY1  
 1405	NC_005704	44003873	0	AJ272266	Bacillus mycoides	plasmid pBMYdx  
@@ -611,9 +617,6 @@
 315730	NC_010182	163937865	0	CP000906	Bacillus mycoides KBAB4	plasmid pBWB403  
 315730	NC_010183	163937941	0	CP000907	Bacillus mycoides KBAB4	plasmid pBWB404  
 766760	NC_021362	511060863	0	CP005965	Bacillus paralicheniformis ATCC 9945a
-398511	NC_013791	316994385	0	CP001878	Bacillus pseudofirmus OF4
-398511	NC_013792	288561476	0	CP001879	Bacillus pseudofirmus OF4	plasmid pBpOF4-01  
-398511	NC_013793	288557107	0	CP001880	Bacillus pseudofirmus OF4	plasmid pBpOF4-02  
 1408	NC_001858	10956475	0	AF036712	Bacillus pumilus	plasmid pPL10  
 1408	NC_004932	32455491	0	AY230134	Bacillus pumilus	plasmid pPL7065  
 1408	NC_013534	270208362	0	GU144016	Bacillus pumilus	plasmid pPZZ84  
@@ -646,7 +649,7 @@
 1052585	NC_016047	350264100	0	CP002905	Bacillus subtilis subsp. spizizenii TU-B-10
 655816	NC_014479	305672698	0	CP002183	Bacillus subtilis subsp. spizizenii str. W23
 1147161	NC_020507	470160151	0	CP003329	Bacillus subtilis subsp. subtilis 6051-HGW
-535026	NC_021809	526444490	0	KF365913	Bacillus subtilis subsp. subtilis NCIB 3610 = ATCC 6051	plasmid pBS32  
+535026	NC_021809	526444490	0	KF365913	Bacillus subtilis subsp. subtilis NCIB 3610 = ATCC 6051 = DSM 10	plasmid pBS32  
 224308	NC_000964	255767013	0	AL009126	Bacillus subtilis subsp. subtilis str. 168
 1302650	NC_020832	472328503	0	CP004405	Bacillus subtilis subsp. subtilis str. BAB-1
 1192196	NC_019896	430755491	0	CP003695	Bacillus subtilis subsp. subtilis str. BSP1
@@ -772,12 +775,14 @@
 817	NC_019534	425702609	0	AB646744	Bacteroides fragilis	plasmid pBFUK1  
 817	NC_005026	32470338	0	U30316	Bacteroides fragilis	plasmid pBI143  
 862962	NC_016776	375356399	0	FQ312004	Bacteroides fragilis 638R
+272559	NC_003228	60679597	0	CR626927	Bacteroides fragilis NCTC 9343
+272559	NC_006873	60650141	0	CR626928	Bacteroides fragilis NCTC 9343	plasmid pBF9343  
 295405	NC_006347	53711291	0	AP006841	Bacteroides fragilis YCH46
 295405	NC_006297	52421214	0	AP006842	Bacteroides fragilis YCH46	plasmid pBFY46  
 693979	NC_014933	319899888	0	CP002352	Bacteroides helcogenes P 36-108
 226186	NC_004663	29345410	0	AE015928	Bacteroides thetaiotaomicron VPI-5482
 226186	NC_004703	29611500	0	AY171301	Bacteroides thetaiotaomicron VPI-5482	plasmid p5482  
-435590	NC_009614	150002608	0	CP000139	Bacteroides vulgatus ATCC 8482
+657309	NC_021017	479162165	0	FP929033	Bacteroides xylanisolvens XB1A
 1094489	NC_020300	451940044	0	CP003123	Bartonella australis Aust/NH1
 360095	NC_008783	121601635	0	CP000524	Bartonella bacilliformis KC583
 696125	NC_014932	319898193	0	FN645454	Bartonella clarridgeiae 73
@@ -886,6 +891,7 @@
 1316444	NC_022551	549734475	0	CP005489	Blattabacterium sp. (Nauphoeta cinerea)	plasmid unnamed  
 600809	NC_013418	295656029	0	CP001429	Blattabacterium sp. (Periplaneta americana) str. BPLAN
 600809	NC_013419	261599111	0	CP001430	Blattabacterium sp. (Periplaneta americana) str. BPLAN	plasmid pBPLAN  
+657314	NC_021022	479176048	0	FP929054	Blautia obeum A2-162
 360910	NC_010645	187476514	0	AM167904	Bordetella avium 197N
 518	NC_025015	690517784	0	X66730	Bordetella bronchiseptica	plasmid pBBR1  
 568707	NC_019382	412337338	0	HE965806	Bordetella bronchiseptica 253
@@ -1205,7 +1211,6 @@
 498739	NC_012170	224984172	0	CP001476	Borreliella burgdorferi CA-11.2A	plasmid CA-11.2A_lp38  
 498739	NC_012194	224796867	0	CP001473	Borreliella burgdorferi CA-11.2A	plasmid CA-11.2A_lp54  
 498739	NC_012203	224797079	0	CP001474	Borreliella burgdorferi CA-11.2A	plasmid CA-11.2A_lp56  
-1328311	NC_022048	530320924	0	CP005925	Borreliella burgdorferi CA382
 521008	NC_017403	387825662	0	CP002312	Borreliella burgdorferi JD1
 521008	NC_017395	387825554	0	CP002316	Borreliella burgdorferi JD1	plasmid JD1 cp26  
 521008	NC_017394	387825484	0	CP002310	Borreliella burgdorferi JD1	plasmid JD1 cp32-1+5  
@@ -1339,12 +1344,19 @@
 430066	NC_010740	189022234	0	CP000888	Brucella abortus S19	chromosome 2  
 262698	NC_006932	62288991	0	AE017223	Brucella abortus bv. 1 str. 9-941	chromosome I  
 262698	NC_006933	62316961	0	AE017224	Brucella abortus bv. 1 str. 9-941	chromosome II  
+529	NC_010917	190570377	0	DQ979387	Brucella anthropi	plasmid pW240  
+439375	NC_009667	153007346	0	CP000758	Brucella anthropi ATCC 49188	chromosome 1  
+439375	NC_009668	153010078	0	CP000759	Brucella anthropi ATCC 49188	chromosome 2  
+439375	NC_009669	153011772	0	CP000760	Brucella anthropi ATCC 49188	plasmid pOANT01  
+439375	NC_009670	153011934	0	CP000761	Brucella anthropi ATCC 49188	plasmid pOANT02  
+439375	NC_009671	153012026	0	CP000762	Brucella anthropi ATCC 49188	plasmid pOANT03  
+439375	NC_009672	153012113	0	CP000763	Brucella anthropi ATCC 49188	plasmid pOANT04  
 483179	NC_010103	161617991	0	CP000872	Brucella canis ATCC 23365	chromosome I  
 483179	NC_010104	161620094	0	CP000873	Brucella canis ATCC 23365	chromosome II  
 1104321	NC_016778	376274175	0	CP003174	Brucella canis HSK A52141	chromosome 1  
 1104321	NC_016796	376276498	0	CP003175	Brucella canis HSK A52141	chromosome 2  
-1423891	NC_022905	560146340	0	CP006896	Brucella ceti TE10759-12	chromosome I  
-1423891	NC_022906	560148055	0	CP006897	Brucella ceti TE10759-12	chromosome II  
+1423891	NC_022905	560146340	0	CP006896	Brucella ceti TE10759-12	chromosome 1  
+1423891	NC_022906	560148055	0	CP006897	Brucella ceti TE10759-12	chromosome 2  
 1407053	NC_022907	560148973	0	CP006898	Brucella ceti TE28753-12	chromosome I  
 1407053	NC_022908	560150526	0	CP006899	Brucella ceti TE28753-12	chromosome II  
 546272	NC_012441	225851546	0	CP001488	Brucella melitensis ATCC 23457	chromosome I  
@@ -1420,8 +1432,6 @@
 292	NC_010099	161722691	0	X61927	Burkholderia cepacia	plasmid PPC1  
 292	NC_019378	410691534	0	JX847411	Burkholderia cepacia	plasmid pIJB1  
 292	NC_019369	410687167	0	JX469832	Burkholderia cepacia	plasmid pYS1  
-1009846	NC_018513	402564811	0	CP003774	Burkholderia cepacia GG4	chromosome 1  
-1009846	NC_018514	402567932	0	CP003775	Burkholderia cepacia GG4	chromosome 2  
 999541	NC_015381	330814956	0	CP002599	Burkholderia gladioli BSR3	chromosome 1  
 999541	NC_015376	330819133	0	CP002600	Burkholderia gladioli BSR3	chromosome 2  
 999541	NC_015382	330822218	0	CP002601	Burkholderia gladioli BSR3	plasmid bgla_1p  
@@ -1598,6 +1608,7 @@
 1202536	NC_018414	400403787	0	CP003541	Candidatus Carsonella ruddii CE isolate Thao2000
 1202537	NC_018415	400404025	0	CP003542	Candidatus Carsonella ruddii CS isolate Thao2000
 667013	NC_021894	527324386	0	CP003467	Candidatus Carsonella ruddii DC
+1202538	NC_018416	400404263	0	CP003543	Candidatus Carsonella ruddii HC isolate Thao2000
 1202539	NC_018417	400404501	0	CP003544	Candidatus Carsonella ruddii HT isolate Thao2000
 1202540	NC_018418	400404723	0	CP003545	Candidatus Carsonella ruddii PC isolate NHV
 387662	NC_008512	116334902	0	AP009180	Candidatus Carsonella ruddii PV
@@ -1629,15 +1640,14 @@
 696127	NC_015722	339319317	0	CP002130	Candidatus Midichloria mitochondrii IricVA
 903503	NC_015735	339477722	0	CP002243	Candidatus Moranella endobia PCIT
 1234603	NC_021057	479324019	0	CP003881	Candidatus Moranella endobia PCVAL
-1212765	NC_018219	397691844	0	CP003731	Candidatus Mycoplasma haemolamae str. Purdue
 1116213	NC_021007	479134201	0	HE613254	Candidatus Mycoplasma haemominutum 'Birmingham 1'
-1343077	NC_021919	529067324	0	CP006059	Candidatus Nasuia deltocephalinicola str. NAS-ALF
 1002672	NC_015380	330812975	0	CP002511	Candidatus Pelagibacter sp. IMCC9063
 335992	NC_007205	71082709	0	CP000084	Candidatus Pelagibacter ubique HTCC1062
 59748	NC_010918	190571872	0	DQ119295	Candidatus Phytoplasma australiense	plasmid pCPa  
 59748	NC_010854	190410555	0	DQ318776	Candidatus Phytoplasma australiense	plasmid pPAPh2  
 59748	NC_010856	190410560	0	DQ318777	Candidatus Phytoplasma australiense	plasmid pPASb11  
 37692	NC_011047	194246403	0	CU469464	Candidatus Phytoplasma mali
+69896	NC_022588	554085530	0	FO393427	Candidatus Phytoplasma solani
 2155	NC_002100	10956703	0	AB000510	Candidatus Phytoplasma sp.	plasmid phytoplasma specific extrachromosomal DNA  
 321961	NC_019535	425702626	0	JX668987	Candidatus Phytoplasma tritici	plasmid pWBD1  
 321961	NC_019533	425702603	0	JX668988	Candidatus Phytoplasma tritici	plasmid pWBD2  
@@ -1646,6 +1656,7 @@
 1206109	NC_018507	402575002	0	CP003708	Candidatus Portiera aleyrodidarum BT-B-HRs
 1239881	NC_018676	407681354	0	CP003867	Candidatus Portiera aleyrodidarum BT-QVLC
 1239881	NC_018618	407453019	0	CP003835	Candidatus Portiera aleyrodidarum BT-QVLC
+1297582	NC_020831	472328233	0	CP004358	Candidatus Portiera aleyrodidarum TV
 669502	NC_021885	527317437	0	CP003468	Candidatus Profftella armatura
 669502	NC_021886	527317804	0	CP003469	Candidatus Profftella armatura	plasmid unnamed  
 264201	NC_005861	46445634	0	BX908798	Candidatus Protochlamydia amoebophila UWE25
@@ -1657,8 +1668,6 @@
 1332188	NC_021219	501435806	0	CP005957	Candidatus Saccharimonas aalborgensis
 234267	NC_008536	116619145	0	CP000473	Candidatus Solibacter usitatus Ellin6076
 946483	NC_022576	550989632	0	CP004885	Candidatus Symbiobacter mobilis CR
-891398	NC_015736	339478129	0	CP002244	Candidatus Tremblaya princeps PCIT
-1053648	NC_017293	384455014	0	CP002918	Candidatus Tremblaya princeps PCVAL
 412965	NC_009465	148244169	0	AP009247	Candidatus Vesicomyosocius okutanii
 28188	NC_011336	208730641	0	EU741249	Capnocytophaga canimorsus	plasmid pCC7  
 860228	NC_015846	340620779	0	CP002113	Capnocytophaga canimorsus Cc5
@@ -1689,6 +1698,26 @@
 867900	NC_015167	325284916	0	CP002534	Cellulophaga lytica DSM 7489
 642492	NC_015275	326789139	0	CP002582	Cellulosilyticum lentocellum DSM 5427
 498211	NC_010995	192358779	0	CP000934	Cellvibrio japonicus Ueda107
+272943	NC_007493	552535527	0	CP000143	Cereibacter sphaeroides 2.4.1	chromosome 1  
+272943	NC_007494	552536492	0	CP000144	Cereibacter sphaeroides 2.4.1	chromosome 2  
+272943	NC_009007	125654605	0	DQ232586	Cereibacter sphaeroides 2.4.1	plasmid A  
+272943	NC_007488	552530711	0	CP000145	Cereibacter sphaeroides 2.4.1	plasmid B  
+272943	NC_007489	77404693	0	CP000146	Cereibacter sphaeroides 2.4.1	plasmid C  
+272943	NC_007490	552530953	0	CP000147	Cereibacter sphaeroides 2.4.1	plasmid D  
+272943	NC_009008	125654693	0	DQ232587	Cereibacter sphaeroides 2.4.1	plasmid E  
+349102	NC_009428	146276058	0	CP000661	Cereibacter sphaeroides ATCC 17025
+349102	NC_009429	146279170	0	CP000662	Cereibacter sphaeroides ATCC 17025	plasmid pRSPA01  
+349102	NC_009430	146279973	0	CP000663	Cereibacter sphaeroides ATCC 17025	plasmid pRSPA02  
+349102	NC_009431	146280242	0	CP000664	Cereibacter sphaeroides ATCC 17025	plasmid pRSPA03  
+349102	NC_009432	146280352	0	CP000665	Cereibacter sphaeroides ATCC 17025	plasmid pRSPA04  
+349102	NC_009433	146280384	0	CP000666	Cereibacter sphaeroides ATCC 17025	plasmid pRSPA05  
+349101	NC_009049	126460778	0	CP000577	Cereibacter sphaeroides ATCC 17029	chromosome 1  
+349101	NC_009050	126463752	0	CP000578	Cereibacter sphaeroides ATCC 17029	chromosome 2  
+349101	NC_009040	126464805	0	CP000579	Cereibacter sphaeroides ATCC 17029	plasmid pRSPH01  
+557760	NC_011963	221638099	0	CP001150	Cereibacter sphaeroides KD131	chromosome 1  
+557760	NC_011958	221368938	0	CP001151	Cereibacter sphaeroides KD131	chromosome 2  
+557760	NC_011962	221218192	0	CP001152	Cereibacter sphaeroides KD131	plasmid pRSKD131A  
+557760	NC_011960	221634492	0	CP001153	Cereibacter sphaeroides KD131	plasmid pRSKD131B  
 1173020	NC_019697	434384225	0	CP003600	Chamaesiphon minutus PCC 6605
 1173020	NC_020053	436736818	0	CP003601	Chamaesiphon minutus PCC 6605	plasmid pCHA6605.01  
 1173020	NC_019698	434389900	0	CP003602	Chamaesiphon minutus PCC 6605	plasmid pCHA6605.02  
@@ -1733,6 +1762,8 @@
 1218354	NC_018636	406598901	0	CP003815	Chlamydia psittaci MN	plasmid pcpMN  
 1050221	NC_018626	406592921	0	CP003798	Chlamydia psittaci NJ1
 1050221	NC_018637	406598909	0	CP003816	Chlamydia psittaci NJ1	plasmid pcpNJ1  
+929557	NC_014796	392376213	0	FQ482149	Chlamydia psittaci RD1
+929557	NC_014797	409191175	0	FQ482150	Chlamydia psittaci RD1	plasmid pRD1  
 1218358	NC_018624	407460163	0	CP003796	Chlamydia psittaci WC
 1218358	NC_018639	406598927	0	CP003818	Chlamydia psittaci WC	plasmid pcpWC  
 1218356	NC_018622	407457548	0	CP003794	Chlamydia psittaci WS/RT/E30
@@ -1764,7 +1795,7 @@
 315277	NC_007430	76789623	0	CP000052	Chlamydia trachomatis A/HAR-13	plasmid pCTA  
 580047	NC_016798	376282008	0	FM872306	Chlamydia trachomatis A2497
 580047	NC_017437	385269641	0	CP002401	Chlamydia trachomatis A2497
-580047	NC_017438	385270623	0	CP002402	Chlamydia trachomatis A2497	plasmid Plasmid0001  
+580047	NC_017438	385270623	0	CP002402	Chlamydia trachomatis A2497	plasmid p0001  
 580047	NC_020550	469830179	0	FM865436	Chlamydia trachomatis A2497	plasmid pCTR  
 580049	NC_012686	237802433	0	FM872308	Chlamydia trachomatis B/Jali20/OT
 580049	NC_012629	228301246	0	FM865438	Chlamydia trachomatis B/Jali20/OT	plasmid pJALI  
@@ -1817,6 +1848,8 @@
 1071768	NC_020963	478457641	0	HE603238	Chlamydia trachomatis K/SotonK1	plasmid pSotonK1  
 1071770	NC_020929	478451325	0	HE601952	Chlamydia trachomatis L1/115
 1071770	NC_020951	478452215	0	HE603218	Chlamydia trachomatis L1/115	plasmid pL1115  
+1075087	NC_020972	478468469	0	HE601951	Chlamydia trachomatis L1/1322/p2
+1075087	NC_020982	478468460	0	HE603219	Chlamydia trachomatis L1/1322/p2	plasmid pL11322  
 1071771	NC_020973	478462164	0	HE601953	Chlamydia trachomatis L1/224
 1071771	NC_020952	478462155	0	HE603220	Chlamydia trachomatis L1/224	plasmid pL1224  
 1071769	NC_020937	478447723	0	HE601950	Chlamydia trachomatis L1/440/LN
@@ -1844,6 +1877,8 @@
 1071776	NC_020955	478463952	0	HE603225	Chlamydia trachomatis L2b/CV204	plasmid pL2bCV204  
 1075085	NC_020935	478452224	0	HE601963	Chlamydia trachomatis L2b/Canada1
 1075085	NC_020953	478453120	0	HE603223	Chlamydia trachomatis L2b/Canada1	plasmid pL2bCan1  
+1075086	NC_020932	478453138	0	HE601957	Chlamydia trachomatis L2b/Canada2
+1075086	NC_020954	478453129	0	HE603224	Chlamydia trachomatis L2b/Canada2	plasmid pL2bCan2  
 1071775	NC_020975	478471160	0	HE601958	Chlamydia trachomatis L2b/LST
 1071775	NC_020985	478472051	0	HE603226	Chlamydia trachomatis L2b/LST	plasmid pL2bLST  
 471473	NC_010280	352951305	0	AM884177	Chlamydia trachomatis L2b/UCH-1/proctitis
@@ -1884,6 +1919,7 @@
 251229	NC_019699	428204730	0	CP003598	Chroococcidiopsis thermalis PCC 7203	plasmid pCHRO.01  
 251229	NC_019696	428210482	0	CP003599	Chroococcidiopsis thermalis PCC 7203	plasmid pCHRO.02  
 1303518	NC_021487	512550081	0	HF951689	Chthonomonas calidirosea T49	chromosome I  
+404380	NC_011146	197116402	0	CP001124	Citrifermentans bemidjiense Bem
 546	NC_019983	435855347	0	JN215523	Citrobacter freundii	plasmid pCFI-1  
 546	NC_019991	435855501	0	JN215524	Citrobacter freundii	plasmid pCFI-2  
 546	NC_019984	435855388	0	JQ356870	Citrobacter freundii	plasmid pCFI-3  
@@ -1929,7 +1965,7 @@
 991791	NC_015686	337735032	0	CP002661	Clostridium acetobutylicum DSM 1731	plasmid pSMBa  
 991791	NC_015688	337738947	0	CP002662	Clostridium acetobutylicum DSM 1731	plasmid pSMBb  
 863638	NC_017295	384456718	0	CP002118	Clostridium acetobutylicum EA 2018
-863638	NC_017296	384456541	0	CP002119	Clostridium acetobutylicum EA 2018	plasmid EA2018plasmid  
+863638	NC_017296	384456541	0	CP002119	Clostridium acetobutylicum EA 2018	plasmid pEA2018  
 1341692	NC_022592	554377794	0	CP006763	Clostridium autoethanogenum DSM 10061
 290402	NC_009617	150014892	0	CP000721	Clostridium beijerinckii NCIMB 8052
 1491	NC_012219	225166733	0	AP010934	Clostridium botulinum	plasmid pC2C203U28  
@@ -1959,6 +1995,8 @@
 515621	NC_012658	237793320	0	CP001083	Clostridium botulinum Ba4 str. 657
 515621	NC_012654	229587271	0	CP001081	Clostridium botulinum Ba4 str. 657	plasmid pCLJ  
 515621	NC_012657	229599876	0	CP001082	Clostridium botulinum Ba4 str. 657	plasmid pCLJ2  
+592027	NC_012946	253771310	0	CP001659	Clostridium botulinum D str. 1873	plasmid pCLG1  
+592027	NC_012945	253771260	0	CP001660	Clostridium botulinum D str. 1873	plasmid pCLG2  
 508767	NC_010723	188587536	0	CP001078	Clostridium botulinum E3 str. Alaska E43
 441772	NC_009699	153937894	0	CP000728	Clostridium botulinum F str. Langeland
 441772	NC_009700	153941546	0	CP000729	Clostridium botulinum F str. Langeland	plasmid pCLI  
@@ -2000,7 +2038,6 @@
 755731	NC_016791	376259380	0	CP003259	Clostridium sp. BNL1100
 48257	NC_001772	10956826	0	U59416	Clostridium sp. MCF-1	plasmid indigenous plasmid  
 1042156	NC_015737	339441064	0	AP012212	Clostridium sp. SY8519
-1231072	NC_022777	557604010	0	HG530135	Clostridium tetani 12124569
 1231072	NC_022778	557606926	0	HG530136	Clostridium tetani 12124569	plasmid p12124569  
 212717	NC_004557	28209834	0	AE015927	Clostridium tetani E88
 212717	NC_004565	28373131	0	AF528097	Clostridium tetani E88	plasmid pE88  
@@ -2013,7 +2050,10 @@
 285	NC_016968	380309717	0	JF274987	Comamonas testosteroni	plasmid pTB30  
 543891	NC_010935	190571920	0	EF079106	Comamonas testosteroni CNB-1	plasmid pCNB  
 363952	NC_013446	590001402	0	CP001220	Comamonas thiooxydans
+936140	NC_011798	219372197	0	EU429343	Companilactobacillus farciminis KCTC 3681 = DSM 20184	plasmid pLF24  
 469383	NC_013739	284041471	0	CP001854	Conexibacter woesei DSM 14684
+717962	NC_021009	479136967	0	FP929038	Coprococcus catus GD/7
+751585	NC_021018	479166807	0	FP929039	Coprococcus sp. ART55/1
 309798	NC_011295	206895078	0	CP001145	Coprothermobacter proteolyticus DSM 5265
 583355	NC_014008	294053541	0	CP001998	Coraliomargarita akajimensis DSM 45221
 1144275	NC_017030	383452024	0	CP003389	Corallococcus coralloides DSM 2259
@@ -2138,10 +2178,10 @@
 216432	NC_014230	298206591	0	CP002046	Croceibacter atlanticus HTCC2559
 43989	NC_010539	172034820	0	CP000808	Crocosphaera subtropica ATCC 51142	plasmid A  
 43989	NC_010541	172034859	0	CP000809	Crocosphaera subtropica ATCC 51142	plasmid B  
-43989	NC_010542	172034885	0	CP000810	Crocosphaera subtropica ATCC 51142	plasmid C  
 43989	NC_010543	172034905	0	CP000811	Crocosphaera subtropica ATCC 51142	plasmid D  
 43989	NC_010546	172034917	0	CP000806	Crocosphaera subtropica ATCC 51142	chromosome circular  
 43989	NC_010547	172054853	0	CP000807	Crocosphaera subtropica ATCC 51142	chromosome linear  
+43989	NC_010542	172034885	0	CP000810	Crocosphaera subtropica ATCC 51142	plasmid pC  
 413503	NC_023032	565643472	0	CP006731	Cronobacter malonaticus
 413503	NC_023024	565631883	0	CP006732	Cronobacter malonaticus	plasmid p1  
 413503	NC_023025	565632295	0	CP006733	Cronobacter malonaticus	plasmid p2  
@@ -2168,9 +2208,9 @@
 1042878	NC_015723	339321330	0	CP002878	Cupriavidus necator N-1	chromosome 2  
 1042878	NC_015727	339327781	0	CP002879	Cupriavidus necator N-1	plasmid pBB1  
 1042878	NC_015724	339323774	0	CP002880	Cupriavidus necator N-1	plasmid pBB2  
+264198	NC_007337	72384244	0	CP000093	Cupriavidus pinatubonensis JMP134	plasmid 1  
 264198	NC_007347	73539706	0	CP000090	Cupriavidus pinatubonensis JMP134	chromosome 1  
 264198	NC_007348	73537298	0	CP000091	Cupriavidus pinatubonensis JMP134	chromosome 2  
-264198	NC_007337	72384244	0	CP000093	Cupriavidus pinatubonensis JMP134	plasmid Plasmid1  
 264198	NC_007336	72383731	0	CP000092	Cupriavidus pinatubonensis JMP134	plasmid megaplasmid  
 164546	NC_010902	190571916	0	DQ459356	Cupriavidus taiwanensis	plasmid pTJ86-1  
 164546	NC_010903	190571918	0	DQ459357	Cupriavidus taiwanensis	plasmid pTJ86-2  
@@ -2256,10 +2296,8 @@
 80866	NC_019264	410688308	0	JF274990	Delftia acidovorans	plasmid pNB8c  
 80866	NC_005088	34500478	0	AB063332	Delftia acidovorans	plasmid pUO1  
 398578	NC_010002	160895450	0	CP000884	Delftia acidovorans SPH-1
-742013	NC_015563	333911667	0	CP002735	Delftia sp. Cs1-4
 1170710	NC_019312	410686651	0	JN648090	Delftia sp. KV29	plasmid pKV29  
 522772	NC_013943	291285947	0	CP001968	Denitrovibrio acetiphilus DSM 12809
-767817	NC_021184	488773889	0	CP003273	Desulfallas gibsoniae DSM 7213
 644282	NC_014365	302341444	0	CP002085	Desulfarculus baarsii DSM 2075
 218208	NC_011768	218777860	0	CP001322	Desulfatibacillum aliphaticivorans
 756499	NC_018017	392391692	0	CP003348	Desulfitobacterium dehalogenans ATCC 51507
@@ -2281,6 +2319,7 @@
 525897	NC_013173	256827818	0	CP001629	Desulfomicrobium baculatum DSM 4028
 706587	NC_018025	392408409	0	CP003360	Desulfomonile tiedjei DSM 6799
 706587	NC_018026	392413879	0	CP003361	Desulfomonile tiedjei DSM 6799	plasmid pDESTI.01  
+767817	NC_021184	488773889	0	CP003273	Desulfoscipio gibsoniae DSM 7213
 646529	NC_018068	392423459	0	CP003639	Desulfosporosinus acidiphilus SJ4
 646529	NC_018066	392423388	0	CP003640	Desulfosporosinus acidiphilus SJ4	plasmid pDESACI.01  
 646529	NC_018067	391738065	0	CP003641	Desulfosporosinus acidiphilus SJ4	plasmid pDESACI.02  
@@ -2296,12 +2335,9 @@
 525146	NC_011883	220903286	0	CP001358	Desulfovibrio desulfuricans ATCC 27774
 1121448	NC_022444	545640361	0	CP006585	Desulfovibrio gigas DSM 1382 = ATCC 19364
 1121448	NC_022436	545625500	0	CP006586	Desulfovibrio gigas DSM 1382 = ATCC 19364	plasmid unnamed  
-1121451	NC_020055	436839709	0	FO203522	Desulfovibrio hydrothermalis AM13 = DSM 14728
-1121451	NC_019953	433637022	0	FO203523	Desulfovibrio hydrothermalis AM13 = DSM 14728	plasmid DESAM_p  
 573370	NC_012796	239904639	0	AP010904	Desulfovibrio magneticus RS-1
 573370	NC_012797	239835334	0	AP010905	Desulfovibrio magneticus RS-1	plasmid pDMC1  
 573370	NC_012795	239828745	0	AP010906	Desulfovibrio magneticus RS-1	plasmid pDMC2  
-526222	NC_012881	242277482	0	CP001649	Desulfovibrio salexigens DSM 2638
 391774	NC_008751	120601051	0	CP000527	Desulfovibrio vulgaris DP4
 391774	NC_008741	120586808	0	CP000528	Desulfovibrio vulgaris DP4	plasmid pDVUL01  
 573059	NC_017310	387151873	0	CP002297	Desulfovibrio vulgaris RCH1
@@ -2316,8 +2352,7 @@
 246195	NC_009446	146328629	0	CP000513	Dichelobacter nodosus VCS1703A
 561229	NC_012912	251787652	0	CP001655	Dickeya chrysanthemi Ech1591
 198628	NC_014500	307128764	0	CP002038	Dickeya dadantii 3937
-579405	NC_012880	242237460	0	CP001654	Dickeya paradisiaca Ech703
-590409	NC_013592	271498578	0	CP001836	Dickeya zeae Ech586
+590409	NC_013592	271498578	0	CP001836	Dickeya parazeae Ech586
 309799	NC_011297	206900094	0	CP001146	Dictyoglomus thermophilum H-6-12
 515635	NC_011661	217966449	0	CP001251	Dictyoglomus turgidum DSM 6724
 398580	NC_009952	159042556	0	CP000830	Dinoroseobacter shibae DFL 12 = DSM 16493
@@ -2377,6 +2412,7 @@
 716541	NC_014107	295697839	0	CP001919	Enterobacter cloacae subsp. cloacae ATCC 13047	plasmid pECL_A  
 716541	NC_014108	295698114	0	CP001920	Enterobacter cloacae subsp. cloacae ATCC 13047	plasmid pECL_B  
 1104326	NC_018079	392976867	0	CP003678	Enterobacter cloacae subsp. dissolvens SDM
+158836	NC_021046	479270911	0	FP929040	Enterobacter hormaechei
 208224	NC_018405	401761514	0	CP003737	Enterobacter kobei
 299767	NC_016514	365968300	0	CP002886	Enterobacter ludwigii
 299767	NC_016515	365972835	0	CP002887	Enterobacter ludwigii	plasmid pEcWSU1_A  
@@ -2391,6 +2427,7 @@
 1027278	NC_015515	332668524	0	JF703130	Enterobacter sp. W001	plasmid pR23  
 565655	NC_020995	478483683	0	CP004856	Enterococcus casseliflavus EC20
 53345	NC_019240	410688096	0	HQ696461	Enterococcus durans	plasmid pGL  
+1351	NC_021023	479179495	0	FP929058	Enterococcus faecalis
 1351	NC_019385	410715656	0	JX023543	Enterococcus faecalis	plasmid PML21  
 1351	NC_002630	11968208	0	AE002565	Enterococcus faecalis	plasmid pAM373  
 1351	NC_005013	32470448	0	AF503772	Enterococcus faecalis	plasmid pAMalpha1  
@@ -2462,7 +2499,6 @@
 889211	NC_018978	410108964	0	FR719212	Erwinia amylovora ATCC BAA-2158	plasmid pEA29  
 889211	NC_018977	410108963	0	FR719210	Erwinia amylovora ATCC BAA-2158	plasmid pEAR4.3  
 889211	NC_018985	410475048	0	FR719211	Erwinia amylovora ATCC BAA-2158	plasmid pEAR5.2  
-1255307	NC_020918	480530218	0	HF560650	Erwinia amylovora CFBP 1232	plasmid pEA29  
 1255305	NC_020915	478427951	0	HF560645	Erwinia amylovora CFBP 2585	plasmid pEA29  
 1255305	NC_020920	478428046	0	HF560646	Erwinia amylovora CFBP 2585	plasmid pEA3  
 665029	NC_013961	292486492	0	FN434113	Erwinia amylovora CFBP1430
@@ -2474,6 +2510,7 @@
 1407063	NC_023071	568063543	0	HG793097	Erwinia amylovora LA636	plasmid LA636P1  
 1407064	NC_023056	568110713	0	HG793098	Erwinia amylovora LA637	plasmid LA637P1  
 1407064	NC_023072	568165538	0	HG793099	Erwinia amylovora LA637	plasmid LA637P2  
+1219359	NC_020918	480530218	0	HF560650	Erwinia amylovora NBRC 12687 = CFBP 1232	plasmid pEA29  
 634500	NC_014306	300714588	0	FP236843	Erwinia billingiae Eb661
 634500	NC_014304	300781822	0	FP236826	Erwinia billingiae Eb661	plasmid pEB102  
 634500	NC_014305	300713132	0	FP236830	Erwinia billingiae Eb661	plasmid pEB170  
@@ -2725,6 +2762,7 @@
 299586	NC_009716	154263796	0	AM743197	Escherichia sp. Sflu5	plasmid pAK51  
 663278	NC_014828	317131008	0	CP002400	Ethanoligenens harbinense YUAN-3
 53442	NC_014624	365823354	0	CP002273	Eubacterium callanderi
+649639	NC_014829	317126741	0	CP002394	Evansella cellulosilytica DSM 2522
 1087448	NC_018665	407475894	0	CP003063	Exiguobacterium antarcticum B7
 518693	NC_010607	187736692	0	AM980831	Exiguobacterium arabatum	plasmid pEspA  
 518693	NC_010608	187736698	0	AM980832	Exiguobacterium arabatum	plasmid pEspB  
@@ -2738,6 +2776,8 @@
 1389960	NC_023058	568514519	0	KF697250	Exiguobacterium sp. S3-2	plasmid pMC3  
 1389960	NC_023070	568516376	0	KF697251	Exiguobacterium sp. S3-2	plasmid pMC4  
 1389960	NC_023059	568515377	0	KF697252	Exiguobacterium sp. S3-2	plasmid pMC5  
+718252	NC_021042	479208076	0	FP929045	Faecalibacterium prausnitzii L2-6
+657322	NC_021020	479170689	0	FP929046	Faecalibacterium prausnitzii SL3/3
 717960	NC_021019	479169109	0	FP929041	Faecalitalea cylindroides T2-87
 550540	NC_014541	308047722	0	CP002209	Ferrimonas balearica DSM 9799
 381764	NC_009718	154248705	0	CP000771	Fervidobacterium nodosum Rt17-B1
@@ -2798,6 +2838,11 @@
 1856	NC_002699	13449233	0	AY027524	Frankia torreyi	plasmid pFQ12  
 767434	NC_017033	383315351	0	CP003350	Frateuria aurantia DSM 6220
 123824	NC_019992	438000464	0	JQ319771	Frederiksenia canicola	plasmid pB000b  
+651822	NC_021038	479197640	0	FP929056	Fretibacterium fastidiosum
+714313	NC_015978	347533753	0	CP002461	Fructilactobacillus sanfranciscensis TMW 1.1304
+714313	NC_015979	347533700	0	CP002462	Fructilactobacillus sanfranciscensis TMW 1.1304	plasmid pLS1  
+714313	NC_015980	347533684	0	CP002463	Fructilactobacillus sanfranciscensis TMW 1.1304	plasmid pLS2  
+1075	NC_004527	27733883	0	AB082959	Fuscovulum blasticum	plasmid pMG160  
 851	NC_004974	32455396	0	AF159249	Fusobacterium nucleatum	plasmid pFN1  
 851	NC_003091	15426254	0	AF295336	Fusobacterium nucleatum	plasmid pKH9  
 851	NC_002002	10956061	0	AF022647	Fusobacterium nucleatum	plasmid pPA52  
@@ -2826,8 +2871,6 @@
 471223	NC_012790	239812973	0	CP001640	Geobacillus sp. WCH70	plasmid pWCH7002  
 581103	NC_014650	312109151	0	CP002293	Geobacillus sp. Y4.1MC1
 581103	NC_014651	312193406	0	CP002294	Geobacillus sp. Y4.1MC1	plasmid pGY4MC101  
-550542	NC_014915	319765157	0	CP002442	Geobacillus sp. Y412MC52
-550542	NC_014916	319768578	0	CP002443	Geobacillus sp. Y412MC52	plasmid pGYMC5201  
 544556	NC_013411	261417500	0	CP001794	Geobacillus sp. Y412MC61
 544556	NC_013412	261420908	0	CP001795	Geobacillus sp. Y412MC61	plasmid pGYMC6101  
 1422	NC_010420	169636460	0	AM886060	Geobacillus stearothermophilus	plasmid pGS18  
@@ -2836,7 +2879,6 @@
 420246	NC_009328	138893679	0	CP000557	Geobacillus thermodenitrificans NG80-2
 420246	NC_009329	138898339	0	CP000558	Geobacillus thermodenitrificans NG80-2	plasmid pLW1071  
 1111068	NC_016593	375006802	0	CP003125	Geobacillus thermoleovorans CCB_US3_UF5
-404380	NC_011146	197116402	0	CP001124	Geobacter bemidjiensis Bem
 316067	NC_011979	222053117	0	CP001390	Geobacter daltonii FRC-32
 398767	NC_010814	189423082	0	CP001089	Geobacter lovleyi SZ
 398767	NC_010815	189426689	0	CP001090	Geobacter lovleyi SZ	plasmid pGLOV01  
@@ -3069,7 +3111,7 @@
 1321938	NC_021216	529858346	0	CP005491	Helicobacter pylori UM299
 637913	NC_017355	384888657	0	CP001582	Helicobacter pylori v225d
 637913	NC_017383	384888493	0	CP001583	Helicobacter pylori v225d	plasmid pHPv225d  
-498761	NC_010337	255961476	0	CP000930	Heliobacterium modesticaldum Ice1
+498761	NC_010337	255961476	0	CP000930	Heliomicrobium modesticaldum Ice1
 757424	NC_014323	300309346	0	CP002039	Herbaspirillum seropedicae SmR1
 760142	NC_015318	327398173	0	CP002606	Hippea maritima DSM 10411
 582402	NC_012982	254292376	0	CP001678	Hirschia baltica ATCC 49814
@@ -3082,12 +3124,6 @@
 443218	NC_015564	333917679	0	CP002786	Hoyosella subflava DQS3-9A1
 443218	NC_015560	333917529	0	CP002787	Hoyosella subflava DQS3-9A1	plasmid pAS9A-1  
 443218	NC_015561	333917557	0	CP002788	Hoyosella subflava DQS3-9A1	plasmid pAS9A-2  
-720554	NC_016627	374294493	0	CP003065	Hungateiclostridium clariflavum DSM 19732
-1515	NC_021652	521300460	0	KC920663	Hungateiclostridium thermocellum	plasmid pEBM107  
-1515	NC_021653	521300466	0	KC920664	Hungateiclostridium thermocellum	plasmid pEBM113  
-1515	NC_021665	521300472	0	KC788287	Hungateiclostridium thermocellum	plasmid pEBM130  
-203119	NC_009012	125972525	0	CP000568	Hungateiclostridium thermocellum ATCC 27405
-637887	NC_017304	385777386	0	CP002416	Hungateiclostridium thermocellum DSM 1313
 608538	NC_013799	288817321	0	AP011112	Hydrogenobacter thermophilus TK-6
 608538	NC_017161	384128090	0	CP002221	Hydrogenobacter thermophilus TK-6
 547143	NC_015557	333902670	0	CP002726	Hydrogenobaculum sp. 3684
@@ -3113,7 +3149,7 @@
 575540	NC_014962	320101555	0	CP002353	Isosphaera pallida ATCC 43644
 575540	NC_014957	320041922	0	CP002354	Isosphaera pallida ATCC 43644	plasmid pISOP01  
 290400	NC_007802	89052491	0	CP000264	Jannaschia sp. CCS1
-290400	NC_007801	89057699	0	CP000265	Jannaschia sp. CCS1	plasmid plasmid1  
+290400	NC_007801	89057699	0	CP000265	Jannaschia sp. CCS1	plasmid p1  
 375286	NC_009659	152979768	0	CP000269	Janthinobacterium sp. Marseille
 471856	NC_013174	256831255	0	CP001706	Jonesia denitrificans DSM 20603
 523791	NC_013166	256821228	0	CP001707	Kangiella koreensis DSM 16069
@@ -3244,12 +3280,13 @@
 1582	NC_016975	380139252	0	JN793951	Lacticaseibacillus casei	plasmid pRCEID7.6  
 1582	NC_010242	164604816	0	DQ116709	Lacticaseibacillus casei	plasmid pSMA23  
 1582	NC_006257	51965123	0	AB119526	Lacticaseibacillus casei	plasmid pYIT356  
-1597	NC_017474	385821700	0	CP002618	Lacticaseibacillus paracasei
-1597	NC_018641	409995665	0	HE970764	Lacticaseibacillus paracasei
-1597	NC_021721	523512490	0	CP005486	Lacticaseibacillus paracasei
+498216	NC_014334	301065125	0	CP001084	Lacticaseibacillus casei str. Zhang
 1597	NC_014334	825706208	0	CP001084	Lacticaseibacillus paracasei
 1597	NC_010999	191636824	0	FM177140	Lacticaseibacillus paracasei
 1597	NC_017473	385818534	0	CP002616	Lacticaseibacillus paracasei
+1597	NC_017474	385821700	0	CP002618	Lacticaseibacillus paracasei
+1597	NC_018641	409995665	0	HE970764	Lacticaseibacillus paracasei
+1597	NC_021721	523512490	0	CP005486	Lacticaseibacillus paracasei
 1597	NC_017476	385824840	0	CP002619	Lacticaseibacillus paracasei	plasmid pBD-II  
 1597	NC_017475	385821656	0	CP002617	Lacticaseibacillus paracasei	plasmid pLC2W  
 1597	NC_021722	523515562	0	CP005487	Lacticaseibacillus paracasei	plasmid pLOCK919  
@@ -3260,9 +3297,24 @@
 1597	NC_020057	436843290	0	HE970765	Lacticaseibacillus paracasei	plasmid pW56  
 1597	NC_019669	428227918	0	JX846826	Lacticaseibacillus paracasei	plasmid pWCZ  
 1597	NC_011352	209401009	0	CP000935	Lacticaseibacillus paracasei	plasmid plca36  
+321967	NC_008526	116493574	0	CP000423	Lacticaseibacillus paracasei ATCC 334
+321967	NC_008502	116326658	0	CP000424	Lacticaseibacillus paracasei ATCC 334	plasmid 1  
+903522	NC_013952	291277644	0	GU380289	Lacticaseibacillus paracasei TXW	plasmid pTXW  
 47714	NC_013543	270208493	0	AY662330	Lacticaseibacillus paracasei subsp. paracasei	plasmid pCD01  
 47714	NC_013544	270208517	0	AY662331	Lacticaseibacillus paracasei subsp. paracasei	plasmid pCD02  
 47714	NC_012222	294514843	0	FM246455	Lacticaseibacillus paracasei subsp. paracasei	plasmid pSJ2-8  
+537973	NC_022112	532355525	0	CP002391	Lacticaseibacillus paracasei subsp. paracasei 8700:2
+537973	NC_022114	532360755	0	CP002392	Lacticaseibacillus paracasei subsp. paracasei 8700:2	plasmid 1  
+537973	NC_022123	532433692	0	CP002393	Lacticaseibacillus paracasei subsp. paracasei 8700:2	plasmid 2  
+1088720	NC_017491	385833938	0	CP003094	Lacticaseibacillus rhamnosus ATCC 8530
+568703	NC_013198	258506995	0	FM179322	Lacticaseibacillus rhamnosus GG
+568703	NC_017482	385826720	0	AP011548	Lacticaseibacillus rhamnosus GG
+486408	NC_011223	203284747	0	CP001155	Lacticaseibacillus rhamnosus HN001	plasmid pLR001  
+486408	NC_011225	203284761	0	CP001156	Lacticaseibacillus rhamnosus HN001	plasmid pLR002  
+1316933	NC_021723	523515595	0	CP005484	Lacticaseibacillus rhamnosus LOCK900
+1318634	NC_021725	523518464	0	CP005485	Lacticaseibacillus rhamnosus LOCK908
+568704	NC_013199	258538191	0	FM179323	Lacticaseibacillus rhamnosus Lc 705
+568704	NC_013200	258509940	0	FM179324	Lacticaseibacillus rhamnosus Lc 705	plasmid pLC1  
 60520	NC_025160	691531533	0	AF459640	Lactiplantibacillus paraplantarum	plasmid pC7  
 1589	NC_012722	238478313	0	FN394966	Lactiplantibacillus pentosus	plasmid p1-4  
 1590	NC_006278	52220778	0	AJ628941	Lactiplantibacillus plantarum	plasmid p256  
@@ -3288,9 +3340,38 @@
 1590	NC_006399	55482307	0	AJ716330	Lactiplantibacillus plantarum	plasmid pPB1  
 1590	NC_019321	410689426	0	JN601038	Lactiplantibacillus plantarum	plasmid pR18  
 1590	NC_013789	288551649	0	GU363552	Lactiplantibacillus plantarum	plasmid pXY3  
+1327988	NC_021514	513839884	0	CP006033	Lactiplantibacillus plantarum 16
+1327988	NC_021515	513842865	0	CP006034	Lactiplantibacillus plantarum 16	plasmid Lp16A  
+1327988	NC_021525	513844788	0	CP006035	Lactiplantibacillus plantarum 16	plasmid Lp16B  
+1327988	NC_021516	513843219	0	CP006036	Lactiplantibacillus plantarum 16	plasmid Lp16C  
+1327988	NC_021526	513845190	0	CP006037	Lactiplantibacillus plantarum 16	plasmid Lp16D  
+1327988	NC_021517	513843590	0	CP006038	Lactiplantibacillus plantarum 16	plasmid Lp16E  
+1327988	NC_021518	513843967	0	CP006039	Lactiplantibacillus plantarum 16	plasmid Lp16F  
+1327988	NC_021527	513846463	0	CP006040	Lactiplantibacillus plantarum 16	plasmid Lp16G  
+1327988	NC_021519	513844328	0	CP006041	Lactiplantibacillus plantarum 16	plasmid Lp16H  
+1327988	NC_021528	513846967	0	CP006042	Lactiplantibacillus plantarum 16	plasmid Lp16I  
+1327988	NC_021520	513844557	0	CP006043	Lactiplantibacillus plantarum 16	plasmid Lp16L  
+644042	NC_012984	254555169	0	CP001617	Lactiplantibacillus plantarum JDM1
+889932	NC_014554	308179191	0	CP002222	Lactiplantibacillus plantarum ST-III
+889932	NC_014558	344915391	0	CP002223	Lactiplantibacillus plantarum ST-III	plasmid pST-III  
+220668	NC_004567	380031102	0	AL935263	Lactiplantibacillus plantarum WCFS1
+220668	NC_006375	54307228	0	CR377164	Lactiplantibacillus plantarum WCFS1	plasmid pWCFS101  
+220668	NC_006376	54307232	0	CR377165	Lactiplantibacillus plantarum WCFS1	plasmid pWCFS102  
+220668	NC_006377	54307184	0	CR377166	Lactiplantibacillus plantarum WCFS1	plasmid pWCFS103  
+1284663	NC_020229	448819523	0	CP004082	Lactiplantibacillus plantarum ZJ316
+1284663	NC_021903	528821545	0	CP006247	Lactiplantibacillus plantarum ZJ316	plasmid pLP-ZJ101  
+1284663	NC_021904	528821563	0	CP006248	Lactiplantibacillus plantarum ZJ316	plasmid pLP-ZJ102  
+1284663	NC_021912	528838742	0	CP006249	Lactiplantibacillus plantarum ZJ316	plasmid pLP-ZJ103  
 337330	NC_024985	689935623	0	KJ767738	Lactiplantibacillus plantarum subsp. plantarum	plasmid pZL2  
 337330	NC_024984	689915431	0	KJ767737	Lactiplantibacillus plantarum subsp. plantarum	plasmid pZL3  
 337330	NC_024988	689921738	0	KJ801833	Lactiplantibacillus plantarum subsp. plantarum	plasmid pZL4  
+767468	NC_021224	864438563	0	CP005942	Lactiplantibacillus plantarum subsp. plantarum P-8
+767468	NC_021233	864438671	0	CP005943	Lactiplantibacillus plantarum subsp. plantarum P-8	plasmid LBPp1  
+767468	NC_021225	864438691	0	CP005944	Lactiplantibacillus plantarum subsp. plantarum P-8	plasmid LBPp2  
+767468	NC_021226	864438711	0	CP005945	Lactiplantibacillus plantarum subsp. plantarum P-8	plasmid LBPp3  
+767468	NC_021234	864438725	0	CP005946	Lactiplantibacillus plantarum subsp. plantarum P-8	plasmid LBPp4  
+767468	NC_021227	864438733	0	CP005947	Lactiplantibacillus plantarum subsp. plantarum P-8	plasmid LBPp5  
+767468	NC_021228	501148317	0	CP005948	Lactiplantibacillus plantarum subsp. plantarum P-8	plasmid LBPp6  
 1579	NC_003458	19718333	0	AB081463	Lactobacillus acidophilus	plasmid pLA103  
 1579	NC_004985	32455502	0	D88438	Lactobacillus acidophilus	plasmid pLA106  
 1314884	NC_021181	529087732	0	CP005926	Lactobacillus acidophilus La-14
@@ -3299,54 +3380,29 @@
 1604	NC_015213	325955697	0	CP002560	Lactobacillus amylovorus	plasmid pRKC30SC1  
 1604	NC_015218	325955704	0	CP002561	Lactobacillus amylovorus	plasmid pRKC30SC2  
 695560	NC_014724	315037230	0	CP002338	Lactobacillus amylovorus GRL 1112
-695560	NC_015319	327399879	0	CP002612	Lactobacillus amylovorus GRL 1112	plasmid plasmid1  
-695560	NC_015322	327399851	0	CP002613	Lactobacillus amylovorus GRL 1112	plasmid plasmid2  
+695560	NC_015319	327399879	0	CP002612	Lactobacillus amylovorus GRL 1112	plasmid p1  
+695560	NC_015322	327399851	0	CP002613	Lactobacillus amylovorus GRL 1112	plasmid p2  
 695562	NC_017470	385816611	0	CP002609	Lactobacillus amylovorus GRL1118
-695562	NC_017471	385818454	0	CP002610	Lactobacillus amylovorus GRL1118	plasmid plasmid1  
-695562	NC_017472	385818461	0	CP002611	Lactobacillus amylovorus GRL1118	plasmid plasmid2  
-387344	NC_008497	116332681	0	CP000416	Lactobacillus brevis ATCC 367
-387344	NC_008498	116334867	0	CP000417	Lactobacillus brevis ATCC 367	plasmid 1  
-387344	NC_008499	116334879	0	CP000418	Lactobacillus brevis ATCC 367	plasmid 2  
-1001583	NC_020819	472405735	0	AP012167	Lactobacillus brevis KB290
-1001583	NC_020820	472279580	0	AP012168	Lactobacillus brevis KB290	plasmid pKB290-1  
-1001583	NC_020821	472279618	0	AP012169	Lactobacillus brevis KB290	plasmid pKB290-2  
-1001583	NC_020826	472279727	0	AP012170	Lactobacillus brevis KB290	plasmid pKB290-3  
-1001583	NC_020822	472279653	0	AP012171	Lactobacillus brevis KB290	plasmid pKB290-4  
-1001583	NC_020823	472279679	0	AP012172	Lactobacillus brevis KB290	plasmid pKB290-5  
-1001583	NC_020827	472279762	0	AP012173	Lactobacillus brevis KB290	plasmid pKB290-6  
-1001583	NC_020824	472279709	0	AP012174	Lactobacillus brevis KB290	plasmid pKB290-7  
-1001583	NC_020828	472279773	0	AP012175	Lactobacillus brevis KB290	plasmid pKB290-8  
-1001583	NC_020825	472279720	0	AP012176	Lactobacillus brevis KB290	plasmid pKB290-9  
-511437	NC_015428	331700395	0	CP002652	Lactobacillus buchneri NRRL B-30929
-511437	NC_015420	330818917	0	CP002653	Lactobacillus buchneri NRRL B-30929	plasmid pLBUC01  
-511437	NC_015429	330370681	0	CP002654	Lactobacillus buchneri NRRL B-30929	plasmid pLBUC02  
-511437	NC_015421	330370666	0	CP002655	Lactobacillus buchneri NRRL B-30929	plasmid pLBUC03  
-1071400	NC_018610	406025865	0	CP003043	Lactobacillus buchneri subsp. silagei CD034
-1071400	NC_016035	347825839	0	JN084215	Lactobacillus buchneri subsp. silagei CD034	plasmid pCD034-1  
-1071400	NC_016034	347825835	0	JN084214	Lactobacillus buchneri subsp. silagei CD034	plasmid pCD034-2  
-1071400	NC_018611	406025807	0	CP003044	Lactobacillus buchneri subsp. silagei CD034	plasmid pCD034-3  
-498216	NC_014334	301065125	0	CP001084	Lactobacillus casei str. Zhang
+695562	NC_017471	385818454	0	CP002610	Lactobacillus amylovorus GRL1118	plasmid p1  
+695562	NC_017472	385818461	0	CP002611	Lactobacillus amylovorus GRL1118	plasmid p2  
 748671	NC_014106	295691862	0	FN692037	Lactobacillus crispatus ST1
 1585	NC_010909	190571831	0	EF196093	Lactobacillus delbrueckii subsp. bulgaricus	plasmid pDOJ1  
 1585	NC_002191	10956541	0	AF236060	Lactobacillus delbrueckii subsp. bulgaricus	plasmid pLBB1  
 353496	NC_017469	385814818	0	CP000156	Lactobacillus delbrueckii subsp. bulgaricus 2038
 390333	NC_008054	104773257	0	CR954253	Lactobacillus delbrueckii subsp. bulgaricus ATCC 11842 = JCM 1002
 321956	NC_008529	116513228	0	CP000412	Lactobacillus delbrueckii subsp. bulgaricus ATCC BAA-365
-767455	NC_014727	313122775	0	CP002341	Lactobacillus delbrueckii subsp. bulgaricus ND02
-767455	NC_014728	312984524	0	CP002342	Lactobacillus delbrueckii subsp. bulgaricus ND02	plasmid unnamed  
 29397	NC_004849	31983511	0	AJ421486	Lactobacillus delbrueckii subsp. lactis	plasmid pJBL2  
 29397	NC_004937	32455752	0	AF109691	Lactobacillus delbrueckii subsp. lactis	plasmid pLL1212  
 29397	NC_004850	31983517	0	AJ421627	Lactobacillus delbrueckii subsp. lactis	plasmid pN42  
 29397	NC_001670	10956535	0	Z50864	Lactobacillus delbrueckii subsp. lactis	plasmid pWS58  
-936140	NC_011798	219372197	0	EU429343	Lactobacillus farciminis KCTC 3681 = DSM 20184	plasmid pLF24  
-767453	NC_021235	501673812	0	CP005958	Lactobacillus fermentum F-6
-334390	NC_010610	184154476	0	AP008937	Lactobacillus fermentum IFO 3956
 1596	NC_011839	219857292	0	AB436615	Lactobacillus gasseri	plasmid pLgLA39  
 324831	NC_008530	116628683	0	CP000413	Lactobacillus gasseri ATCC 33323 = JCM 1131
+326425	NC_021744	525706521	0	CP002081	Lactobacillus helveticus CNRZ32
 405566	NC_010080	161506634	0	CP000517	Lactobacillus helveticus DPC 4571
 585520	NC_002102	10956546	0	AJ222725	Lactobacillus helveticus DSM 20075 = CGMCC 1.1877	plasmid pLH1  
 767462	NC_017467	385812838	0	CP002429	Lactobacillus helveticus H10
 767462	NC_017468	385814792	0	CP002430	Lactobacillus helveticus H10	plasmid pH10  
+880633	NC_018528	403514032	0	CP003799	Lactobacillus helveticus R0052
 880633	NC_014386	302513104	0	FJ851149	Lactobacillus helveticus R0052	plasmid pIR52-1  
 44272	NC_001379	10956823	0	J04240	Lactobacillus helveticus subsp. jugurti	plasmid pLJ1  
 909954	NC_017477	385824947	0	CP002464	Lactobacillus johnsonii DPC 6026
@@ -3355,77 +3411,16 @@
 633699	NC_012552	226526990	0	AY862141	Lactobacillus johnsonii FI9785	plasmid p9785S  
 1408186	NC_022909	560151351	0	CP006811	Lactobacillus johnsonii N6.2
 257314	NC_005362	42518084	0	AE017198	Lactobacillus johnsonii NCC 533
-1033837	NC_015602	336053510	0	CP002764	Lactobacillus kefiranofaciens ZW3
-1033837	NC_015598	336053279	0	CP002765	Lactobacillus kefiranofaciens ZW3	plasmid pWW1  
-1033837	NC_015603	336055419	0	CP002766	Lactobacillus kefiranofaciens ZW3	plasmid pWW2  
-321967	NC_008526	116493574	0	CP000423	Lactobacillus paracasei ATCC 334
-321967	NC_008502	116326658	0	CP000424	Lactobacillus paracasei ATCC 334	plasmid 1  
-903522	NC_013952	291277644	0	GU380289	Lactobacillus paracasei TXW	plasmid pTXW  
-537973	NC_022112	532355525	0	CP002391	Lactobacillus paracasei subsp. paracasei 8700:2
-537973	NC_022114	532360755	0	CP002392	Lactobacillus paracasei subsp. paracasei 8700:2	plasmid 1  
-537973	NC_022123	532433692	0	CP002393	Lactobacillus paracasei subsp. paracasei 8700:2	plasmid 2  
-1327988	NC_021514	513839884	0	CP006033	Lactobacillus plantarum 16
-1327988	NC_021515	513842865	0	CP006034	Lactobacillus plantarum 16	plasmid Lp16A  
-1327988	NC_021525	513844788	0	CP006035	Lactobacillus plantarum 16	plasmid Lp16B  
-1327988	NC_021516	513843219	0	CP006036	Lactobacillus plantarum 16	plasmid Lp16C  
-1327988	NC_021526	513845190	0	CP006037	Lactobacillus plantarum 16	plasmid Lp16D  
-1327988	NC_021517	513843590	0	CP006038	Lactobacillus plantarum 16	plasmid Lp16E  
-1327988	NC_021518	513843967	0	CP006039	Lactobacillus plantarum 16	plasmid Lp16F  
-1327988	NC_021527	513846463	0	CP006040	Lactobacillus plantarum 16	plasmid Lp16G  
-1327988	NC_021519	513844328	0	CP006041	Lactobacillus plantarum 16	plasmid Lp16H  
-1327988	NC_021528	513846967	0	CP006042	Lactobacillus plantarum 16	plasmid Lp16I  
-1327988	NC_021520	513844557	0	CP006043	Lactobacillus plantarum 16	plasmid Lp16L  
-644042	NC_012984	254555169	0	CP001617	Lactobacillus plantarum JDM1
-220668	NC_004567	380031102	0	AL935263	Lactobacillus plantarum WCFS1
-220668	NC_006375	54307228	0	CR377164	Lactobacillus plantarum WCFS1	plasmid pWCFS101  
-220668	NC_006376	54307232	0	CR377165	Lactobacillus plantarum WCFS1	plasmid pWCFS102  
-220668	NC_006377	54307184	0	CR377166	Lactobacillus plantarum WCFS1	plasmid pWCFS103  
-1284663	NC_020229	448819523	0	CP004082	Lactobacillus plantarum ZJ316
-1284663	NC_021903	528821545	0	CP006247	Lactobacillus plantarum ZJ316	plasmid pLP-ZJ101  
-1284663	NC_021904	528821563	0	CP006248	Lactobacillus plantarum ZJ316	plasmid pLP-ZJ102  
-1284663	NC_021912	528838742	0	CP006249	Lactobacillus plantarum ZJ316	plasmid pLP-ZJ103  
-767468	NC_021224	864438563	0	CP005942	Lactobacillus plantarum subsp. plantarum P-8
-767468	NC_021233	864438671	0	CP005943	Lactobacillus plantarum subsp. plantarum P-8	plasmid LBPp1  
-767468	NC_021225	864438691	0	CP005944	Lactobacillus plantarum subsp. plantarum P-8	plasmid LBPp2  
-767468	NC_021226	864438711	0	CP005945	Lactobacillus plantarum subsp. plantarum P-8	plasmid LBPp3  
-767468	NC_021234	864438725	0	CP005946	Lactobacillus plantarum subsp. plantarum P-8	plasmid LBPp4  
-767468	NC_021227	864438733	0	CP005947	Lactobacillus plantarum subsp. plantarum P-8	plasmid LBPp5  
-767468	NC_021228	501148317	0	CP005948	Lactobacillus plantarum subsp. plantarum P-8	plasmid LBPp6  
-889932	NC_014554	308179191	0	CP002222	Lactobacillus plantarum subsp. plantarum ST-III
-889932	NC_014558	344915391	0	CP002223	Lactobacillus plantarum subsp. plantarum ST-III	plasmid pST-III  
-1340495	NC_021494	512590512	0	CP006011	Lactobacillus reuteri I5007
-1340495	NC_021503	512656346	0	CP006012	Lactobacillus reuteri I5007	plasmid pLRI01  
-1340495	NC_021495	512593096	0	CP006013	Lactobacillus reuteri I5007	plasmid pLRI02  
-1340495	NC_021496	512594165	0	CP006014	Lactobacillus reuteri I5007	plasmid pLRI022  
-1340495	NC_021504	512657636	0	CP006015	Lactobacillus reuteri I5007	plasmid pLRI023  
-1340495	NC_021497	512595024	0	CP006016	Lactobacillus reuteri I5007	plasmid pLRI024  
-1340495	NC_021498	512595901	0	CP006017	Lactobacillus reuteri I5007	plasmid pLRI025  
-557433	NC_010609	184152655	0	AP007281	Lactobacillus reuteri JCM 1112
-491077	NC_015697	338202359	0	CP002844	Lactobacillus reuteri SD2112
-491077	NC_015699	338202351	0	CP002848	Lactobacillus reuteri SD2112	plasmid pLR580  
-491077	NC_015700	338202319	0	CP002845	Lactobacillus reuteri SD2112	plasmid pLR581  
-491077	NC_015701	338204606	0	CP002847	Lactobacillus reuteri SD2112	plasmid pLR584  
-491077	NC_015698	338202336	0	CP002846	Lactobacillus reuteri SD2112	plasmid pLR585  
-1358027	NC_021872	526230725	0	CP006603	Lactobacillus reuteri TD1
-1088720	NC_017491	385833938	0	CP003094	Lactobacillus rhamnosus ATCC 8530
-568703	NC_013198	258506995	0	FM179322	Lactobacillus rhamnosus GG
-568703	NC_017482	385826720	0	AP011548	Lactobacillus rhamnosus GG
-486408	NC_011223	203284747	0	CP001155	Lactobacillus rhamnosus HN001	plasmid pLR001  
-486408	NC_011225	203284761	0	CP001156	Lactobacillus rhamnosus HN001	plasmid pLR002  
-1316933	NC_021723	523515595	0	CP005484	Lactobacillus rhamnosus LOCK900
-1318634	NC_021725	523518464	0	CP005485	Lactobacillus rhamnosus LOCK908
-568704	NC_013199	258538191	0	FM179323	Lactobacillus rhamnosus Lc 705
-568704	NC_013200	258509940	0	FM179324	Lactobacillus rhamnosus Lc 705	plasmid pLC1  
-1069534	NC_015975	347524522	0	CP003032	Lactobacillus ruminis ATCC 27782
-314315	NC_007576	81427616	0	CR936503	Lactobacillus sakei subsp. sakei 23K
-362948	NC_007929	90960990	0	CP000233	Lactobacillus salivarius UCC118
-362948	NC_007930	90962708	0	CP000234	Lactobacillus salivarius UCC118	plasmid pMP118  
-362948	NC_006529	56707107	0	AF488831	Lactobacillus salivarius UCC118	plasmid pSF118-20  
-362948	NC_006530	56707135	0	AF488832	Lactobacillus salivarius UCC118	plasmid pSF118-44  
-714313	NC_015978	347533753	0	CP002461	Lactobacillus sanfranciscensis TMW 1.1304
-714313	NC_015979	347533700	0	CP002462	Lactobacillus sanfranciscensis TMW 1.1304	plasmid pLS1  
-714313	NC_015980	347533684	0	CP002463	Lactobacillus sanfranciscensis TMW 1.1304	plasmid pLS2  
+190905	NC_015602	336053510	0	CP002764	Lactobacillus kefiranofaciens subsp. kefiranofaciens
+190905	NC_015598	336053279	0	CP002765	Lactobacillus kefiranofaciens subsp. kefiranofaciens	plasmid pWW1  
+190905	NC_015603	336055419	0	CP002766	Lactobacillus kefiranofaciens subsp. kefiranofaciens	plasmid pWW2  
 1248330	NC_004957	32455916	17232	AF310974	Lactobacillus sp. PC121B	plasmid p121BS  
+1359	NC_002193	7597489	0	Z22704	Lactococcus cremoris
+1359	NC_019347	410686922	0	JQ821353	Lactococcus cremoris	plasmid pAF04  
+1359	NC_007191	71024880	0	AB198069	Lactococcus cremoris	plasmid pAG6  
+1359	NC_004930	32455457	0	AY026767	Lactococcus cremoris	plasmid pBM02  
+1359	NC_004847	31983499	0	AF247159	Lactococcus cremoris	plasmid pHP003  
+1359	NC_002137	9507667	0	AF036485	Lactococcus cremoris	plasmid pNZ4000  
 1363	NC_016969	380139222	0	HE650695	Lactococcus garvieae	plasmid pGL1  
 1363	NC_016981	380236483	0	HE650696	Lactococcus garvieae	plasmid pGL2  
 1363	NC_016970	380139229	0	HE650697	Lactococcus garvieae	plasmid pGL3  
@@ -3454,12 +3449,6 @@
 1358	NC_004959	32455434	0	AF001314	Lactococcus lactis	plasmid pSRQ900  
 1358	NC_004980	32455780	0	L75827	Lactococcus lactis	plasmid pWC1  
 1358	NC_002192	7597478	0	X56954	Lactococcus lactis	plasmid pWV01  
-1359	NC_002193	7597489	0	Z22704	Lactococcus lactis subsp. cremoris
-1359	NC_019347	410686922	0	JQ821353	Lactococcus lactis subsp. cremoris	plasmid pAF04  
-1359	NC_007191	71024880	0	AB198069	Lactococcus lactis subsp. cremoris	plasmid pAG6  
-1359	NC_004930	32455457	0	AY026767	Lactococcus lactis subsp. cremoris	plasmid pBM02  
-1359	NC_004847	31983499	0	AF247159	Lactococcus lactis subsp. cremoris	plasmid pHP003  
-1359	NC_002137	9507667	0	AF036485	Lactococcus lactis subsp. cremoris	plasmid pNZ4000  
 1104322	NC_017492	385836969	0	CP003132	Lactococcus lactis subsp. cremoris A76
 1104322	NC_017497	385836922	0	CP003136	Lactococcus lactis subsp. cremoris A76	plasmid pQA504  
 1104322	NC_017495	385836839	0	CP003135	Lactococcus lactis subsp. cremoris A76	plasmid pQA518  
@@ -3518,6 +3507,7 @@
 44688	NC_015912	342318748	0	JN172911	Lactococcus lactis subsp. lactis bv. diacetylactis	plasmid pVF21  
 44688	NC_015901	343403315	0	JN172912	Lactococcus lactis subsp. lactis bv. diacetylactis	plasmid pVF22  
 44688	NC_015902	342675619	0	JN225497	Lactococcus lactis subsp. lactis bv. diacetylactis	plasmid pVF50  
+521095	NC_013203	257783814	0	CP001721	Lancefieldella parvulum DSM 20469
 168471	NC_010370	170783434	0	EF679779	Laribacter hongkongensis	plasmid pHLHK22  
 168471	NC_006628	57790535	0	AY858987	Laribacter hongkongensis	plasmid pHLHK8  
 557598	NC_012559	226938934	0	CP001154	Laribacter hongkongensis HLHK9
@@ -3526,6 +3516,7 @@
 1599	NC_004942	32455516	0	AF438419	Latilactobacillus sakei	plasmid pRV500  
 1599	NC_011652	217076130	0	EU555173	Latilactobacillus sakei	plasmid pYC2  
 1599	NC_010936	190571843	0	EU185047	Latilactobacillus sakei	plasmid pYSI8  
+314315	NC_007576	81427616	0	CR936503	Latilactobacillus sakei subsp. sakei 23K
 1234378	NC_020127	442555261	0	CP004029	Lawsonia intracellularis N343
 1234378	NC_020128	442556480	0	CP004030	Lawsonia intracellularis N343	plasmid 1  
 1234378	NC_020129	442556508	0	CP004031	Lawsonia intracellularis N343	plasmid 2  
@@ -3556,6 +3547,14 @@
 999552	NC_023135	568282035	0	CP006773	Leisingera methylohalidivorans DSM 14336
 999552	NC_023146	568306343	0	CP006774	Leisingera methylohalidivorans DSM 14336	plasmid unnamed  
 999552	NC_023136	568287774	0	CP006775	Leisingera methylohalidivorans DSM 14336	plasmid unnamed2  
+511437	NC_015428	331700395	0	CP002652	Lentilactobacillus buchneri NRRL B-30929
+511437	NC_015420	330818917	0	CP002653	Lentilactobacillus buchneri NRRL B-30929	plasmid pLBUC01  
+511437	NC_015429	330370681	0	CP002654	Lentilactobacillus buchneri NRRL B-30929	plasmid pLBUC02  
+511437	NC_015421	330370666	0	CP002655	Lentilactobacillus buchneri NRRL B-30929	plasmid pLBUC03  
+1071400	NC_018610	406025865	0	CP003043	Lentilactobacillus buchneri subsp. silagei CD034
+1071400	NC_016035	347825839	0	JN084215	Lentilactobacillus buchneri subsp. silagei CD034	plasmid pCD034-1  
+1071400	NC_016034	347825835	0	JN084214	Lentilactobacillus buchneri subsp. silagei CD034	plasmid pCD034-2  
+1071400	NC_018611	406025807	0	CP003044	Lentilactobacillus buchneri subsp. silagei CD034	plasmid pCD034-3  
 1588	NC_025165	699964236	0	A14660	Lentilactobacillus hilgardii	plasmid pLAB1000  
 1184	NC_002141	10956086	0	AF176225	Leptolyngbya boryana	plasmid pPBS1  
 47253	NC_002061	10956779	0	D10842	Leptolyngbya foveolarum	plasmid Plasmid pPF1  
@@ -3630,16 +3629,50 @@
 1580	NC_012551	226526941	0	AB370337	Levilactobacillus brevis	plasmid pLB925A04  
 1580	NC_005952	49457772	0	AB118106	Levilactobacillus brevis	plasmid pRH45II  
 1580	NC_014919	319779746	0	HQ622718	Levilactobacillus brevis	plasmid pSD11  
+387344	NC_008497	116332681	0	CP000416	Levilactobacillus brevis ATCC 367
+387344	NC_008498	116334867	0	CP000417	Levilactobacillus brevis ATCC 367	plasmid 1  
+387344	NC_008499	116334879	0	CP000418	Levilactobacillus brevis ATCC 367	plasmid 2  
+1001583	NC_020819	472405735	0	AP012167	Levilactobacillus brevis KB290
+1001583	NC_020820	472279580	0	AP012168	Levilactobacillus brevis KB290	plasmid pKB290-1  
+1001583	NC_020821	472279618	0	AP012169	Levilactobacillus brevis KB290	plasmid pKB290-2  
+1001583	NC_020826	472279727	0	AP012170	Levilactobacillus brevis KB290	plasmid pKB290-3  
+1001583	NC_020822	472279653	0	AP012171	Levilactobacillus brevis KB290	plasmid pKB290-4  
+1001583	NC_020823	472279679	0	AP012172	Levilactobacillus brevis KB290	plasmid pKB290-5  
+1001583	NC_020827	472279762	0	AP012173	Levilactobacillus brevis KB290	plasmid pKB290-6  
+1001583	NC_020824	472279709	0	AP012174	Levilactobacillus brevis KB290	plasmid pKB290-7  
+1001583	NC_020828	472279773	0	AP012175	Levilactobacillus brevis KB290	plasmid pKB290-8  
+1001583	NC_020825	472279720	0	AP012176	Levilactobacillus brevis KB290	plasmid pKB290-9  
 1215343	NC_019907	431805346	0	CP003789	Liberibacter crescens BT-1
 89059	NC_014164	296274678	0	FN667595	Ligilactobacillus acidipiscis	plasmid pLAC1  
+1069534	NC_015975	347524522	0	CP003032	Ligilactobacillus ruminis ATCC 27782
+362948	NC_007929	90960990	0	CP000233	Ligilactobacillus salivarius UCC118
+362948	NC_007930	90962708	0	CP000234	Ligilactobacillus salivarius UCC118	plasmid pMP118  
+362948	NC_006529	56707107	0	AF488831	Ligilactobacillus salivarius UCC118	plasmid pSF118-20  
+362948	NC_006530	56707135	0	AF488832	Ligilactobacillus salivarius UCC118	plasmid pSF118-44  
 1613	NC_004947	32455530	0	AF378372	Limosilactobacillus fermentum	plasmid pKC5b  
 1613	NC_004566	28373195	0	AJ488494	Limosilactobacillus fermentum	plasmid pLME300  
+767453	NC_021235	501673812	0	CP005958	Limosilactobacillus fermentum F-6
+334390	NC_010610	184154476	0	AP008937	Limosilactobacillus fermentum IFO 3956
 1598	NC_010728	189009205	0	EF432638	Limosilactobacillus reuteri	plasmid pILR091  
 1598	NC_014936	319955757	0	HQ015473	Limosilactobacillus reuteri	plasmid pK50-2  
 1598	NC_010603	183219412	0	EU583804	Limosilactobacillus reuteri	plasmid pLR581  
 1598	NC_010621	184199631	0	EU596446	Limosilactobacillus reuteri	plasmid pLR585  
 1598	NC_003528	20069863	0	AY082384	Limosilactobacillus reuteri	plasmid pTE44  
 1598	NC_004532	27753647	0	AF205068	Limosilactobacillus reuteri	plasmid unnamed  
+1340495	NC_021494	512590512	0	CP006011	Limosilactobacillus reuteri I5007
+1340495	NC_021503	512656346	0	CP006012	Limosilactobacillus reuteri I5007	plasmid pLRI01  
+1340495	NC_021496	512594165	0	CP006014	Limosilactobacillus reuteri I5007	plasmid pLRI02  
+1340495	NC_021495	512593096	0	CP006013	Limosilactobacillus reuteri I5007	plasmid pLRI03  
+1340495	NC_021504	512657636	0	CP006015	Limosilactobacillus reuteri I5007	plasmid pLRI04  
+1340495	NC_021497	512595024	0	CP006016	Limosilactobacillus reuteri I5007	plasmid pLRI05  
+1340495	NC_021498	512595901	0	CP006017	Limosilactobacillus reuteri I5007	plasmid pLRI06  
+557433	NC_010609	184152655	0	AP007281	Limosilactobacillus reuteri JCM 1112
+491077	NC_015697	338202359	0	CP002844	Limosilactobacillus reuteri SD2112
+491077	NC_015699	338202351	0	CP002848	Limosilactobacillus reuteri SD2112	plasmid pLR580  
+491077	NC_015700	338202319	0	CP002845	Limosilactobacillus reuteri SD2112	plasmid pLR581  
+491077	NC_015701	338204606	0	CP002847	Limosilactobacillus reuteri SD2112	plasmid pLR584  
+491077	NC_015698	338202336	0	CP002846	Limosilactobacillus reuteri SD2112	plasmid pLR585  
+1358027	NC_021872	526230725	0	CP006603	Limosilactobacillus reuteri TD1
 557436	NC_009513	148543243	0	CP000705	Limosilactobacillus reuteri subsp. reuteri
 349123	NC_014553	308153215	0	GU108604	Limosilactobacillus reuteri subsp. rodentium	plasmid pGT231  
 349123	NC_001757	10956562	0	U21859	Limosilactobacillus reuteri subsp. rodentium	plasmid pGT232  
@@ -3657,6 +3690,7 @@
 1639	NC_021839	525929673	0	CP006598	Listeria monocytogenes
 1639	NC_021825	525877702	0	CP006596	Listeria monocytogenes
 1639	NC_021826	525886094	0	CP006597	Listeria monocytogenes
+1639	NC_021825	2082516422	0	CP006596	Listeria monocytogenes
 1639	NC_014495	307069350	0	FR667692	Listeria monocytogenes	plasmid pLM1-2bUG1  
 1639	NC_014255	298740847	0	GU244485	Listeria monocytogenes	plasmid pLM33  
 1639	NC_021828	525901154	0	CP006595	Listeria monocytogenes	plasmid unnamed  
@@ -3700,8 +3734,6 @@
 386043	NC_008555	116871422	0	AM263198	Listeria welshimeri serovar 6b str. SLCC5334
 238013	NC_019233	410687973	0	FR714836	Loigolactobacillus rennini	plasmid pREN  
 1421	NC_005242	38639856	0	AY325804	Lysinibacillus sphaericus	plasmid pLG  
-444177	NC_010382	169825618	0	CP000817	Lysinibacillus sphaericus C3-41
-444177	NC_010381	169825414	0	CP000818	Lysinibacillus sphaericus C3-41	plasmid pBsph  
 458233	NC_011999	222150250	0	AP009484	Macrococcus caseolyticus JCSC5402
 458233	NC_011995	222142561	0	AP009485	Macrococcus caseolyticus JCSC5402	plasmid pMCCL1  
 458233	NC_011996	222142576	0	AP009486	Macrococcus caseolyticus JCSC5402	plasmid pMCCL2  
@@ -3713,12 +3745,13 @@
 458233	NC_012003	222143522	0	AP009492	Macrococcus caseolyticus JCSC5402	plasmid pMCCL8  
 699246	NC_013895	308513210	0	CP001850	Mageeibacillus indolicus UPII9-5
 156889	NC_008576	117923318	0	CP000471	Magnetococcus marinus MC-1
-431944	NC_009353	145306741	0	CU459004	Magnetospirillum gryphiswaldense MSR-1	plasmid unnamed  
+431944	NC_009353	145306741	0	CU459004	Magnetospirillum gryphiswaldense MSR-1	plasmid pMSR-1  
 1430440	NC_023065	568144401	0	HG794546	Magnetospirillum gryphiswaldense MSR-1 v2	chromosome I  
 84159	NC_007706	84798614	0	AB116387	Magnetospirillum magneticum	plasmid pMGT  
 342108	NC_007626	83309099	0	AP007255	Magnetospirillum magneticum AMB-1
 697281	NC_015520	332980605	0	CP002360	Mahella australiensis 50-1 BON
 42858	NC_006871	60677337	0	AJ888003	Mammaliicoccus lentus	plasmid pSTE2  
+147467	NC_006974	62868688	0	AF093750	Mammaliicoccus sciuri	plasmid pACK6  
 1296	NC_010626	187729629	0	EU602348	Mammaliicoccus sciuri	plasmid pC194-like  
 1296	NC_005076	34328027	0	AJ579365	Mammaliicoccus sciuri	plasmid pSCFS1  
 75985	NC_006976	62945224	0	AJ966516	Mannheimia haemolytica	plasmid pCCK3259  
@@ -3736,16 +3769,16 @@
 394221	NC_008347	114568554	0	CP000449	Maricaulis maris MCS10
 191026	NC_022579	551593593	0	FO203519	Maridesulfovibrio hydrothermalis
 191026	NC_022578	551588049	0	FO203518	Maridesulfovibrio hydrothermalis	plasmid DESAM_p  
+1121451	NC_020055	436839709	0	FO203522	Maridesulfovibrio hydrothermalis AM13 = DSM 14728
+1121451	NC_019953	433637022	0	FO203523	Maridesulfovibrio hydrothermalis AM13 = DSM 14728	plasmid DESAM_p  
+526222	NC_012881	242277482	0	CP001649	Maridesulfovibrio salexigens DSM 2638
 869210	NC_015387	328949540	0	CP002630	Marinithermus hydrothermalis DSM 14884
 443254	NC_016751	374339022	0	CP003257	Marinitoga piezophila KA3
 443254	NC_016748	373231418	0	CP003258	Marinitoga piezophila KA3	plasmid pMARPI01  
 225937	NC_017506	385329741	0	CP001978	Marinobacter adhaerens HP15
 225937	NC_017507	385333923	0	CP001980	Marinobacter adhaerens HP15	plasmid pHP-187  
 225937	NC_017508	385334102	0	CP001979	Marinobacter adhaerens HP15	plasmid pHP-42  
-1163748	NC_017067	387812450	0	FO203363	Marinobacter hydrocarbonoclasticus ATCC 49840
-351348	NC_008740	120552944	0	CP000514	Marinobacter hydrocarbonoclasticus VT8
-351348	NC_008738	120536823	0	CP000515	Marinobacter hydrocarbonoclasticus VT8	plasmid pMAQU01  
-351348	NC_008739	120537037	0	CP000516	Marinobacter hydrocarbonoclasticus VT8	plasmid pMAQU02  
+1163748	NC_017067	387812450	0	FO203363	Marinobacter nauticus ATCC 49840
 490759	NC_018268	399543043	0	CP003735	Marinobacter sp. BSs20148
 1371	NC_002094	10956242	0	U75508	Marinococcus halophilus	plasmid pPL1  
 717774	NC_015276	326793322	0	CP002583	Marinomonas mediterranea MMB-1
@@ -3804,8 +3837,6 @@
 395965	NC_011666	217976200	0	CP001280	Methylocella silvestris BL2
 243233	NC_002977	77128441	0	AE017282	Methylococcus capsulatus str. Bath
 187303	NC_018485	402770565	0	HE956757	Methylocystis sp. SC2	chromosome I  
-1091494	NC_016112	357403388	0	FO082060	Methylomicrobium alcaliphilum 20Z
-1091494	NC_016108	357397515	0	FO082061	Methylomicrobium alcaliphilum 20Z	plasmid MEALZ_p  
 857087	NC_015572	333981747	0	CP002738	Methylomonas methanica MC09
 754477	NC_017856	387128982	0	CP003380	Methylophaga frappieri
 754477	NC_017858	387128925	0	CP003381	Methylophaga frappieri	plasmid unnamed  
@@ -3829,6 +3860,8 @@
 441620	NC_010721	188579259	0	CP001031	Methylorubrum populi BJ001	plasmid pMPOP02  
 583345	NC_012968	253995374	0	CP001672	Methylotenera mobilis JLW8
 666681	NC_014207	297537197	0	CP002056	Methylotenera versatilis 301
+1091494	NC_016112	357403388	0	FO082060	Methylotuvimicrobium alcaliphilum 20Z
+1091494	NC_016108	357397515	0	FO082061	Methylotuvimicrobium alcaliphilum 20Z	plasmid MEALZ_p  
 582744	NC_012969	253997713	0	CP001674	Methylovorus glucosetrophus SIP3-4
 582744	NC_012970	254003128	0	CP001675	Methylovorus glucosetrophus SIP3-4	plasmid pMsip01  
 582744	NC_012972	254028270	0	CP001676	Methylovorus glucosetrophus SIP3-4	plasmid pMsip02  
@@ -3842,15 +3875,6 @@
 161213	NC_004954	32455920	0	AY034092	Micrococcus sp. 28	plasmid pSD10  
 404583	NC_024972	690516876	0	LK056645	Micrococcus sp. A1	plasmid pLMA1  
 404582	NC_022599	554761244	0	KF577591	Micrococcus sp. V7	plasmid pLMV7  
-1173027	NC_019738	428308377	0	CP003630	Microcoleus sp. PCC 7113
-1173027	NC_019739	428314405	0	CP003631	Microcoleus sp. PCC 7113	plasmid pMIC7113.01  
-1173027	NC_019760	428314740	0	CP003632	Microcoleus sp. PCC 7113	plasmid pMIC7113.02  
-1173027	NC_019740	428314593	0	CP003633	Microcoleus sp. PCC 7113	plasmid pMIC7113.03  
-1173027	NC_019761	428314544	0	CP003634	Microcoleus sp. PCC 7113	plasmid pMIC7113.04  
-1173027	NC_019741	428314670	0	CP003635	Microcoleus sp. PCC 7113	plasmid pMIC7113.05  
-1173027	NC_019742	428314511	0	CP003636	Microcoleus sp. PCC 7113	plasmid pMIC7113.06  
-1173027	NC_019762	428314808	0	CP003637	Microcoleus sp. PCC 7113	plasmid pMIC7113.07  
-1173027	NC_019743	428314710	0	CP003638	Microcoleus sp. PCC 7113	plasmid pMIC7113.08  
 1126	NC_001597	10956079	0	D17448	Microcystis aeruginosa	plasmid Plasmid pMA2  
 1126	NC_004984	32455410	0	U94409	Microcystis aeruginosa	plasmid pMa025  
 1126	NC_002060	10956083	0	D10841	Microcystis aeruginosa	plasmid small Plasmid pMA1  
@@ -3878,6 +3902,7 @@
 582	NC_023901	609267374	0	KF813021	Morganella morganii	plasmid pM60  
 1124991	NC_020418	455737153	0	CP004345	Morganella morganii subsp. morganii KT
 886377	NC_015945	344201337	0	CP002999	Muricauda ruestringensis DSM 13258
+579405	NC_012880	242237460	0	CP001654	Musicola paradisiaca Ech703
 882378	NC_014722	312794749	0	FR687359	Mycetohabitans rhizoxinica HKI 454
 882378	NC_014718	312602094	0	FR687360	Mycetohabitans rhizoxinica HKI 454	plasmid pBRH01  
 882378	NC_014723	330399456	0	FR687361	Mycetohabitans rhizoxinica HKI 454	plasmid pBRH02  
@@ -3936,6 +3961,7 @@
 395095	NC_022350	544161316	0	CP001664	Mycobacterium tuberculosis str. Haarlem
 572418	NC_015758	339630083	0	FR878060	Mycobacterium tuberculosis variant africanum GM041182
 233413	NC_002945	31791177	0	BX248333	Mycobacterium tuberculosis variant bovis AF2122/97
+233413	NC_002945	1185580147	0	LT708304	Mycobacterium tuberculosis variant bovis AF2122/97	chromosome Mycobacterium_bovis_AF212297  
 1206780	NC_020245	461474881	0	CP003900	Mycobacterium tuberculosis variant bovis BCG str. Korea 1168P
 717522	NC_016804	378769743	0	CP002095	Mycobacterium tuberculosis variant bovis BCG str. Mexico
 410289	NC_008769	121635883	0	AM408590	Mycobacterium tuberculosis variant bovis BCG str. Pasteur 1173P2
@@ -3965,12 +3991,7 @@
 246196	NC_008596	118467340	0	CP000480	Mycolicibacterium smegmatis MC2 155
 246196	NC_018289	399984432	0	CP001663	Mycolicibacterium smegmatis MC2 155
 350058	NC_008726	120401028	0	CP000511	Mycolicibacterium vanbaalenii PYR-1
-2110	NC_013948	291319937	0	FP671138	Mycoplasma agalactiae
-347257	NC_009497	148377268	0	CU179680	Mycoplasma agalactiae PG2
 243272	NC_011025	193082772	0	CP001047	Mycoplasma arthritidis 158L3-1
-767465	NC_018077	392429594	0	CP002058	Mycoplasma bovis HB0801
-956483	NC_015725	339320528	0	CP002513	Mycoplasma bovis Hubei-1
-289397	NC_014760	313678134	0	CP002188	Mycoplasma bovis PG45
 40479	NC_019788	429221933	0	JX294737	Mycoplasma capricolum subsp. capricolum	plasmid pMG1B-1  
 40479	NC_019794	429221936	0	JX294735	Mycoplasma capricolum subsp. capricolum	plasmid pMG2A-1  
 40479	NC_019787	429221930	0	JX294736	Mycoplasma capricolum subsp. capricolum	plasmid pMG2D-1  
@@ -3979,10 +4000,6 @@
 51364	NC_019795	429221939	0	JX294733	Mycoplasma cottewii	plasmid pMG2C-1  
 51364	NC_019786	429221927	0	JX294734	Mycoplasma cottewii	plasmid pMG2E-1  
 512564	NC_014014	294155300	0	CP001991	Mycoplasma crocodyli MP145
-1246955	NC_019949	433624204	0	HF559394	Mycoplasma cynos C142
-637387	NC_014552	308189587	0	CP001995	Mycoplasma fermentans JER
-943945	NC_014921	319776738	0	CP002458	Mycoplasma fermentans M64
-496833	NC_021002	479133239	0	AP009608	Mycoplasma fermentans PG18
 1159203	NC_018412	401770401	0	CP003512	Mycoplasma gallisepticum CA06_2006.052-5-2P
 1159202	NC_018411	401769656	0	CP003511	Mycoplasma gallisepticum NC06_2006.080-5-2P
 1159204	NC_018413	401771165	0	CP003513	Mycoplasma gallisepticum NC08_2008.031-4-3P
@@ -4031,16 +4048,25 @@
 272634	NC_000912	13507739	0	U00089	Mycoplasma pneumoniae M129
 1238993	NC_020076	479052799	0		Mycoplasma pneumoniae M129-B7
 1238993	NC_020076	865264894	0	CP003913	Mycoplasma pneumoniae M129-B7
-272635	NC_002771	15828471	0	AL445566	Mycoplasma pulmonis UAB CTIP
 743965	NC_015946	344204770	0	CP003021	Mycoplasma putrefaciens KS1
 1292033	NC_021083	482887500	0	CP004357	Mycoplasma putrefaciens Mput9231
 708248	NC_015153	325989358	0	FQ790233	Mycoplasma suis KI3806
 768700	NC_015155	325972867	0	CP002525	Mycoplasma suis str. Illinois
-262723	NC_007294	71894025	0	AE017245	Mycoplasma synoviae 53
 1197325	NC_018149	397677603	0	CP003703	Mycoplasma wenyonii str. Massachusetts
 51365	NC_019785	429221924	0	JX294731	Mycoplasma yeatsii	plasmid pMG2B-1  
 51365	NC_019797	429221945	0	JX294732	Mycoplasma yeatsii	plasmid pMG2F-1  
 51365	NC_011102	195546299	0	EU429323	Mycoplasma yeatsii	plasmid pMyBK1  
+2110	NC_013948	291319937	0	FP671138	Mycoplasmopsis agalactiae
+347257	NC_009497	148377268	0	CU179680	Mycoplasmopsis agalactiae PG2
+767465	NC_018077	392429594	0	CP002058	Mycoplasmopsis bovis HB0801
+956483	NC_015725	339320528	0	CP002513	Mycoplasmopsis bovis Hubei-1
+289397	NC_014760	313678134	0	CP002188	Mycoplasmopsis bovis PG45
+1246955	NC_019949	433624204	0	HF559394	Mycoplasmopsis cynos C142
+637387	NC_014552	308189587	0	CP001995	Mycoplasmopsis fermentans JER
+943945	NC_014921	319776738	0	CP002458	Mycoplasmopsis fermentans M64
+496833	NC_021002	479133239	0	AP009608	Mycoplasmopsis fermentans PG18
+272635	NC_002771	15828471	0	AL445566	Mycoplasmopsis pulmonis UAB CTIP
+262723	NC_007294	71894025	0	AE017245	Mycoplasmopsis synoviae 53
 33	NC_010372	169302939	0	EU137666	Myxococcus fulvus	plasmid pMF1  
 1278073	NC_020126	442317022	0	CP004025	Myxococcus stipitatus DSM 14675
 246197	NC_008095	108756767	0	CP000113	Myxococcus xanthus DK 1622
@@ -4110,8 +4136,8 @@
 105559	NC_014317	300067537	0	CP002088	Nitrosococcus watsonii C-113	plasmid pNWAT02  
 228410	NC_004757	30248031	0	AL954747	Nitrosomonas europaea ATCC 19718
 335283	NC_008344	114330036	0	CP000450	Nitrosomonas eutropha C91
-335283	NC_008341	114326555	0	CP000451	Nitrosomonas eutropha C91	plasmid Plasmid1  
-335283	NC_008342	114326611	0	CP000452	Nitrosomonas eutropha C91	plasmid Plasmid2  
+335283	NC_008341	114326555	0	CP000451	Nitrosomonas eutropha C91	plasmid p1  
+335283	NC_008342	114326611	0	CP000452	Nitrosomonas eutropha C91	plasmid p2  
 42353	NC_002114	10956813	0	AB018481	Nitrosomonas sp.	plasmid pAYL  
 42353	NC_002113	10956811	0	AB018480	Nitrosomonas sp.	plasmid pAYS  
 153948	NC_015222	325980881	0	CP002552	Nitrosomonas sp. AL212
@@ -4170,13 +4196,6 @@
 670487	NC_014761	313678900	0	CP002361	Oceanithermus profundus DSM 14977
 670487	NC_014753	313667214	0	CP002362	Oceanithermus profundus DSM 14977	plasmid pOCEPR01  
 221109	NC_004193	23097455	0	BA000028	Oceanobacillus iheyensis HTE831
-529	NC_010917	190570377	0	DQ979387	Ochrobactrum anthropi	plasmid pW240  
-439375	NC_009667	153007346	0	CP000758	Ochrobactrum anthropi ATCC 49188	chromosome 1  
-439375	NC_009668	153010078	0	CP000759	Ochrobactrum anthropi ATCC 49188	chromosome 2  
-439375	NC_009669	153011772	0	CP000760	Ochrobactrum anthropi ATCC 49188	plasmid pOANT01  
-439375	NC_009670	153011934	0	CP000761	Ochrobactrum anthropi ATCC 49188	plasmid pOANT02  
-439375	NC_009671	153012026	0	CP000762	Ochrobactrum anthropi ATCC 49188	plasmid pOANT03  
-439375	NC_009672	153012113	0	CP000763	Ochrobactrum anthropi ATCC 49188	plasmid pOANT04  
 391626	NC_020911	478181348	0	CP003740	Octadecabacter antarcticus 307
 391626	NC_020907	478176604	0	CP003741	Octadecabacter antarcticus 307	plasmid pOA307_63  
 391616	NC_020908	478176662	0	CP003742	Octadecabacter arcticus 238
@@ -4189,13 +4208,6 @@
 1247	NC_003201	16519565	0	AJ310613	Oenococcus oeni	plasmid pRS2  
 1247	NC_003099	15530173	0	AJ310614	Oenococcus oeni	plasmid pRS3  
 203123	NC_008528	116490126	0	CP000411	Oenococcus oeni PSU-1
-1031710	NC_017538	386028266	0	CP002821	Oligotropha carboxidovorans OM4
-1031710	NC_017536	386031648	0	CP002822	Oligotropha carboxidovorans OM4	plasmid pHCG3B  
-1031710	NC_017539	386031806	0	CP002823	Oligotropha carboxidovorans OM4	plasmid pOC167B  
-504832	NC_015684	337739247	0	CP002826	Oligotropha carboxidovorans OM5
-504832	NC_011386	209883160	0	CP001196	Oligotropha carboxidovorans OM5
-504832	NC_015689	337739122	0	CP002827	Oligotropha carboxidovorans OM5	plasmid pHCG3  
-504832	NC_015685	337738957	0	CP002828	Oligotropha carboxidovorans OM5	plasmid pOC167  
 633147	NC_014363	302334808	0	CP002106	Olsenella uli DSM 7084
 100379	NC_019167	410687489	0	AB479508	Onion yellows phytoplasma	plasmid EcOYNIM_1998  
 100379	NC_019168	410687496	0	AB479509	Onion yellows phytoplasma	plasmid EcOYNIM_1999  
@@ -4325,6 +4337,7 @@
 634956	NC_015661	336237224	0	CP002837	Parageobacillus thermoglucosidasius C56-YS93	plasmid pGEOTH02  
 1129794	NC_020514	476411542	0	CP003837	Paraglaciecola psychrophila 170
 1150469	NC_017059	384260349	0	HE663493	Pararhodospirillum photometricum DSM 122	chromosome DSM 122  
+84588	NC_005070	33864539	0	BX548020	Parasynechococcus marenigrum WH 8102
 402881	NC_009719	154250456	0	CP000774	Parvibaculum lavamentivorans DS-1
 314260	NC_014414	304319677	0	CP002156	Parvularcula bermudensis HTCC2503
 747	NC_019209	410687719	0	GU080062	Pasteurella multocida	plasmid pB1000  
@@ -4377,7 +4390,6 @@
 524386	NC_012033	222554303	0	FJ613505	Pedobacter sp. BG5	plasmid pMWHK1  
 1082931	NC_016078	357383074	0	CP003075	Pelagibacterium halotolerans B2
 1082931	NC_016079	357383070	0	CP003076	Pelagibacterium halotolerans B2	plasmid pPHB2  
-338963	NC_007498	90960985	0	CP000142	Pelobacter carbinolicus DSM 2380
 338966	NC_008609	118578449	0	CP000482	Pelobacter propionicus DSM 2379
 338966	NC_008607	118577231	0	CP000483	Pelobacter propionicus DSM 2379	plasmid pPRO1  
 338966	NC_008608	118577427	0	CP000484	Pelobacter propionicus DSM 2379	plasmid pPRO2  
@@ -4414,6 +4426,7 @@
 667015	NC_015165	325300726	0	CP002531	Phocaeicola salanitronis DSM 18170	plasmid pBACSA01  
 667015	NC_015168	324976987	0	CP002532	Phocaeicola salanitronis DSM 18170	plasmid pBACSA02  
 667015	NC_015166	324959701	0	CP002533	Phocaeicola salanitronis DSM 18170	plasmid pBACSA03  
+435590	NC_009614	150002608	0	CP000139	Phocaeicola vulgatus ATCC 8482
 85581	NC_016983	380310264	0	AB571865	Photobacterium damselae subsp. damselae	plasmid pAQU1  
 85581	NC_014653	312620954	0	FN597600	Photobacterium damselae subsp. damselae	plasmid pPHDD1  
 38294	NC_012919	253723639	0	AB453229	Photobacterium damselae subsp. piscicida	plasmid pP9014  
@@ -4474,12 +4487,24 @@
 264731	NC_014033	294672793	0	CP002006	Prevotella ruminicola 23
 575614	NC_022124	532435496	0	CP003666	Prevotella sp. oral taxon 299 str. F0039
 575614	NC_022111	532354121	0	CP003667	Prevotella sp. oral taxon 299 str. F0039	plasmid unnamed  
+592022	NC_014103	295702242	0	CP001982	Priestia megaterium DSM 319
+545693	NC_014019	294496875	0	CP001983	Priestia megaterium QM B1551
+545693	NC_010008	294672670	0	CP001984	Priestia megaterium QM B1551	plasmid pBM100  
+545693	NC_010009	294672655	0	CP001985	Priestia megaterium QM B1551	plasmid pBM200  
+545693	NC_010010	294672678	0	CP001986	Priestia megaterium QM B1551	plasmid pBM300  
+545693	NC_004604	294663009	0	CP001987	Priestia megaterium QM B1551	plasmid pBM400  
+545693	NC_014025	294509091	0	CP001988	Priestia megaterium QM B1551	plasmid pBM500  
+545693	NC_014031	294505704	0	CP001989	Priestia megaterium QM B1551	plasmid pBM600  
+545693	NC_014023	294508916	0	CP001990	Priestia megaterium QM B1551	plasmid pBM700  
+1006007	NC_017138	384044176	0	CP003017	Priestia megaterium WSH-002
+1006007	NC_017139	384044106	0	CP003018	Priestia megaterium WSH-002	plasmid WSH-002_p1  
+1006007	NC_017140	384044079	0	CP003019	Priestia megaterium WSH-002	plasmid WSH-002_p2  
+1006007	NC_017141	384044091	0	CP003020	Priestia megaterium WSH-002	plasmid WSH-002_p3  
 146891	NC_008816	123967536	0	CP000551	Prochlorococcus marinus str. AS9601
 93059	NC_009976	159902540	0	CP000878	Prochlorococcus marinus str. MIT 9211
 93060	NC_009840	157412338	0	CP000825	Prochlorococcus marinus str. MIT 9215
 167546	NC_009091	126695337	0	CP000576	Prochlorococcus marinus str. MIT 9301
 74546	NC_007577	78778385	0	CP000111	Prochlorococcus marinus str. MIT 9312
-74547	NC_005071	33862273	0	BX548175	Prochlorococcus marinus str. MIT 9313
 167542	NC_008817	123965234	0	CP000552	Prochlorococcus marinus str. MIT 9515
 167555	NC_008819	124024712	0	CP000553	Prochlorococcus marinus str. NATL1A
 59920	NC_007335	162958048	0	CP000095	Prochlorococcus marinus str. NATL2A
@@ -4557,7 +4582,6 @@
 1457392	NC_022344	543110697	0	KC543497	Pseudomonas aeruginosa PA96	plasmid pOZ176  
 208964	NC_002516	110645304	0	AE004091	Pseudomonas aeruginosa PAO1
 1367494	NC_022594	651874622	0	CP006832	Pseudomonas aeruginosa PAO1-VE13
-1367493	NC_022591	651868701	0	CP006831	Pseudomonas aeruginosa PAO1-VE2
 1352354	NC_022361	651859679	0	CP006705	Pseudomonas aeruginosa PAO581
 1340851	NC_021577	514407635	0	CP006245	Pseudomonas aeruginosa RP73
 1427342	NC_023149	568306739	0	CP006931	Pseudomonas aeruginosa SCV20265
@@ -4569,7 +4593,6 @@
 294	NC_012674	237797106	0	AY887963	Pseudomonas fluorescens	plasmid pNAH20  
 1037911	NC_017911	387891255	0	CP003041	Pseudomonas fluorescens A506
 1037911	NC_021361	510414827	0	CP003042	Pseudomonas fluorescens A506	plasmid pA506  
-1114970	NC_016830	378947941	0	CP003150	Pseudomonas fluorescens F113
 205922	NC_007492	255961261	0	CP000094	Pseudomonas fluorescens Pf0-1
 743713	NC_022437	545626530	0	JQ737005	Pseudomonas fluorescens R124	plasmid pMP-R124  
 216595	NC_012660	229587578	0	AM181176	Pseudomonas fluorescens SBW25
@@ -4580,6 +4603,7 @@
 78543	NC_021250	507528052	0	JX891462	Pseudomonas migulae	plasmid pD2RT  
 1435044	NC_023075	568179884	0	CP006978	Pseudomonas monteilii SB3078
 1435058	NC_023076	568185322	0	CP006979	Pseudomonas monteilii SB3101
+1114970	NC_016830	378947941	0	CP003150	Pseudomonas ogarae
 1282356	NC_020209	447915004	0	CP004045	Pseudomonas poae RE*1-1-14
 1124983	NC_021237	501677485	0	CP003190	Pseudomonas protegens CHA0
 220664	NC_004129	70728250	0	CP000076	Pseudomonas protegens Pf-5
@@ -4613,8 +4637,8 @@
 1245471	NC_021499	512615653	0	AP013068	Pseudomonas resinovorans NBRC 106553
 1245471	NC_021506	512689975	0	AP013069	Pseudomonas resinovorans NBRC 106553	plasmid pCAR1.3  
 264730	NC_005773	71733195	0	CP000058	Pseudomonas savastanoi pv. phaseolicola 1448A
-264730	NC_007274	71725141	0	CP000059	Pseudomonas savastanoi pv. phaseolicola 1448A	plasmid large plasmid  
-264730	NC_007275	71725269	0	CP000060	Pseudomonas savastanoi pv. phaseolicola 1448A	plasmid small plasmid  
+264730	NC_007274	71725141	0	CP000059	Pseudomonas savastanoi pv. phaseolicola 1448A	plasmid large  
+264730	NC_007275	71725269	0	CP000060	Pseudomonas savastanoi pv. phaseolicola 1448A	plasmid small  
 360920	NC_019265	1949548806	0	FR820585	Pseudomonas savastanoi pv. savastanoi	plasmid pPsv48A  
 360920	NC_019266	410686305	0	FR820586	Pseudomonas savastanoi pv. savastanoi	plasmid pPsv48B  
 360920	NC_019292	1559969465	0	FR820587	Pseudomonas savastanoi pv. savastanoi	plasmid pPsv48C  
@@ -4665,7 +4689,6 @@
 675635	NC_016600	375129061	0	CP002596	Pseudonocardia dioxanivorans CB1190	plasmid pPSED02  
 675635	NC_015313	327309734	0	CP002598	Pseudonocardia dioxanivorans CB1190	plasmid pPSED03  
 762903	NC_015177	325102757	0	CP002545	Pseudopedobacter saltans DSM 12145
-767029	NC_018142	397668839	0	CP002734	Pseudopropionibacterium propionicum F0230a
 1123383	NC_022792	557820703	0	AP014507	Pseudothermotoga elfii DSM 9442 = NBRC 107921
 1123384	NC_022795	557830113	0	AP014508	Pseudothermotoga hypogea DSM 11164 = NBRC 106472
 416591	NC_009828	157362870	0	CP000812	Pseudothermotoga lettingae TMO
@@ -4754,9 +4777,9 @@
 347834	NC_007762	86359705	0	CP000134	Rhizobium etli CFN 42	plasmid p42a  
 347834	NC_007763	86359881	0	CP000135	Rhizobium etli CFN 42	plasmid p42b  
 347834	NC_007764	86360045	0	CP000136	Rhizobium etli CFN 42	plasmid p42c  
+347834	NC_004041	89255298	0	U80928	Rhizobium etli CFN 42	plasmid p42d  
 347834	NC_007765	86360278	0	CP000137	Rhizobium etli CFN 42	plasmid p42e  
 347834	NC_007766	86360734	0	CP000138	Rhizobium etli CFN 42	plasmid p42f  
-347834	NC_004041	89255298	0	U80928	Rhizobium etli CFN 42	plasmid symbiotic plasmid p42d  
 491916	NC_010994	190889639	0	CP001074	Rhizobium etli CIAT 652
 491916	NC_010998	190895317	0	CP001075	Rhizobium etli CIAT 652	plasmid pA  
 491916	NC_010996	190893983	0	CP001076	Rhizobium etli CIAT 652	plasmid pB  
@@ -4793,30 +4816,12 @@
 698761	NC_020060	440228565	0	CP004016	Rhizobium tropici CIAT 899	plasmid pRtrCIAT899a  
 698761	NC_020061	440222456	0	CP004017	Rhizobium tropici CIAT 899	plasmid pRtrCIAT899b  
 698761	NC_020062	440222965	0	CP004018	Rhizobium tropici CIAT 899	plasmid pRtrCIAT899c  
+392499	NC_009511	148552929	0	CP000699	Rhizorhabdus wittichii RW1
+392499	NC_009507	148550551	0	CP000700	Rhizorhabdus wittichii RW1	plasmid pSWIT01  
+392499	NC_009508	148550845	0	CP000701	Rhizorhabdus wittichii RW1	plasmid pSWIT02  
 666685	NC_020541	469816339	0	CP003470	Rhodanobacter denitrificans
-1075	NC_004527	27733883	0	AB082959	Rhodobacter blasticus	plasmid pMG160  
 272942	NC_014034	294675557	0	CP001312	Rhodobacter capsulatus SB 1003
 272942	NC_014035	294679055	0	CP001313	Rhodobacter capsulatus SB 1003	plasmid pRCB133  
-272943	NC_007493	552535527	0	CP000143	Rhodobacter sphaeroides 2.4.1	chromosome 1  
-272943	NC_007494	552536492	0	CP000144	Rhodobacter sphaeroides 2.4.1	chromosome 2  
-272943	NC_009007	125654605	0	DQ232586	Rhodobacter sphaeroides 2.4.1	plasmid A  
-272943	NC_007488	552530711	0	CP000145	Rhodobacter sphaeroides 2.4.1	plasmid B  
-272943	NC_007489	77404693	0	CP000146	Rhodobacter sphaeroides 2.4.1	plasmid C  
-272943	NC_007490	552530953	0	CP000147	Rhodobacter sphaeroides 2.4.1	plasmid D  
-272943	NC_009008	125654693	0	DQ232587	Rhodobacter sphaeroides 2.4.1	plasmid E  
-349102	NC_009428	146276058	0	CP000661	Rhodobacter sphaeroides ATCC 17025
-349102	NC_009429	146279170	0	CP000662	Rhodobacter sphaeroides ATCC 17025	plasmid pRSPA01  
-349102	NC_009430	146279973	0	CP000663	Rhodobacter sphaeroides ATCC 17025	plasmid pRSPA02  
-349102	NC_009431	146280242	0	CP000664	Rhodobacter sphaeroides ATCC 17025	plasmid pRSPA03  
-349102	NC_009432	146280352	0	CP000665	Rhodobacter sphaeroides ATCC 17025	plasmid pRSPA04  
-349102	NC_009433	146280384	0	CP000666	Rhodobacter sphaeroides ATCC 17025	plasmid pRSPA05  
-349101	NC_009049	126460778	0	CP000577	Rhodobacter sphaeroides ATCC 17029	chromosome 1  
-349101	NC_009050	126463752	0	CP000578	Rhodobacter sphaeroides ATCC 17029	chromosome 2  
-349101	NC_009040	126464805	0	CP000579	Rhodobacter sphaeroides ATCC 17029	plasmid pRSPH01  
-557760	NC_011963	221638099	0	CP001150	Rhodobacter sphaeroides KD131	chromosome 1  
-557760	NC_011958	221368938	0	CP001151	Rhodobacter sphaeroides KD131	chromosome 2  
-557760	NC_011962	221218192	0	CP001152	Rhodobacter sphaeroides KD131	plasmid pRSKD131A  
-557760	NC_011960	221634492	0	CP001153	Rhodobacter sphaeroides KD131	plasmid pRSKD131B  
 1036179	NC_010882	190410619	0	DQ629589	Rhodococcus aetherivorans I24	plasmid pRA1  
 1833	NC_005073	33867057	0	AY223810	Rhodococcus erythropolis	plasmid pBD2  
 1833	NC_003846	20800428	0	AF015088	Rhodococcus erythropolis	plasmid pFAJ2600  
@@ -4890,11 +4895,11 @@
 1105107	NC_016929	379022404	0	CP003304	Rickettsia canadensis str. CA410
 293613	NC_009879	157803189	0	CP000409	Rickettsia canadensis str. McKiel
 272944	NC_003103	15891923	0	AE006914	Rickettsia conorii str. Malish 7
+1032845	NC_015866	341583222	0	CP002912	Rickettsia conorii subsp. heilongjiangensis 054
 42862	NC_019229	410687897	0	GQ329881	Rickettsia felis	plasmid pRF  
 315456	NC_007109	67458392	0	CP000053	Rickettsia felis URRWXCal2
 315456	NC_007110	67459793	0	CP000054	Rickettsia felis URRWXCal2	plasmid pRF  
 315456	NC_007111	67459862	0	CP000055	Rickettsia felis URRWXCal2	plasmid pRFdelta  
-1032845	NC_015866	341583222	0	CP002912	Rickettsia heilongjiangensis 054
 652620	NC_016050	350273053	0	AP011533	Rickettsia japonica YH
 416276	NC_009900	157964072	0	CP000683	Rickettsia massiliae MTU5
 416276	NC_009897	157954006	0	CP000684	Rickettsia massiliae MTU5	plasmid pRMA  
@@ -4954,6 +4959,8 @@
 373994	NC_019686	427740454	0	CP003551	Rivularia sp. PCC 7116	plasmid pRIV7116.02  
 313596	NC_013222	260060589	0	CP001712	Robiginitalea biformata HTCC2501
 585394	NC_015977	347530298	0	CP003040	Roseburia hominis A2-183
+657315	NC_021040	479201824	0	FP929049	Roseburia intestinalis M50/1
+718255	NC_021012	479146200	0	FP929050	Roseburia intestinalis XB6B4
 383372	NC_009767	156740028	0	CP000804	Roseiflexus castenholzii DSM 13941
 357808	NC_009523	148654188	0	CP000686	Roseiflexus sp. RS-1
 375451	NC_008209	110677421	0	CP000362	Roseobacter denitrificans OCh 114
@@ -4975,7 +4982,7 @@
 185588	NC_004929	32455972	0	AF416330	Ruegeria sp. PR1b	plasmid pSD20  
 185588	NC_004574	28558826	0	AF416331	Ruegeria sp. PR1b	plasmid pSD25  
 292414	NC_008044	99079841	0	CP000377	Ruegeria sp. TM1040
-292414	NC_008043	99078009	0	CP000376	Ruegeria sp. TM1040	plasmid mega plasmid  
+292414	NC_008043	99078009	0	CP000376	Ruegeria sp. TM1040	plasmid megaplasmid  
 292414	NC_008042	99077902	0	CP000375	Ruegeria sp. TM1040	plasmid unnamed  
 394503	NC_011898	220927459	0	CP001348	Ruminiclostridium cellulolyticum H10
 697329	NC_014833	317054731	0	CP002403	Ruminococcus albus 7 = DSM 20455
@@ -5013,7 +5020,6 @@
 41514	NC_010067	161501984	0	CP000880	Salmonella enterica subsp. arizonae serovar 62:z4,z23:-
 866913	NC_021820	526218030	0	CP006602	Salmonella enterica subsp. enterica serovar 4,[5],12:i:- str. 08-1736
 1967595	NC_003079	15320547	0	AY048853	Salmonella enterica subsp. enterica serovar 6,7:c:1,5	plasmid pSFD10  
-1406860	NC_022991	563651606	0	CP006876	Salmonella enterica subsp. enterica serovar Agona str. 24249
 454166	NC_011149	197247352	0	CP001138	Salmonella enterica subsp. enterica serovar Agona str. SL483
 454166	NC_011148	197247299	0	CP001137	Salmonella enterica subsp. enterica serovar Agona str. SL483	plasmid unnamed  
 932733	NC_015575	334139592	0	HQ230977	Salmonella enterica subsp. enterica serovar Bardo	plasmid pSBardo-Kan  
@@ -5051,7 +5057,6 @@
 550537	NC_011294	207855516	0	AM933172	Salmonella enterica subsp. enterica serovar Enteritidis str. P125109
 550538	NC_011274	205351346	0	AM933173	Salmonella enterica subsp. enterica serovar Gallinarum str. 287/91
 1225522	NC_022221	537435369	0	CP003786	Salmonella enterica subsp. enterica serovar Gallinarum/pullorum str. CDC1983-67
-1081093	NC_016831	378953804	0	CP003047	Salmonella enterica subsp. enterica serovar Gallinarum/pullorum str. RKS5078
 1124936	NC_021810	525814190	0	CP004086	Salmonella enterica subsp. enterica serovar Heidelberg str. 41578
 1124936	NC_021811	525811113	0	CP004087	Salmonella enterica subsp. enterica serovar Heidelberg str. 41578	plasmid pSEEH1578_01  
 1124936	NC_021841	525932970	0	CP004088	Salmonella enterica subsp. enterica serovar Heidelberg str. 41578	plasmid pSEEH1578_02  
@@ -5197,6 +5202,7 @@
 936157	NT_187100	409249914	0	FR775219	Salmonella enterica subsp. enterica serovar Weltevreden str. 2007-60-3289-1
 936157	NT_187103	409250470	0	FR775222	Salmonella enterica subsp. enterica serovar Weltevreden str. 2007-60-3289-1
 936157	NT_187110	409251170	0	FR775229	Salmonella enterica subsp. enterica serovar Weltevreden str. 2007-60-3289-1
+936157	NT_187135	409248365	0	FR775255	Salmonella enterica subsp. enterica serovar Weltevreden str. 2007-60-3289-1	plasmid pSW82  
 356621	NC_011604	216700335	0	DQ268764	Salmonella enterica subsp. enterica serovar Westhampton	plasmid pWES-1  
 1179812	NC_019342	410690538	0	JQ418538	Salmonella sp. 14	plasmid p14-120  
 1179812	NC_019335	410689997	0	JQ418537	Salmonella sp. 14	plasmid p14-95A  
@@ -5257,21 +5263,6 @@
 693970	NC_017577	386343408	0	CP002812	Shewanella baltica OS117	plasmid pSBAL11701  
 693970	NC_017580	386343312	0	CP002813	Shewanella baltica OS117	plasmid pSBAL11702  
 693970	NC_017578	386343535	0	CP002814	Shewanella baltica OS117	plasmid pSBAL11703  
-325240	NC_009052	126172257	0	CP000563	Shewanella baltica OS155
-325240	NC_009035	126090118	0	CP000564	Shewanella baltica OS155	plasmid pSbal01  
-325240	NC_009036	126090236	0	CP000565	Shewanella baltica OS155	plasmid pSbal02  
-325240	NC_009037	126090319	0	CP000566	Shewanella baltica OS155	plasmid pSbal03  
-325240	NC_009038	126090338	0	CP000567	Shewanella baltica OS155	plasmid pSbal04  
-402882	NC_009665	152998555	0	CP000753	Shewanella baltica OS185
-402882	NC_009661	152998483	0	CP000754	Shewanella baltica OS185	plasmid pS18501  
-399599	NC_009997	160873126	0	CP000891	Shewanella baltica OS195
-399599	NC_009998	160872934	0	CP000892	Shewanella baltica OS195	plasmid pS19501  
-399599	NC_009999	160873002	0	CP000893	Shewanella baltica OS195	plasmid pS19502  
-399599	NC_010000	160873076	0	CP000894	Shewanella baltica OS195	plasmid pS19503  
-407976	NC_011663	217971216	0	CP001252	Shewanella baltica OS223
-407976	NC_011664	217975547	0	CP001253	Shewanella baltica OS223	plasmid pS22301  
-407976	NC_011668	217980264	0	CP001254	Shewanella baltica OS223	plasmid pS22302  
-407976	NC_011665	217975697	0	CP001255	Shewanella baltica OS223	plasmid pS22303  
 693973	NC_016901	378706362	0	CP002383	Shewanella baltica OS678
 693973	NC_016905	378715492	0	CP002384	Shewanella baltica OS678	plasmid pSBAL67801  
 318161	NC_007954	91791369	0	CP000302	Shewanella denitrificans OS217
@@ -5288,10 +5279,8 @@
 592146	NC_012035	222692192	0	FJ626843	Shewanella sp. 33B	plasmid pSFKW33  
 94122	NC_008577	117918459	0	CP000469	Shewanella sp. ANA-3	chromosome 1  
 94122	NC_008573	117676079	0	CP000470	Shewanella sp. ANA-3	plasmid Plasmid1  
-60480	NC_008321	113968346	0	CP000446	Shewanella sp. MR-4
 60481	NC_008322	114045513	0	CP000444	Shewanella sp. MR-7
 60481	NC_008320	113951722	0	CP000445	Shewanella sp. MR-7	plasmid Plasmid1  
-351745	NC_008750	120596833	0	CP000503	Shewanella sp. W3-18-1
 637905	NC_014012	294138771	0	AP011177	Shewanella violacea DSS12
 392500	NC_010506	170724370	0	CP000961	Shewanella woodyi ATCC 51908
 621	NC_019357	414085904	0	HQ404303	Shigella boydii	plasmid pSB13  
@@ -5457,9 +5446,6 @@
 745310	NC_020544	472433924	0	CP004040	Sphingomonas sp. MM-1	plasmid pISP3  
 745310	NC_013970	478733161	0	AB549721	Sphingomonas sp. MM-1	plasmid pISP3  
 745310	NC_020563	485191029	0	CP004041	Sphingomonas sp. MM-1	plasmid pISP4  
-392499	NC_009511	148552929	0	CP000699	Sphingomonas wittichii RW1
-392499	NC_009507	148550551	0	CP000700	Sphingomonas wittichii RW1	plasmid pSWIT01  
-392499	NC_009508	148550845	0	CP000701	Sphingomonas wittichii RW1	plasmid pSWIT02  
 317655	NC_008048	103485498	0	CP000356	Sphingopyxis alaskensis RB2256
 317655	NC_008036	98152871	0	CP000357	Sphingopyxis alaskensis RB2256	plasmid F plasmid  
 33050	NC_014466	308071692	0	AB534719	Sphingopyxis macrogoltabida	plasmid pSM103mini  
@@ -5689,7 +5675,6 @@
 342451	NC_007351	73663756	0	AP008935	Staphylococcus saprophyticus subsp. saprophyticus ATCC 15305 = NCTC 7292	plasmid pSSP1  
 342451	NC_007352	73663802	0	AP008936	Staphylococcus saprophyticus subsp. saprophyticus ATCC 15305 = NCTC 7292	plasmid pSSP2  
 881952	NC_015432	330827429	0	FR687301	Staphylococcus saprophyticus subsp. saprophyticus MS1146	plasmid pSSAP1  
-147467	NC_006974	62868688	0	AF093750	Staphylococcus sciuri subsp. sciuri	plasmid pACK6  
 1286	NC_007769	86559540	0	AM184100	Staphylococcus simulans	plasmid pLNU2  
 1286	NC_008351	114882150	0	AM399079	Staphylococcus simulans	plasmid pLNU5 (naturally occurring)  
 1287	NC_013944	1897973730	0	GU228571	Staphylococcus simulans bv. staphylolyticus	plasmid pACK1  
@@ -5747,8 +5732,10 @@
 990317	NC_015215	325977200	0	FR824043	Streptococcus gallolyticus subsp. gallolyticus ATCC BAA-2069
 990317	NC_015219	325926838	0	FR824044	Streptococcus gallolyticus subsp. gallolyticus ATCC BAA-2069	plasmid pSGG1  
 467705	NC_009785	157149651	0	CP000725	Streptococcus gordonii str. Challis substr. CH1
+1156431	NC_022582	552628837	0	CP006776	Streptococcus ilei
+1156431	NC_022584	552737301	0	CP006805	Streptococcus ilei
 1069533	NC_016826	379704392	0	CP003295	Streptococcus infantarius subsp. infantarius CJ18
-1069533	NC_016837	379704341	0	CP003296	Streptococcus infantarius subsp. infantarius CJ18	plasmid pSICJ18-1  
+1069533	NC_016837	379704341	0	CP003296	Streptococcus infantarius subsp. infantarius CJ18	plasmid complete genome  
 68892	NC_019365	410691244	0	JX275965	Streptococcus infantis	plasmid pSI01  
 862967	NC_022246	538379295	0	CP003857	Streptococcus intermedius B196
 862966	NC_022237	538349851	0	CP003858	Streptococcus intermedius C270
@@ -5832,8 +5819,6 @@
 1048332	NC_015760	340397867	0	FR873481	Streptococcus salivarius CCHSS3
 347253	NC_017595	387783149	0	FR873482	Streptococcus salivarius JIM8777
 388919	NC_009009	125716887	0	CP000387	Streptococcus sanguinis SK36
-1156431	NC_022584	552737301	0	CP006805	Streptococcus sp. I-G2
-1156433	NC_022582	552628837	0	CP006776	Streptococcus sp. I-P16
 1307	NC_002140	10956187	0	AB019522	Streptococcus suis	plasmid pSSU1  
 993512	NC_017622	386587281	0	CP002570	Streptococcus suis A7
 568814	NC_012926	253754647	0	FM252032	Streptococcus suis BM407
@@ -5911,6 +5896,7 @@
 591167	NC_016114	357409266	0	CP002475	Streptomyces pratensis ATCC 33331
 591167	NC_016110	357409092	0	CP002476	Streptomyces pratensis ATCC 33331	plasmid pSFLA01  
 591167	NC_016115	357415565	0	CP002477	Streptomyces pratensis ATCC 33331	plasmid pSFLA02  
+1343740	NC_022785	557682930	0	CP006567	Streptomyces rapamycinicus NRRL 5491
 1928	NC_004808	255767880	0	AB088224	Streptomyces rochei	plasmid pSLA2-L  
 1928	NC_024971	689922279	0	AB905437	Streptomyces rochei	plasmid pSLA2-S  
 680198	NC_013929	290954631	0	FN554889	Streptomyces scabiei 87.22
@@ -5993,7 +5979,6 @@
 1173263	NC_019702	428220140	0	CP003594	Synechococcus sp. PCC 7502
 1173263	NC_019691	428223389	0	CP003595	Synechococcus sp. PCC 7502	plasmid pSYN7502.01  
 1173263	NC_019692	428223448	0	CP003596	Synechococcus sp. PCC 7502	plasmid pSYN7502.02  
-84588	NC_005070	33864539	0	BX548020	Synechococcus sp. WH 8102
 1148	NC_017277	384435229	0	AP012205	Synechocystis sp. PCC 6803
 1148	NC_000911	16329170	0	BA000022	Synechocystis sp. PCC 6803
 1148	NC_020286	451813329	0	CP003265	Synechocystis sp. PCC 6803
@@ -6014,6 +5999,7 @@
 335543	NC_008554	116747452	0	CP000478	Syntrophobacter fumaroxidans MPOB
 645991	NC_015172	325288201	0	CP002547	Syntrophobotulus glycolicus DSM 8271
 335541	NC_008346	114565576	0	CP000448	Syntrophomonas wolfei subsp. wolfei str. Goettingen G311
+338963	NC_007498	90960985	0	CP000142	Syntrophotalea carbinolica DSM 2380
 643648	NC_014220	297616214	0	CP002048	Syntrophothermus lipocalidus DSM 12680
 56780	NC_007759	85857845	0	CP000252	Syntrophus aciditrophicus SB
 203275	NC_016610	375253814	0	CP003191	Tannerella forsythia 92A2
@@ -6078,8 +6064,8 @@
 555079	NC_014377	302388599	0	CP002131	Thermosediminibacter oceani DSM 16646
 484019	NC_011653	217076133	0	CP001185	Thermosipho africanus TCF52B
 391009	NC_009616	150019913	0	CP000716	Thermosipho melanesiensis BI429
-197221	NC_004113	22297544	0	BA000039	Thermosynechococcus elongatus BP-1
 1394889	NC_023033	571026788	0	CP006735	Thermosynechococcus sp. NK55a
+197221	NC_004113	22297544	0	BA000039	Thermosynechococcus vestitus BP-1
 243274	NC_000853	15642775	0	AE000512	Thermotoga maritima MSB8
 243274	NC_021214	499078742	0	CP004077	Thermotoga maritima MSB8
 243274	NC_023151	568317838	0	CP007013	Thermotoga maritima MSB8
@@ -6203,12 +6189,12 @@
 150340	NC_013457	262395299	0	CP001806	Vibrio antiquarius	chromosome 2  
 693153	NC_011753	294514841	0	FM954972	Vibrio atlanticus	chromosome 1  
 693153	NC_011744	294510242	0	FM954973	Vibrio atlanticus	chromosome 2  
-338187	NC_022269	541866813	0	CP006605	Vibrio campbellii ATCC BAA-1116	chromosome I  
-338187	NC_009783	156972381	0	CP000789	Vibrio campbellii ATCC BAA-1116	chromosome I  
-338187	NC_022270	541870142	0	CP006606	Vibrio campbellii ATCC BAA-1116	chromosome II  
-338187	NC_009784	156975952	0	CP000790	Vibrio campbellii ATCC BAA-1116	chromosome II  
-338187	NC_009777	156936674	0	CP000791	Vibrio campbellii ATCC BAA-1116	plasmid pVIBHAR  
-338187	NC_022271	541872144	0	CP006607	Vibrio campbellii ATCC BAA-1116	plasmid unnamed  
+1224742	NC_009783	156972381	0	CP000789	Vibrio campbellii CAIM 519 = NBRC 15631 = ATCC BAA-1116	chromosome I  
+1224742	NC_022269	541866813	0	CP006605	Vibrio campbellii CAIM 519 = NBRC 15631 = ATCC BAA-1116	chromosome I  
+1224742	NC_022270	541870142	0	CP006606	Vibrio campbellii CAIM 519 = NBRC 15631 = ATCC BAA-1116	chromosome II  
+1224742	NC_009784	156975952	0	CP000790	Vibrio campbellii CAIM 519 = NBRC 15631 = ATCC BAA-1116	chromosome II  
+1224742	NC_009777	156936674	0	CP000791	Vibrio campbellii CAIM 519 = NBRC 15631 = ATCC BAA-1116	plasmid pVIBHAR  
+1224742	NC_022271	541872144	0	CP006607	Vibrio campbellii CAIM 519 = NBRC 15631 = ATCC BAA-1116	plasmid unnamed  
 666	NC_006860	60202126	0	AY876057	Vibrio cholerae	plasmid pSIO1  
 666	NC_004982	32455390	0	AF052650	Vibrio cholerae	plasmid pTLC  
 666	NC_010897	190570447	0	DQ787203	Vibrio cholerae	plasmid pVCG1.1  
@@ -6283,6 +6269,9 @@
 137591	NC_010914	355153940	0	EU236595	Weissella cibaria	plasmid pKW2126  
 1045854	NC_015759	339633914	0	CP002899	Weissella koreensis KACC 15510
 1045854	NC_015756	339635250	0	CP002900	Weissella koreensis KACC 15510	plasmid WKp2903  
+1398	NC_010853	190404491	0	EF015591	Weizmannia coagulans	plasmid pMSR0  
+941639	NC_015634	336112679	0	CP002472	Weizmannia coagulans 2-6
+345219	NC_016023	347750441	0	CP003056	Weizmannia coagulans 36D1
 1142511	NC_016893	379009272	0	CP003315	Wigglesworthia glossinidia endosymbiont of Glossina morsitans morsitans (Yale colony)
 570417	NC_010981	190570478	0	AM999887	Wolbachia endosymbiont of Culex quinquefasciatus Pel
 163164	NC_002978	42519920	0	AE017196	Wolbachia endosymbiont of Drosophila melanogaster
@@ -6292,8 +6281,6 @@
 292805	NC_006833	58584261	0	AE017321	Wolbachia endosymbiont strain TRS of Brugia malayi
 66084	NC_012416	225629872	0	CP001391	Wolbachia sp. wRi
 273121	NC_005090	34556458	0	BX571656	Wolinella succinogenes DSM 1740
-78245	NC_009720	154243958	0	CP000781	Xanthobacter autotrophicus Py2
-78245	NC_009717	154243668	0	CP000782	Xanthobacter autotrophicus Py2	plasmid pXAUT01  
 29447	NC_017557	386081654	0	FP340279	Xanthomonas albilineans	plasmid plasmI  
 29447	NC_017556	386081561	0	FP340278	Xanthomonas albilineans	plasmid plasmII  
 29447	NC_017555	386076359	0	FP340277	Xanthomonas albilineans	plasmid plasmIII  
@@ -6424,8 +6411,8 @@
 229193	NC_005816	45478711	0	AE017046	Yersinia pestis biovar Microtus str. 91001	plasmid pPCP1  
 633	NC_011759	218534615	0	FM178282	Yersinia pseudotuberculosis	plasmid pGDT4  
 349747	NC_009708	153946813	0	CP000720	Yersinia pseudotuberculosis IP 31758
-349747	NC_009705	153930630	0	CP000719	Yersinia pseudotuberculosis IP 31758	plasmid plasmid_153kb  
-349747	NC_009704	153930562	0	CP000718	Yersinia pseudotuberculosis IP 31758	plasmid plasmid_59kb  
+349747	NC_009705	153930630	0	CP000719	Yersinia pseudotuberculosis IP 31758	plasmid p_153kb  
+349747	NC_009704	153930562	0	CP000718	Yersinia pseudotuberculosis IP 31758	plasmid p_59kb  
 273123	NC_006155	51594359	0	BX936398	Yersinia pseudotuberculosis IP 32953
 273123	NC_006153	113911685	0	BX936399	Yersinia pseudotuberculosis IP 32953	plasmid pYV  
 273123	NC_006154	51593942	0	BX936400	Yersinia pseudotuberculosis IP 32953	plasmid pYptb32953  
@@ -6477,6 +6464,7 @@
 579138	NC_015716	338708711	0	CP002867	Zymomonas mobilis subsp. pomaceae ATCC 29192	plasmid pZYMOP02  
 281309	NC_005957	49476684	0	AE017355	[Bacillus thuringiensis] serovar konkukian str. 97-27
 281309	NC_006578	56899872	0	CP000047	[Bacillus thuringiensis] serovar konkukian str. 97-27	plasmid pBT9727  
+717608	NC_021047	479336697	0	FP929037	[Clostridium] cf. saccharolyticum K10
 610130	NC_014376	302384444	0	CP002109	[Clostridium] saccharolyticum WM1
 701347	NC_014618	311277332	0	CP002272	[Enterobacter] lignolyticus SCF1
 515620	NC_012778	238915976	0	CP001104	[Eubacterium] eligens ATCC 27750
@@ -6489,6 +6477,7 @@
 749	NC_020885	472438357	0	JQ773456	[Pasteurella] aerogenes	plasmid pB1002  
 749	NC_019255	410688193	0	FR687372	[Pasteurella] aerogenes	plasmid pCCK343  
 749	NC_019979	435852572	0	JQ319769	[Pasteurella] aerogenes	plasmid pIG1  
+657313	NC_021015	479155735	0	FP929055	[Ruminococcus] torques L2-14
 538945	NC_010983	190710335	0	EU727537	alpha proteobacterium endosymbiont of Amoeba proteus	plasmid pAP3.9  
 1264698	NC_019783	429345135	0	JX843238	bacterium 36B	plasmid pTOR_02  
 1264699	NC_019798	429345170	0	JX843237	bacterium 72B	plasmid pTOR_01  

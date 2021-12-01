@@ -9,6 +9,8 @@ import ctypes
 
 import fetch as fetch
 
+VERBOSE = False
+
 try:
     ctypes.windll.shcore.SetProcessDpiAwareness(True) # améliore la netteté de l'app
 except:
@@ -75,7 +77,8 @@ class GUI:
                     name_path += '/'
                     self.create_node(tree, name_path, name)
                 except:
-                    print(name_path)
+                    if VERBOSE:
+                        print(name_path)
                     pass
 
     def create_tree(self):
@@ -233,7 +236,8 @@ class GUI:
                     path_full = path + name.replace(" ", "_").replace("[", "_").replace("]", "_").replace(":", "_") + '/'
                     nb_new_region_found = -1
                     if path_full == current_path and name not in org_done:
-                        print(name)
+                        if VERBOSE:
+                            print(name)
                         c += 1
                         if(self.selected_region.get() == 'CDS'):
                             fetch.load_data_from_NC(index, name, path, NC_list, 'intron')
@@ -256,7 +260,8 @@ class GUI:
                         nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
                         org_done.append(name)
                     if nb_new_region_found != -1:
-                        print(name)
+                        if VERBOSE:
+                            print(name)
 
                         if nb_new_region_found == 0:
                             self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")

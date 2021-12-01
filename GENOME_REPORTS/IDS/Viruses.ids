@@ -38,10 +38,8 @@
 92444	NC_002548	10314009	0	AF150629	Acute bee paralysis virus	viral segment Unknown  
 340187	NC_003780	20451015	0	AF024514	Acyrthosiphon pisum virus	viral segment Unknown  
 85106	NC_002077	9632547	0	AF063497	Adeno-associated virus - 1	viral segment Unknown  
-10804	NC_001401	110645916	0	AF043303	Adeno-associated virus - 2	viral segment Unknown  
 46350	NC_001729	9628918	0	U48704	Adeno-associated virus - 3	viral segment Unknown  
 57579	NC_001829	9629641	0	U89790	Adeno-associated virus - 4	viral segment Unknown  
-82300	NC_006152	51593836	0	AF085716	Adeno-associated virus - 5	viral segment Unknown  
 202812	NC_006260	51949960	0	AF513851	Adeno-associated virus - 7	viral segment Unknown  
 202813	NC_006261	51949963	0	AF513852	Adeno-associated virus - 8	viral segment Unknown  
 1293540	NC_021247	506498026	0	HF679131	Adoxophyes honmai entomopoxvirus 'L'	viral segment Unknown  
@@ -149,6 +147,7 @@
 70566	NC_009895	157939617	0	AB100604	Akabane virus	viral segment M  
 70566	NC_009896	157939567	0	AB000851	Akabane virus	viral segment S  
 35252	NC_002531	10140926	0	AF005370	Alcelaphine gammaherpesvirus 1	viral segment Unknown  
+2885846	NC_001524	9627074	0	M15953	Alces alces papillomavirus 1	viral segment Unknown  
 28314	NC_001662	9628278	0	M20036	Aleutian mink disease virus	viral segment Unknown  
 12321	NC_001495	9626924	0	L00163	Alfalfa mosaic virus	viral segment RNA 1  
 12321	NC_002024	50355594	0	X01572	Alfalfa mosaic virus	viral segment RNA 2  
@@ -211,7 +210,7 @@
 150286	NC_013668	388262476	0	FJ940765	Anguillid herpesvirus 1	viral segment Unknown  
 62099	NC_023426	582973099	0	AP013055	Anomala cuprea entomopoxvirus	viral segment Unknown  
 487311	NC_011317	208429851	0	EU233812	Anopheles gambiae densovirus	viral segment Unknown  
-1465751	NC_023848	602259401	0	KF938901	Anopheles minimus irodovirus	viral segment Unknown  
+1465751	NC_023848	602259401	0	KF938901	Anopheles minimus iridovirus	viral segment Unknown  
 1398939	NC_023682	609252151	0	KF298278	Anopheline-associated C virus	viral segment 1  
 1398939	NC_023683	608309558	0	KF298279	Anopheline-associated C virus	viral segment 2  
 1460071	NC_023483	586929324	0	KF751885	Antheraea pernyi iflavirus	viral segment Unknown  
@@ -305,9 +304,6 @@
 90961	NC_003243	17158068	0	AF081020	Australian bat lyssavirus	viral segment Unknown  
 190810	NC_003553	20136756	0	X17101	Australian grapevine viroid	viral segment Unknown  
 46015	NC_001623	9627742	0	L22858	Autographa californica nucleopolyhedrovirus	viral segment Unknown  
-1810950	NC_040460	1571815445	0	KU925440	Avalon virus	viral segment L  
-1810950	NC_040459	1571815184	0	KU925441	Avalon virus	viral segment M  
-1810950	NC_040458	1571815143	0	KU925442	Avalon virus	viral segment S  
 2364132	NC_040845	1571847636	0	MH824555	Avian HDV-like agent
 219704	NC_004828	31543992	0	AY186198	Avian adeno-associated virus ATCC VR-865	viral segment Unknown  
 281492	NC_006263	51949968	0	AY629583	Avian adeno-associated virus strain DA-1	viral segment Unknown  
@@ -329,7 +325,6 @@
 38170	NC_015134	323714229	0	FR694199	Avian orthoreovirus	viral segment S3  
 38170	NC_015135	323714231	0	FR694200	Avian orthoreovirus	viral segment S4  
 28274	NC_019531	422937945	0	JX987283	Avian paramyxovirus 4	viral segment Unknown  
-686983	NC_006553	56692979	0	AY563023	Avian sapelovirus	viral segment Unknown  
 12896	NC_001410	11496574	0	J02020	Avocado sunblotch viroid	viral segment Unknown  
 1476487	NC_023864	602260066	0	KJ437671	Axonopus compressus streak virus	viral segment Unknown  
 11764	NC_022517	725896726	0	D10032	Baboon endogenous virus strain M7	viral segment Unknown  
@@ -540,8 +535,8 @@
 40051	NC_006013	1368578813	0	M11787	Bluetongue virus	viral segment 2  
 40051	NC_006014	50253385	0	M22096	Bluetongue virus	viral segment 3  
 40051	NC_006024	85857779	0	Y00421	Bluetongue virus	viral segment 4  
-40051	NC_006010	50253381	0	D12532	Bluetongue virus	viral segment 5  
 40051	NC_006025	50253395	0	Y00422	Bluetongue virus	viral segment 5  
+40051	NC_006010	50253381	0	D12532	Bluetongue virus	viral segment 6  
 40051	NC_006022	50253389	0	X06463	Bluetongue virus	viral segment 7  
 40051	NC_006007	50253377	0	D00500	Bluetongue virus	viral segment 8  
 40051	NC_006008	1787383128	0	D00509	Bluetongue virus	viral segment 9  
@@ -572,7 +567,6 @@
 10546	NC_044934	1755165851	0	BD269513	Bovine adenovirus 1
 114429	NC_002513	9845468	0	AF252854	Bovine adenovirus 2	viral segment Unknown  
 10510	NC_001876	9630091	0	AF030154	Bovine adenovirus 3	viral segment Unknown  
-111167	NC_020074	440382961	0	JQ345700	Bovine adenovirus 6	viral segment Unknown  
 10320	NC_001847	9629818	0	AJ004801	Bovine alphaherpesvirus 1	viral segment Unknown  
 35244	NC_005261	1417992657	0	AY261359	Bovine alphaherpesvirus 5	viral segment Unknown  
 1027244	NC_023632	589892872	0	HQ916314	Bovine astrovirus B170/HK	viral segment Unknown  
@@ -595,7 +589,6 @@
 129727	NC_005337	41057437	0	AY386265	Bovine papular stomatitis virus	viral segment Unknown  
 10784	NC_001540	9627190	0	M14363	Bovine parvovirus	viral segment Unknown  
 172296	NC_006259	51949957	0	AF406966	Bovine parvovirus - 2	viral segment Unknown  
-365609	NC_038895	1464310301	0	DQ335247	Bovine parvovirus-1
 11247	NC_038272	1464306658	0	AF295543	Bovine respiratory syncytial virus ATCC51908
 11215	NC_002161	9634109	0	AF178654	Bovine respirovirus 3	viral segment Unknown  
 2340909	NC_040718	1571846977	0	MH260580	Bovine serum-associated circular virus
@@ -671,6 +664,7 @@
 74320	NC_023442	584593359	0	KF611977	Buzura suppressaria nucleopolyhedrovirus	viral segment Unknown  
 1223561	NC_018484	401829641	0	JQ717261	CAS virus	viral segment L  
 1223561	NC_018481	401829632	0	JQ717262	CAS virus	viral segment S  
+2499242	NC_055569	2047108791	0	MK353339	Caaingua virus
 60879	NC_038670	1464309585	0	AF075259	Cabassou virus
 51336	NC_003866	20806015	0	U65529	Cabbage leaf curl virus	chromosome DNA A  
 51336	NC_003887	20889306	0	U65530	Cabbage leaf curl virus	chromosome DNA B  
@@ -741,7 +735,6 @@
 470214	NC_011051	194268064	0	EF680235	Capreolus capreolus papillomavirus 1	viral segment Unknown  
 11660	NC_001463	9626651	0	M33677	Caprine arthritis encephalitis virus
 1452516	NC_023422	581976511	0	KF793927	Caprine kobuvirus	viral segment Unknown  
-1529392	NC_028362	951885104	0	KT215610	Caprine parainfluenza virus 3	viral segment Unknown  
 163325	NC_008302	113200758	0	DQ256124	Capsicum chlorosis virus	viral segment L  
 163325	NC_008303	113200760	0	DQ256125	Capsicum chlorosis virus	viral segment M  
 163325	NC_008301	113200755	0	DQ256123	Capsicum chlorosis virus	viral segment S  
@@ -905,7 +898,7 @@
 642255	NC_013027	254688530	0	FJ959081	Circovirus-like genome RW-E	viral segment Unknown  
 642258	NC_013030	255046528	0	FJ959084	Circovirus-like genome SAR-A	viral segment Unknown  
 642259	NC_013018	254688511	0	FJ959085	Circovirus-like genome SAR-B	viral segment Unknown  
-1862826	NC_030449	1041840725	0	KU343138	Circular ssDNA virus sp.
+2805939	NC_030449	1041840725	0	KU343138	Circular ssDNA virus sp.
 862944	NC_014360	302317583	0	GU979420	Circulifer tenellus virus 1	viral segment Unknown  
 12898	NC_003539	20087053	0	X14638	Citrus bark cracking viroid	viral segment Unknown  
 12906	NC_001651	11496577	0	U21125	Citrus bent leaf viroid	viral segment Unknown  
@@ -932,11 +925,6 @@
 697192	NC_004359	24462251	0	AB019508	Citrus viroid VI	viral segment Unknown  
 174178	NC_003382	18450268	0	AF347695	Citrus yellow mosaic virus	viral segment Unknown  
 1297894	NC_040311	1571794310	0	JX101610	Citrus yellow vein-associated virus
-1529605	NC_024704	674269321	0	KJ787686	Cladosporium cladosporioides virus 1	viral segment 1  
-1529605	NC_024705	674269323	0	KJ787687	Cladosporium cladosporioides virus 1	viral segment 2  
-1529605	NC_024706	674269325	0	KJ787688	Cladosporium cladosporioides virus 1	viral segment 3  
-1529605	NC_024707	674269327	0	KJ787689	Cladosporium cladosporioides virus 1	viral segment 4  
-1529605	NC_024708	674269329	0	KJ787690	Cladosporium cladosporioides virus 1	viral segment 5  
 1307957	NC_008293	113195403	0	DQ504428	Clanis bilineata nucleopolyhedrovirus	viral segment Unknown  
 11096	NC_002657	12657941	0	AF326963	Classical swine fever virus	viral segment Unknown  
 858517	NC_015397	330370661	0	HQ396465	Cleome golden mosaic virus	viral segment DNA A  
@@ -1102,7 +1090,6 @@
 51330	NC_004810	30840968	0	AY242078	Cucurbit yellow stunting disorder virus	viral segment RNA 2  
 220814	NC_005875	47177087	0	AJ542500	Cucurbita yellow vein virus-associated DNA beta	viral segment Unknown  
 390844	NC_008604	166159177	0	AB262759	Culex flavivirus	viral segment Unknown  
-2010272	NC_035133	1211677432	0	MF176298	Culex mononega-like virus 2	viral segment Unknown  
 2010273	NC_035124	1211677391	0	MF176384	Culex negev-like virus 1	viral segment Unknown  
 2010274	NC_035123	1211677387	0	MF176276	Culex negev-like virus 2	viral segment Unknown  
 2010275	NC_035129	1211677416	0	MF176277	Culex negev-like virus 3	viral segment Unknown  
@@ -1178,7 +1165,6 @@
 1843767	NC_030132	1028356512	0	KT862232	Deer faeces associated circular DNA virus 1	viral segment Unknown  
 305674	NC_006966	62422552	0	AY689436	Deerpox virus W-848-83	viral segment Unknown  
 198112	NC_004830	71480055	0	AJ489744	Deformed wing virus	viral segment Unknown  
-10565	NC_001524	9627074	0	M15953	Deltapapillomavirus 1	viral segment Unknown  
 10564	NC_001523	9627065	0	M11910	Deltapapillomavirus 2	viral segment Unknown  
 56144	NC_001789	9629249	0	U83594	Deltapapillomavirus 3	viral segment Unknown  
 337052	NC_001522	9627056	0	X02346	Deltapapillomavirus 4	viral segment Unknown  
@@ -1294,7 +1280,6 @@
 219174	NC_039241	1464315712	0	AJ536613	Eggplant latent viroid
 12151	NC_001480	9626694	0	J04374	Eggplant mosaic virus	viral segment Unknown  
 270256	NC_023339	575768762	0	JQ864181	Eggplant mottled crinkle virus	viral segment Unknown  
-1256869	NC_020803	471236971	0	JX679246	Egli virus	viral segment Unknown  
 1131483	NC_016744	378554407	0	JQ037753	Eidolon helvum (bat) parvovirus	viral segment Unknown  
 1231903	NC_018615	406356611	0	JX678730	Eilat virus	viral segment Unknown  
 155414	NC_002701	13487887	0	AF356189	Eimeria brunetti RNA virus 1	viral segment Unknown  
@@ -1313,7 +1298,6 @@
 138949	NC_001472	9626677	0	M16560	Enterovirus B	viral segment Unknown  
 138950	NC_002058	12408699	0	V01149	Enterovirus C	viral segment Unknown  
 138951	NC_001430	9626436	0	D00820	Enterovirus D	viral segment Unknown  
-42789	NC_038308	1464306923	0	AY426531	Enterovirus D68
 12064	NC_001859	9629892	0	D00214	Enterovirus E	viral segment Unknown  
 1330520	NC_021220	501000335	0	DQ092770	Enterovirus F	viral segment Unknown  
 310907	NC_003988	21389216	0	AF201894	Enterovirus H	viral segment Unknown  
@@ -1492,10 +1476,10 @@
 676234	NC_020469	459642382	0	FJ768020	Furcraea necrotic streak virus	viral segment Unknown  
 2060778	NC_036596	1327850228	0	MG254901	Fusarium graminearum alternavirus 1	viral segment RNA 1  
 2060778	NC_036601	1327850240	0	MG254902	Fusarium graminearum alternavirus 1	viral segment RNA 2  
+687918	NC_013470	262530253	0	GQ140627	Fusarium graminearum dsRNA mycovirus 4	viral segment RNA 1  
+687918	NC_013471	262530255	0	GQ140628	Fusarium graminearum dsRNA mycovirus 4	viral segment RNA 2  
 194397	NC_006937	255612555	0	AY533037	Fusarium graminearum dsRNA mycovirus-1	viral segment Unknown  
 687917	NC_013469	262530250	0	GQ140626	Fusarium graminearum dsRNA mycovirus-3	viral segment Unknown  
-687918	NC_013470	262530253	0	GQ140627	Fusarium graminearum dsRNA mycovirus-4	viral segment RNA 1  
-687918	NC_013471	262530255	0	GQ140628	Fusarium graminearum dsRNA mycovirus-4	viral segment RNA 2  
 1284208	NC_023680	608309552	0	KC330231	Fusarium graminearum hypovirus 1	viral segment Unknown  
 1849539	NC_030883	1063296227	0	LC150613	Fusarium poae alternavirus 1	viral segment 1  
 1849539	NC_030880	1063296221	0	LC150614	Fusarium poae alternavirus 1	viral segment 2  
@@ -1698,9 +1682,6 @@
 204269	NC_014528	312164880	0	HM543471	Great Island virus	viral segment 7  
 204269	NC_014529	312164887	0	HM543472	Great Island virus	viral segment 8  
 204269	NC_014530	312164884	0	HM543473	Great Island virus	viral segment 9  
-1810946	NC_040512	1571824239	0	KU925467	Great Saltee virus	viral segment L  
-1810946	NC_040513	1571824472	0	KU925468	Great Saltee virus	viral segment M  
-1810946	NC_040514	1571824576	0	KU925469	Great Saltee virus	viral segment S  
 152217	NC_003876	20889389	0	AF337175	Gremmeniella abietina RNA virus L1	viral segment Unknown  
 279539	NC_005965	50080149	0	AY615210	Gremmeniella abietina RNA virus L2	viral segment Unknown  
 191436	NC_004018	21427658	0	AY089993	Gremmeniella abietina RNA virus MS1	viral segment RNA 1  
@@ -1734,7 +1715,11 @@
 710112	NC_013758	284520907	0	GU321093	Haloarcula hispanica pleomorphic virus 1	viral segment Unknown  
 1282967	NC_020998	478755948	0	KC252997	Haloarcula hispanica virus PH1	viral segment Unknown  
 326574	NC_007217	71647259	0	AY950802	Haloarcula hispanica virus SH1	viral segment Unknown  
+222645	NC_004927	1799084462	0	AY190604	Haloferax virus HF1	viral segment Unknown  
 1156722	NC_017090	394922865	0	JN882267	Halogeometricum pleomorphic virus 1	viral segment Unknown  
+1273753	NC_021320	509139559	0	KC292022	Halorubrum Tailed Virus 5	viral segment Unknown  
+1273754	NC_021335	509141110	0	KC292021	Halorubrum Tailed Virus 7	viral segment Unknown  
+1273755	NC_021321	509139678	0	KC292020	Halorubrum Tailed Virus 8	viral segment Unknown  
 33771	NC_003345	1799084433	0	AF222060	Halorubrum phage HF2	viral segment Unknown  
 1156719	NC_017087	394922814	0	JN882264	Halorubrum pleomorphic virus 2	viral segment Unknown  
 1156720	NC_017088	394922833	0	JN882265	Halorubrum pleomorphic virus 3	viral segment Unknown  
@@ -1742,20 +1727,15 @@
 1273746	NC_021330	509140683	0	KC292029	Halovirus HCTV-1	viral segment Unknown  
 1273747	NC_021319	509139472	0	KC292028	Halovirus HCTV-2	viral segment Unknown  
 1273748	NC_021327	509140160	0	KC292027	Halovirus HCTV-5	viral segment Unknown  
-222645	NC_004927	1799084462	0	AY190604	Halovirus HF1	viral segment Unknown  
 1273749	NC_021328	509140327	0	KC292026	Halovirus HGTV-1	viral segment Unknown  
 1273750	NC_021322	509139803	0	KC292025	Halovirus HHTV-1	viral segment Unknown  
 1273751	NC_021340	509141440	0	KC292024	Halovirus HHTV-2	viral segment Unknown  
 1273752	NC_021329	509140609	0	KC292023	Halovirus HRTV-4	viral segment Unknown  
-1273753	NC_021320	509139559	0	KC292022	Halovirus HRTV-5	viral segment Unknown  
-1273754	NC_021335	509141110	0	KC292021	Halovirus HRTV-7	viral segment Unknown  
-1273755	NC_021321	509139678	0	KC292020	Halovirus HRTV-8	viral segment Unknown  
 1262530	NC_021471	511534117	0	KC117378	Halovirus HSTV-1	viral segment Unknown  
 1262527	NC_020159	443404743	0	KC117376	Halovirus HSTV-2	viral segment Unknown  
 1262528	NC_020158	443404569	0	KC117377	Halovirus HVTV-1	viral segment Unknown  
 1500510	NC_025213	693698803	0	KF771641	Halovirus VNH-1	viral segment Unknown  
 1410467	NC_022611	555928175	0	KF699344	Halyomorpha halys virus	viral segment Unknown  
-1286140	NC_020899	475994026	0	JQ957872	Hana virus	viral segment Unknown  
 93830	NC_006435	55733703	0	AF189155	Hantavirus Z10	viral segment L  
 93830	NC_006437	55733705	0	AF276987	Hantavirus Z10	viral segment M  
 93830	NC_006433	55733701	0	AF184987	Hantavirus Z10	viral segment S  
@@ -1792,8 +1772,6 @@
 33746	NC_009826	157781210	0	Y13184	Hepatitis C virus genotype 5
 42182	NC_009827	157781214	0	D84262	Hepatitis C virus genotype 6
 1544901	NC_030791	1057485909	0	EF108306	Hepatitis C virus genotype 7
-12461	NC_001434	9626440	0	L08816	Hepatitis E virus	viral segment Unknown  
-39113	NC_001655	9628101	0	AF179612	Hepatitis GB virus B
 12475	NC_001653	13277517	0	D01075	Hepatitis delta virus	viral segment Unknown  
 12092	NC_001489	9626732	0	M14707	Hepatovirus A	viral segment Unknown  
 28300	NC_001486	9626719	0	M22056	Heron hepatitis B virus	viral segment Unknown  
@@ -1942,7 +1920,6 @@
 943908	NC_015150	326910936	0	HQ696595	Human polyomavirus 9	viral segment Unknown  
 12730	NC_003461	19718363	0	AF457102	Human respirovirus 1	viral segment Unknown  
 11216	NC_001796	10937870	0	AB012132	Human respirovirus 3	viral segment Unknown  
-573824	NC_038311	1464306962	0	FJ445111	Human rhinovirus A1
 992230	NC_038878	1464310212	0	EF077279	Human rhinovirus NAT001
 10942	NC_021541	514360948	0	EU490415	Human rotavirus B	viral segment 1  
 10942	NC_021550	514360968	0	AY238384	Human rotavirus B	viral segment 10  
@@ -2489,7 +2466,6 @@
 89471	NC_008307	113200752	0	AB061773	Melon yellow spot virus	viral segment M  
 89471	NC_008300	113200747	0	AB038343	Melon yellow spot virus	viral segment S  
 152219	NC_039197	1464315374	0	JX112711	Menangle virus
-1286141	NC_020900	475994034	0	JQ957873	Meno virus	viral segment Unknown  
 743685	NC_023763	594140721	0	GU078661	Merino Walk mammarenavirus	viral segment L  
 743685	NC_023764	594140724	0	GU078660	Merino Walk mammarenavirus	viral segment S  
 493803	NC_010277	733573629	0	HM011556	Merkel cell polyomavirus	viral segment Unknown  
@@ -2683,6 +2659,7 @@
 367682	NC_008552	116734779	0	AM182569	Narcissus symptomless virus	viral segment Unknown  
 160843	NC_011541	212499141	0	AM158908	Narcissus yellow stripe virus
 590647	NC_017937	387935515	0	FJ362497	Nariva virus	viral segment Unknown  
+114777	NC_054954	2046355388	0	MK450543	Natrialba phage PhiCh1
 114777	NC_004084	22091104	0	AF440695	Natrialba phage PhiCh1	viral segment Unknown  
 59302	NC_016959	379765013	0	HM147989	Ndumu virus	viral segment Unknown  
 312009	NC_011538	212498904	0	AY751778	Nemesia ring necrosis virus	viral segment Unknown  
@@ -2732,7 +2709,6 @@
 1246677	NC_008311	113478394	0	DQ285629	Norovirus GV	viral segment Unknown  
 673457	NC_044047	1709902454	0	FJ692500	Norovirus dog/GVI.1/HKU_Ca026F/2007/HKG
 95340	NC_029646	1007626112	0	AB044366	Norwalk-like virus	viral segment Unknown  
-1286142	NC_020901	475994041	0	JQ957874	Nse virus	viral segment Unknown  
 64292	NC_018705	563354756	0	JX236040	Ntaya virus	viral segment Unknown  
 85652	NC_001990	9631279	0	AF102884	Nudaurelia capensis beta virus	viral segment Unknown  
 644610	NC_012703	237781162	0	FJ554526	Nyamanini nyavirus	viral segment Unknown  
@@ -2994,6 +2970,7 @@
 292477	NC_008284	112180300	0	AB267835	Pepper yellow leaf curl Indonesia virus	viral segment DNA B  
 160358	NC_014327	301173451	0	AB541985	Pepper yellow mosaic virus
 260378	NC_005347	41057724	0	AY502935	Pepper yellow vein Mali virus	viral segment DNA A  
+1256869	NC_020803	471236971	0	JX679246	Perch perhabdovirus	viral segment Unknown  
 170621	NC_003113	15741225	0	AF323747	Perina nuda virus	viral segment Unknown  
 97344	NC_000936	9633605	0	AF192260	Periplaneta fuliginosa densovirus	viral segment Unknown  
 1188812	NC_019024	410118100	0	HE806447	Peristrophe mosaic virus	viral segment DNA B  
@@ -3210,7 +3187,6 @@
 12809	NC_005267	38639880	0	AY303788	Raspberry ringspot virus	viral segment RNA 2  
 502102	NC_012936	253750530	0	FJ938068	Rat coronavirus Parker	viral segment Unknown  
 1640278	NC_027200	827882808	0	KP967684	Rat cytomegalovirus ALL-03	viral segment Unknown  
-79700	NC_002512	20198505	0	AF232689	Rat cytomegalovirus Maastricht	viral segment Unknown  
 1123754	NC_016442	360040884	0	JF729471	Rattail cactus necrosis-associated virus	viral segment Unknown  
 1756445	NC_028492	959121882	0	KT945134	Rattus norvegicus papillomavirus 3	viral segment Unknown  
 11938	NC_001819	9629514	0	U94692	Rauscher murine leukemia virus	viral segment Unknown  
@@ -3236,7 +3212,6 @@
 11636	NC_006934	62326506	0	AY842951	Reticuloendotheliosis virus	viral segment Unknown  
 693998	NC_009988	160707867	0	EF203064	Rhinolophus bat coronavirus HKU2	viral segment Unknown  
 147711	NC_001617	9627730	0	A10937	Rhinovirus A	viral segment Unknown  
-12131	NC_001490	9626735	0	K02121	Rhinovirus B14	viral segment Unknown  
 463676	NC_009996	160700581	0	EF582385	Rhinovirus C	viral segment Unknown  
 1408133	NC_022619	555928257	0	KF311065	Rhizoctonia cerealis alphaendornavirus 1	viral segment Unknown  
 1592828	NC_026954	817524679	0	KP209316	Rhizoctonia fumigata mycovirus	viral segment 1  
@@ -3244,8 +3219,8 @@
 1678208	NC_027529	896684346	0	KP861921	Rhizoctonia solani RNA virus HN008	viral segment Unknown  
 1411681	NC_023684	593773602	0	KF372436	Rhizoctonia solani dsRNA virus 2	viral segment 1  
 1411681	NC_023685	593773604	0	KF372437	Rhizoctonia solani dsRNA virus 2	viral segment 2  
+2838388	NC_003802	20522144	0	AF133291	Rhizoctonia solani virus	viral segment RNA 2  
 46618	NC_003801	20522142	0	AF133290	Rhizoctonia solani virus 717	viral segment RNA 1  
-46618	NC_003802	20522144	0	AF133291	Rhizoctonia solani virus 717	viral segment RNA 2  
 359987	NC_018613	406356606	0	AB243297	Rhizosolenia setigera RNA virus 01	viral segment Unknown  
 878260	NC_014481	306478697	0	HQ128706	Rhododendron virus A	viral segment Unknown  
 66834	NC_001874	9629935	0	AF022937	Rhopalosiphum padi virus	viral segment Unknown  
@@ -4131,7 +4106,6 @@
 11149	NC_038861	1464310157	0	AJ271965	Transmissible gastroenteritis virus
 47680	NC_044936	1755165852	0	AF258784	Tree shrew adenovirus 1
 47680	AC_000190	564105783	0	BK001455	Tree shrew adenovirus 1	viral segment Unknown  
-70796	NC_003990	21389214	0	AJ225173	Tremovirus A	viral segment Unknown  
 103442	NC_003783	20451028	0	AF178440	Triatoma virus	viral segment Unknown  
 1144379	NC_016898	379059601	0	JN709473	Trichechus manatus latirostris papillomavirus 2	viral segment Unknown  
 291589	NC_006563	56698748	0	AY609301	Trichechus manatus papillomavirus 1	viral segment Unknown  
@@ -4162,9 +4136,6 @@
 151043	NC_003834	20564215	0	AF226161	Tulare apple mosaic virus	viral segment RNA 2  
 151043	NC_003835	20564218	0	AF226162	Tulare apple mosaic virus	viral segment RNA 3  
 167132	NC_004322	23578028	0	AB066288	Tulip virus X	viral segment Unknown  
-1810944	NC_040770	1571847208	0	KU925497	Tunis virus	viral segment L  
-1810944	NC_040771	1571847210	0	KU925498	Tunis virus	viral segment M  
-1810944	NC_040772	1571847212	0	KU925499	Tunis virus	viral segment S  
 92129	NC_002199	9634968	0	AF079780	Tupaia paramyxovirus	viral segment Unknown  
 318558	NC_007020	66508427	0	AY840978	Tupaia virus	viral segment Unknown  
 10397	NC_002794	14250967	0	AF281817	Tupaiid betaherpesvirus 1	viral segment Unknown  
@@ -4329,7 +4300,14 @@
 12232	NC_003224	17059637	0	AF127929	Zucchini yellow mosaic virus
 253701	NC_006059	50428554	0	AY366208	Zygocactus virus X	viral segment Unknown  
 114871	NC_003874	20889374	0	AF224490	Zygosaccharomyces bailii virus Z	viral segment Unknown  
+10804	NC_001401	110645916	0	AF043303	adeno-associated virus 2	viral segment Unknown  
+82300	NC_006152	51593836	0	AF085716	adeno-associated virus 5	viral segment Unknown  
 2758977	NC_010354	168480155	0	EU236594	bovine rhinitis B virus 1	viral segment Unknown  
 2760809	NC_030454	1043372793	0	KU355876	enterovirus A114
+42789	NC_038308	1464306923	0	AY426531	enterovirus D68
 338323	NC_008188	109390382	0	DQ080078	human papillomavirus 103
 565537	NC_012213	224983322	0	FM212639	human papillomavirus 108
+79700	NC_002512	20198505	0	AF232689	rat cytomegalovirus strain Maastricht	viral segment Unknown  
+573824	NC_038311	1464306962	0	FJ445111	rhinovirus A1
+12131	NC_001490	9626735	0	K02121	rhinovirus B14	viral segment Unknown  
+2871093	NC_003990	21389214	0	AJ225173	tremovirus A1	viral segment Unknown  
