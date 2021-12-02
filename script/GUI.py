@@ -239,14 +239,20 @@ class GUI:
                         if VERBOSE:
                             print(name)
                         c += 1
+                        nb_region_found_1 = 0
+                        nb_region_already_downloaded_1 = 0
                         if(self.selected_region.get() == 'CDS'):
-                            fetch.load_data_from_NC(index, name, path, NC_list, 'intron')
+                            nb_region_found_1, nb_region_already_downloaded_1 = fetch.load_data_from_NC(index, name, path, NC_list, 'intron')
                         self.window.update()
-                        nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                        nb_region_found_2, nb_region_already_downloaded_2 = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                        nb_new_region_found = nb_region_found_1 + nb_region_found_2
+                        nb_new_region_already_downloaded = nb_region_already_downloaded_1 + nb_region_already_downloaded_2
                         org_done.append(name)
-                        if nb_new_region_found == 0:
+                        if nb_new_region_found == 0 and nb_new_region_already_downloaded == 0:
                             self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
                             c -= 1
+                        elif nb_new_region_found == 0 and nb_new_region_already_downloaded != 0:
+                            self.print_on_window("[" + self.selected_region.get() + "] for [" + name + "] already downloaded ")
                         else:
                             self.print_on_window("[" + self.selected_region.get() + "] for [" + name + "] downloaded ")
                         self.window.update()
@@ -254,24 +260,33 @@ class GUI:
                         break
                     elif current_path in path_full and name not in org_done:
                         c += 1
+                        nb_region_found_1 = 0
+                        nb_region_already_downloaded_1 = 0
                         self.window.update()
                         if(self.selected_region.get() == 'CDS'):
-                            fetch.load_data_from_NC(index, name, path, NC_list, 'intron')
-                        nb_new_region_found = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+                            nb_region_found_1, nb_region_already_downloaded_1 = fetch.load_data_from_NC(index, name, path, NC_list, 'intron')
+                        nb_region_found_2, nb_region_already_downloaded_2 = fetch.load_data_from_NC(index, name, path, NC_list, self.selected_region.get())
+
+                        nb_new_region_found = nb_region_found_1 + nb_region_found_2
+                        nb_new_region_already_downloaded = nb_region_already_downloaded_1 + nb_region_already_downloaded_2
+
                         org_done.append(name)
                     if nb_new_region_found != -1:
                         if VERBOSE:
                             print(name)
 
-                        if nb_new_region_found == 0:
+                        if nb_new_region_found == 0 and nb_new_region_already_downloaded == 0:
                             self.print_on_window("Selected functional region [" + self.selected_region.get() + "] not found for organism [" + name + "]")
                             c -= 1
+                        elif nb_new_region_found == 0 and nb_new_region_already_downloaded != 0:
+                            self.print_on_window("[" + self.selected_region.get() + "] for [" + name + "] already downloaded ")
                         else:
                             self.print_on_window("[" + self.selected_region.get() + "] for [" + name + "] downloaded ")
                         self.window.update()
                         nb_region_found += nb_new_region_found
-                if nb_region_found == 0:
-                    self.window.update()
+                # if nb_region_found == 0:
+                #     print("hello")
+                self.window.update()
 
 
         self.print_on_window(str(c) + " items downloaded")
@@ -280,9 +295,9 @@ class GUI:
 
 
     def on_tree_select(self, event): #on recupere l'organisme dans item, A GARDER ?????
-            for item in self.treeview.selection():
-                item_text = self.treeview.item(item,"text")
-                self.labelText.set(item_text)
+        for item in self.treeview.selection():
+            item_text = self.treeview.item(item,"text")
+            self.labelText.set(item_text)
 
 if __name__ == "__main__":
     App = GUI()

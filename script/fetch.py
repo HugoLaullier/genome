@@ -52,10 +52,12 @@ def reset_tree(root, progressbar, progress = None, window = None):
     reset the tree stored locally
     """
     # delete previous tree
-    if os.path.exists('../Results'):
-        shutil.rmtree('../Results')
+    # if os.path.exists('../Results'): # NE PAS FAIRE CA
+    #     shutil.rmtree('../Results')
+    
     # update with new report from website
-    if os.path.exists('../GENOME_REPORTS/overview.txt') :
+
+    if os.path.exists('../GENOME_REPORTS/overview.txt') and os.path.isfile("../pickle/organism_df"):
         t = os.path.getmtime("../GENOME_REPORTS/overview.txt")
         pred_time = datetime.datetime.fromtimestamp(t)
         now = datetime.datetime.now()
@@ -81,6 +83,7 @@ def reset_tree(root, progressbar, progress = None, window = None):
             ftp.retrbinary('RETR '+ filename, open("IDS/" + filename, 'wb').write)
     if VERBOSE:
         print("download done.")
+
     # parse overview.txt
     organism_names = []
     organism_paths = []
@@ -167,11 +170,14 @@ def reset_tree(root, progressbar, progress = None, window = None):
                 "name":organism_names_ids,
                 "path":organism_paths_ids,
                 "NC":organism_NC_ids})
+
     # create pickle file saving the dataframe
     if not os.path.exists("../pickle"):
         os.makedirs("../pickle")
+
     with open("../pickle/organism_df", 'wb') as f:
         pickle.dump(organism_df, f)
+
     root.destroy()
 
 
@@ -185,19 +191,21 @@ def load_df_from_pickle():
     except IOError:
         print("Pickle file not accessible")
         return reset_tree()
-    if not os.path.exists('../Results'):
-        for i in range(len(organism_df)):
-            name = organism_df["name"][i].replace(" ", "_")
-            name = name.replace("[", "_")
-            name = name.replace("]", "_")
-            name = name.replace(":", "_")
-            path = organism_df["path"][i] + name + "/"
-            if not os.path.exists(path):
-                os.makedirs(path)
+    #if not os.path.exists('../Results'):
+    for i in range(len(organism_df)):
+        name = organism_df["name"][i].replace(" ", "_")
+        name = name.replace("[", "_")
+        name = name.replace("]", "_")
+        name = name.replace(":", "_")
+        path = organism_df["path"][i] + name + "/"
+        if not os.path.exists(path):
+            os.makedirs(path)
     return organism_df
 
-def join(outfile, header_str, selected_region, feature_location, record_fasta, is_complement):
-    write_buffer = header_str + feature_location
+def join(write_buffer, header_str, selected_region, feature_location, record_fasta, is_complement):
+    if selected_region != "intron":
+        write_buffer += header_str + feature_location
+    
     if is_complement:
         feature_location = feature_location[16:-2]
     else:
@@ -218,7 +226,7 @@ def join(outfile, header_str, selected_region, feature_location, record_fasta, i
     # check si les index sont dans le bon ordre
     for i in range(len(indexes) - 1):
         if indexes[i] > indexes[i + 1]:
-            return False
+            return write_buffer
     indexes.sort(key=lambda r:r[0])
 
 
@@ -229,7 +237,7 @@ def join(outfile, header_str, selected_region, feature_location, record_fasta, i
                 is_valid = False
             fn.append(FeatureLocation(indexes[i][1]-1, indexes[i+1][0]))
         if not is_valid:
-            return
+            return write_buffer
     else:
         fn = []
         for xi in indexes:
@@ -238,7 +246,7 @@ def join(outfile, header_str, selected_region, feature_location, record_fasta, i
             else :
                 fn.append(FeatureLocation(xi[0]-1, xi[1]))
         if not is_valid:
-            return
+            return write_buffer
     
     if len(fn) > 1:
         f = CompoundLocation(fn)
@@ -262,16 +270,19 @@ def join(outfile, header_str, selected_region, feature_location, record_fasta, i
             type_seq = ": exon "
             if selected_region == "intron":
                 type_seq = ": intron "
+            if selected_region != "intron":
+                write_buffer += "\n"
             if is_complement:
-                write_buffer += "\n" + header_str + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq).reverse_complement())
+                write_buffer += header_str + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq).reverse_complement())
             else:
-                write_buffer += "\n" + header_str + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq))
-    outfile.write(write_buffer + "\n")
-    return
+                write_buffer += header_str + feature_location + type_seq+ str(i+1)+ "\n" + str(SeqFeature(fn[i], type="domain").extract(record_fasta.seq))
+    write_buffer += "\n"
+    # outfile.write(write_buffer + "\n")
+    return write_buffer
 
-def extract(outfile, header_str, selected_region, feature_location, record_fasta, is_complement):
+def extract(write_buffer, header_str, selected_region, feature_location, record_fasta, is_complement):
     if selected_region == "intron":
-        return
+        return write_buffer
     write_buffer = header_str + feature_location + "\n"
     if is_complement:
         feature_location = feature_location[11:-1]
@@ -279,10 +290,10 @@ def extract(outfile, header_str, selected_region, feature_location, record_fasta
     try:
         (int(x[0]),int(x[1]))
     except ValueError:
-        return
+        return write_buffer
     else:
         if(check_inf_sup(int(x[0]),int(x[1])) == False):
-            return
+            return write_buffer
         f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])), type="domain")
         if is_complement:
             if DEBUG:
@@ -294,13 +305,30 @@ def extract(outfile, header_str, selected_region, feature_location, record_fasta
                 print("EXTRACT")
                 print(f.extract(record_fasta.seq))
             write_buffer += str(f.extract(record_fasta.seq))
-    outfile.write(write_buffer + "\n")
-    return
+    write_buffer += "\n"
+    # outfile.write(write_buffer + "\n")
+    return write_buffer
 
 def handler():
     if VERBOSE:
         print("Timeout, NC skipped")
     raise Exception("end of time")
+
+def test_NC_downloaded(path, NC, name, selected_region):
+    """ Test if NC is already downloaded """
+    name = name.replace(" ", "_")
+    name = name.replace("[", "_")
+    name = name.replace("]", "_")
+    name = name.replace(":", "_")
+    path += name + "/"
+    try:
+        files = os.listdir(path)
+    except:
+        return False
+    for f in files:
+        if NC in f and selected_region in f:
+            return True
+    return False
 
 def load_data_from_NC(index, name, path, NC_list, selected_region):
     """
@@ -308,6 +336,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
     """
     Entrez.email = ''.join(random.choice(string.ascii_lowercase) for i in range(20))+'@'+''.join(random.choice(string.ascii_lowercase) for i in range(20))+ '.com'
     nb_region_found = 0
+    nb_region_already_downloaded = 0
     if VERBOSE:
         print()
         print("downloading [" + name + "]")
@@ -320,6 +349,11 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             print("\t", NC)
         if DEBUG == True :
             print(str(NC) + " / " + str(len(NC_list)))
+        if test_NC_downloaded(path, NC, name, selected_region):
+            if VERBOSE:
+                print(name, NC, "alredy downloaded")
+            nb_region_already_downloaded += 1
+            continue
         name = name.replace(" ", "_")
         name = name.replace("[", "_")
         name = name.replace("]", "_")
@@ -371,35 +405,49 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
                 if os.path.isfile(path + name + "/" + NC_filename):
                     os.remove(path + name + "/" + NC_filename)
                 list_file.append(NC_filename)
-            with open(path + name + "/" + NC_filename, 'a+') as out:
-                if DEBUG:
-                    print(i+1, "/", len(record[0]["GBSeq_feature-table"]))
-                    print(feature_location)
-                
-                header_str = selected_region + ' ' + name + ' ' + NC + ': '
+            
+            # parse feature for current NC
+            write_buffer = ""
+            if DEBUG:
+                print(i+1, "/", len(record[0]["GBSeq_feature-table"]))
+                print(feature_location)
+            
+            header_str = selected_region + ' ' + name + ' ' + NC + ': '
 
-                if feature_location.find("complement") != -1 and feature_location.find("join") != -1:
-                    join(out, header_str, selected_region, feature_location, record_fasta, True)
+            if feature_location.find("complement") != -1 and feature_location.find("join") != -1:
+                write_buffer = join(write_buffer, header_str, selected_region, feature_location, record_fasta, True)
 
-                elif feature_location.find("complement") != -1:
-                    extract(out, header_str, selected_region, feature_location, record_fasta, True)
+            elif feature_location.find("complement") != -1:
+                write_buffer = extract(write_buffer, header_str, selected_region, feature_location, record_fasta, True)
 
-                elif feature_location.find("join") != -1:
-                    join(out, header_str, selected_region, feature_location, record_fasta, False)
+            elif feature_location.find("join") != -1:
+                write_buffer = join(write_buffer, header_str, selected_region, feature_location, record_fasta, False)
 
-                else:
-                    extract(out, header_str, selected_region, feature_location, record_fasta, False)
-            if os.stat(path + name + "/" + NC_filename).st_size == 0:
-                        os.remove(path + name + "/" + NC_filename)
-                        nb_region_found -= 1
+            else:
+                write_buffer = extract(write_buffer, header_str, selected_region, feature_location, record_fasta, False)
 
-    if nb_region_found == 0:
+            # if file not empty then create it
+            if write_buffer != "":
+                with open(path + name + "/" + NC_filename, 'a+') as out:
+                    out.write(write_buffer)
+            else:
+                nb_region_found -= 1
+
+            # if os.stat(path + name + "/" + NC_filename).st_size == 0:
+            #     try:
+            #         os.remove(path + name + "/" + NC_filename)
+            #         print(path)
+            #     except:
+            #         print(path)
+            #     nb_region_found -= 1
+
+    if nb_region_found == 0 and nb_region_already_downloaded == 0:
         if VERBOSE:
             print("Selected functional region not found for organism : [" + name + "]")
-        return 0
+        return 0, 0
     if VERBOSE:
         print(name + " downloaded")
-    return nb_region_found
+    return nb_region_found, nb_region_already_downloaded
 
 def check_inf_sup(inf,sup):
     if(inf <= sup):
