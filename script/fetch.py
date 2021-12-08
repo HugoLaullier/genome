@@ -235,7 +235,10 @@ def join(write_buffer, header_str, selected_region, feature_location, record_fas
         for i in range(len(indexes) - 1):
             if(check_inf_sup(indexes[i][1],indexes[i+1][0]) == False):
                 is_valid = False
-            fn.append(FeatureLocation(indexes[i][1]-1, indexes[i+1][0]))
+            try :
+                fn.append(FeatureLocation(indexes[i][1]-1, indexes[i+1][0]))
+            except :
+                return write_buffer
         if not is_valid:
             return write_buffer
     else:
@@ -361,7 +364,10 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
         if DEBUG:
             print("NC id  =", NC)
             print("----------------------------")
-        handle_fasta = Entrez.efetch(db="nucleotide", id=NC, rettype="fasta", retmode="text")
+        try :
+            handle_fasta = Entrez.efetch(db="nucleotide", id=NC, rettype="fasta", retmode="text")
+        except :
+            continue
         '''
         signal.signal(signal.SIGALRM, handler)
         signal.alarm(10)
@@ -374,10 +380,7 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
         try:
             record_fasta = timeout(timeout=10)(SeqIO.read)(handle_fasta, "fasta")
         except:
-            try :
-                record_fasta = SeqIO.read(handle_fasta, "fasta")
-            except ValueError :
-                pass
+            continue
 
         if DEBUG:
             print(record_fasta)
@@ -385,7 +388,10 @@ def load_data_from_NC(index, name, path, NC_list, selected_region):
             
         handle_fasta.close()
         handle_text = Entrez.efetch(db="nucleotide", id=NC, retmode="xml")
-        record = Entrez.read(handle_text)
+        try:
+            record = Entrez.read(handle_text)
+        except :
+            continue
         handle_text.close()
         list_file = []
         for i in range(len(record[0]["GBSeq_feature-table"])):
